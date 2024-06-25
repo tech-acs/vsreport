@@ -26,9 +26,8 @@ Authors@R: c(
   person(given="Diego",
          family="Lara",
          role=c("ctb"),
-         email= "diego.lara.de.andres@ons.gov.uk"),
-        
-)
+         email= "diego.lara.de.andres@ons.gov.uk")
+         )
 Description: Package to assist importing and processing of life event data and creating tablulated data.
 License: MIT
 Encoding: UTF-8
