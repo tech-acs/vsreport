@@ -3,19 +3,17 @@ Type: Package
 Title: Package for CRVS Report
 Version: 0.1.4
 Authors@R: c(
-  person("UNECA", 
-         role=c("aut", "cre")),
   person(given="Tesfaye",
          family="Belay",
-         role=c("aut"),
+         role=c("aut","cre"),
          email= "belayt@un.org"),
   person(given="Pamela",
          family="Kakande ",
-         role=c("aut"),
+         role="aut",
          email= "pamela.nabukhonzo@un.org"),
   person(given="Rachel",
          family="Shipsey",
-         role=c("aut"),
+         role="aut",
          email= "rachel.shipsey@ons.gov.uk"),
   person(given="Liam",
          family="Beardsmore",
@@ -23,11 +21,11 @@ Authors@R: c(
          email= "liam.beardsmore@ons.gov.uk"),
   person(given="Henry",
          family="Partridge",
-         role=c("ctb"),
+         role="ctb",
          email= "henry.partridge@ons.gov.uk"),
   person(given="Diego",
          family="Lara",
-         role=c("ctb"),
+         role="ctb",
          email= "diego.lara.de.andres@ons.gov.uk")
          )
 Description: Package to assist importing and processing of life event data and creating tablulated data.
