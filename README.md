@@ -6,9 +6,9 @@ This package contains some useful functions to create a crvs report.
 
 ## Installation and Getting Started
 
-To install and use the `crvsreportpackage` from GitHub, follow these steps to ensure all package dependencies are correctly managed and installed using renv:
+To install and use the `crvsreportpackage` from GitHub, follow these steps to ensure all package dependencies are correctly managed and installed using `renv`:
 
-1. Clone the repository:
+1. __Clone the repository__:
 
 ```sh
 git clone https://github.com/tech-acs/crvsreportpackage.git
@@ -55,8 +55,8 @@ website format.
 
 ## Contributing
 
-We welcome contributions! We will shortly add Contributing Guidelines for details
-on our code of conduct and the process for submitting pull requests.
+We welcome contributions! Please have a look at our [Contributing Guidelines](CONTRIBUTING.md) for details
+on the process for submitting pull requests. Also have a read at our [Contributor Code of Conduct](CODE_OF_CONDUCT.md) before interacting with the project.
 
 ## License
 
