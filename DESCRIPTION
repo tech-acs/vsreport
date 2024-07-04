@@ -47,5 +47,6 @@ Imports:
     renv,
     shiny,
     stringr,
+    testthat,
     tidyr,
     tidyverse

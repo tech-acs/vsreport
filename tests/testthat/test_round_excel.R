@@ -3,7 +3,7 @@
 library(testthat)
 
 
-source("../../R/utils/round_excel.R")
+source("../../R/round_excel.R")
 
 test_that("round_excel function works correctly", {
   expect_equal(round_excel(1.14, 1), 1.1)  # Test round down
