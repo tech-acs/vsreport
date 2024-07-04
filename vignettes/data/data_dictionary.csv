@@ -3,26 +3,26 @@ birth1a,Date of occurrence,Birth,NA,Direct
 birth1b,Date of registration,Birth,NA,Direct
 birth1c,Place of occurrence,Birth,NA,Direct
 birth1g,"Type of birth (i.e., single, twin, triplet, quadruplet or higher multiple delivery)",Birth,NA,Direct
-birth1h,Attendant at birth ,Birth,NA,Direct
-birth1i,"Type of place of occurrence (hospital, home, etc.) ",Birth,NA,Additional
+birth1h,Attendant at birth,Birth,NA,Direct
+birth1i,"Type of place of occurrence (hospital, home, etc.)",Birth,NA,Additional
 birth2a,Sex,Birth,Newborn,Direct
 birth3a,Date of birth,Birth,Mother,Direct
-birth3b,Age ,Birth,Mother,Derived
+birth3b,Age,Birth,Mother,Derived
 birth3c,Marital status,Birth,Mother,Direct
-birth3l,Place of usual residence ,Birth,Mother,Direct
-birth3n,Urban/rural residence ,Birth,Mother,Derived
+birth3l,Place of usual residence,Birth,Mother,Direct
+birth3n,Urban/rural residence,Birth,Mother,Derived
 death1a,Date of occurrence,Death,NA,Direct
 death1b,Date of registration,Death,NA,Direct
 death1c,Place of occurrence,Death,NA,Direct
-death1g,Cause of death ,Death,NA,Direct
+death1g,Cause of death,Death,NA,Direct
 death1j,"Death occurring during pregnancy, childbirth and puerperium (for females between 15 and 49 years of age)",Death,NA,Additional
-death1n,"Type of place of occurrence (hospital, home, etc.) ",Death,NA,Additional
+death1n,"Type of place of occurrence (hospital, home, etc.)",Death,NA,Additional
 death2a,Date of birth,Death,NA,Direct
-death2b,Age ,Death,Decedent,Derived
-death2c,Sex ,Death,Decedent,Direct
-death2o,Place of usual residence ,Death,Decedent,Direct
-death2p,Place of usual residence of the mother (for deaths under 1 year of age) ,Death,Decedent,Direct
-death2r,Urban/rural residence ,Death,Decedent,Derived
+death2b,Age,Death,Decedent,Derived
+death2c,Sex,Death,Decedent,Direct
+death2o,Place of usual residence,Death,Decedent,Direct
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct
+death2r,Urban/rural residence,Death,Decedent,Derived
 marriage1a,Date of occurrence,Marriage,NA,Direct
 marriage1b,Date of registration,Marriage,NA,Direct
 marriage2a,Date of birth,Marriage,Bride,Direct
