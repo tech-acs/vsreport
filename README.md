@@ -6,13 +6,33 @@ This package contains some useful functions to create a crvs report.
 
 ## Installation and Getting Started
 
-You can install this development version from GitHub with:
+To install and use the `crvsreportpackage` from GitHub, follow these steps to ensure all package dependencies are correctly managed and installed using renv:
 
-```r
-# install.packages(devtools)
-devtools::install_github("tech-acs/crvsreportpackage")
+1. Clone the repository:
+
+```sh
+git clone https://github.com/tech-acs/crvsreportpackage.git
+cd crvsreportpackage
 ```
- 
+
+2. __Initialize the `renv` environment__: Upon first entering the package directory, `renv` will activate the specific package environment defined for `crvsreportpackage`. You need to run the following R commands to restore the required packages:
+
+```R
+install.packages("renv")
+renv::restore()
+```
+
+This will read the `renv.lock` file which contains the dependencies and install the correct versions of all required packages.
+
+3. __Install the package__: Once the environment is set up, you can install the package using:
+
+```R
+devtools::install()
+```
+
+By following these steps, you will ensure that you have all the necessary dependencies and the correct versions installed, allowing `crvsreportpackage` to function as intended.
+
+
 ## Usage
 
 Once you have installed the package, here is a basic example of how to use
