@@ -9,8 +9,8 @@ variable_info <- read.csv("./vignettes/data/data_dictionary.csv")
 generate_data <- function(var_info) {
   n <- 100  # Number of simulated records
 
-  data <- lapply(var_info$variable_name, function(var) {
-    switch(var,
+  data <- lapply(var_info$variable_name, function(var_id, var_name) {
+    switch(var_name,
            "Date of occurrence" = sample(seq(as.Date('2000/01/01'), as.Date('2023/01/01'), by="day"), n, replace = TRUE),
            "Date of registration" = sample(seq(as.Date('2000/01/01'), as.Date('2023/01/01'), by="day"), n, replace = TRUE),
            "Place of occurrence" = sample(c("Hospital", "Home", "Clinic", "Other"), n, replace = TRUE),
@@ -31,11 +31,11 @@ generate_data <- function(var_info) {
            "Date of marriage" = sample(seq(as.Date('1990/01/01'), as.Date('2020/01/01'), by="day"), n, replace = TRUE),
            "Duration of marriage" = sample(1:30, n, replace = TRUE),
            rep(NA, n))  # Default for unknown variables
-  })
+  }, var_info$variable_id)
 
   # Convert list to data frame
   data <- as.data.frame(data)
-  names(data) <- var_info$variable_name
+  names(data) <- var_info$variable_id
 
   return(data)
 }
