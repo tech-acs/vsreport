@@ -37,3 +37,15 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+Imports: 
+    crosstalk,
+    desc,
+    dplyr,
+    htmlwidgets,
+    janitor,
+    reactable,
+    renv,
+    shiny,
+    stringr,
+    tidyr,
+    tidyverse
