@@ -29,7 +29,7 @@ Authors@R: c(
          email= "diego.lara.de.andres@ons.gov.uk")
          )
 Description: Package to assist importing and processing of life event data and creating tablulated data.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.1
