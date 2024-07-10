@@ -14,7 +14,7 @@ generate_data <- function(var_info) {
     switch(var_name,
            "Date of occurrence" = sample(seq(as.Date('2000/01/01'), as.Date('2023/01/01'), by="day"), n, replace = TRUE),
            "Date of registration" = sample(seq(as.Date('2000/01/01'), as.Date('2023/01/01'), by="day"), n, replace = TRUE),
-           "Place of occurrence" = sample(c("Hospital", "Home", "Clinic", "Other"), n, replace = TRUE),
+           "Place of occurrence" = sample(c("RegionA", "RegionB", "RegionC", "RegionD"), n, replace = TRUE),
            "Type of birth (i.e., single, twin, triplet, quadruplet or higher multiple delivery)" = sample(c("Single", "Twin", "Triplet", "Quadruplet or higher"), n, replace = TRUE),
            "Attendant at birth" = sample(c("Doctor", "Nurse", "Midwife", "Other"), n, replace = TRUE),
            "Type of place of occurrence (hospital, home, etc.)" = sample(c("Hospital", "Home", "Clinic", "Other"), n, replace = TRUE),
