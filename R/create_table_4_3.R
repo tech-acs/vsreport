@@ -27,7 +27,7 @@
 #' The Vital Statistics \href{https://www.vitalstrategies.org/resources/production-of-a-vital-statistics-report/}{report resource kit}
 #' includes guidance and templates to help complete your CRVS report.
 #'
-#' @examples t4.3 <- create_t4.3(data, date_var = year, data_year = 2022, tablename = "Table_4_3")
+#' @examples table4_3 <- create_t4.3(sample_data1, date_var = birth1a, data_year = 2021, tablename = "Table_4_3")
 
 create_t4.3 <- function(data, date_var, data_year = 2022, tablename = "Table_4_3"){
   output <- data |>
