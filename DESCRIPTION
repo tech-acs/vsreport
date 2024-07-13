@@ -1,11 +1,53 @@
 Package: crvsreportpackage
 Type: Package
 Title: Package for CRVS Report
-Version: 0.1.4
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Version: 0.1.6
+Authors@R: c(
+  person(given="Tesfaye",
+         family="Belay",
+         role=c("aut","cre"),
+         email= "belayt@un.org"),
+  person(given="Pamela",
+         family="Kakande ",
+         role="aut",
+         email= "pamela.nabukhonzo@un.org"),
+  person(given="Rachel",
+         family="Shipsey",
+         role="aut",
+         email= "rachel.shipsey@ons.gov.uk"),
+  person(given="Liam",
+         family="Beardsmore",
+         role=c("aut","ctb"),
+         email= "liam.beardsmore@ons.gov.uk"),
+  person(given="Henry",
+         family="Partridge",
+         role="ctb",
+         email= "henry.partridge@ons.gov.uk"),
+  person(given="Diego",
+         family="Lara",
+         role="ctb",
+         email= "diego.lara.de.andres@ons.gov.uk")
+         )
 Description: Package to assist importing and processing of life event data and creating tablulated data.
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
+Suggests: 
+    knitr,
+    rmarkdown,
+    roxygen2
+VignetteBuilder: knitr
+Imports: 
+    crosstalk,
+    desc,
+    dplyr,
+    htmlwidgets,
+    janitor,
+    reactable,
+    renv,
+    shiny,
+    stringr,
+    testthat,
+    tidyr,
+    tidyverse
