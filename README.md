@@ -27,6 +27,9 @@ You need to provide the repository address in the format username/repository.
 devtools::install_github("tech-acs/crvsreportpackage")
 ```
 
+During this installation, you will be asked to install some required packages that are used within `crvsreportpackage`.
+This might take a minute or two.
+
 ### Use the `crvsreportpackage` in your Script
 
 Once you have installed the package, here is a basic example of how to use

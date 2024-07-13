@@ -14,8 +14,9 @@
 #' @param date_var Date of occurrence variable
 #' @param data_year Chosen year
 #' @param tablename Name for csv output use _ instead of . for names
+#' @param output_path The path to export the generated table
 #'
-#' @return Data frame with tabulated results
+#' @return Data frame with tabulated results (if an output_path is given, it will export a .csv)
 #' @export
 #'
 #' @import dplyr
@@ -29,7 +30,7 @@
 #'
 #' @examples table4_3 <- create_t4.3(sample_data1, date_var = birth1a, data_year = 2021, tablename = "Table_4_3")
 
-create_t4.3 <- function(data, date_var, data_year = 2022, tablename = "Table_4_3"){
+create_t4.3 <- function(data, date_var, data_year = 2022, tablename = "Table_4_3", output_path = NULL){
   output <- data |>
     na.omit(sbind) |>
     mutate(birth1a = year(birth1a)) |>
@@ -38,9 +39,13 @@ create_t4.3 <- function(data, date_var, data_year = 2022, tablename = "Table_4_3
     summarise(total = n()) |>
     pivot_wider(names_from = birth1c, values_from = total, values_fill = 0) |>
     adorn_totals(c("col", "row"))
-
-  #write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
-  return(output)
+  
+  if (is.null(output_path)){
+    return(output)
+  } else {
+    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
+    return(output)
+  }
 }
 
 
