@@ -2,18 +2,17 @@ Package: crvsreportpackage
 Type: Package
 Title: Package for CRVS Report
 Version: 0.1.4
-Authors@R: c(
-  person(given="Tesfaye",
+Authors@R: c(person(given="Tesfaye",
          family="Belay",
          role=c("aut","cre"),
          email= "belayt@un.org"),
   person(given="Pamela",
          family="Kakande ",
-         role=c("aut","cre"),
+         role=c("aut"),
          email= "pamela.nabukhonzo@un.org"),
   person(given="Rachel",
          family="Shipsey",
-         role=c("aut","cre"),
+         role=c("aut"),
          email= "rachel.shipsey@ons.gov.uk"),
   person(given="Liam",
          family="Beardsmore",
@@ -26,11 +25,12 @@ Authors@R: c(
   person(given="Diego",
          family="Lara",
          role=c("ctb"),
-         email= "diego.lara.de.andres@ons.gov.uk"),
-        
-)
+         email= "diego.lara.de.andres@ons.gov.uk"))
 Description: Package to assist importing and processing of life event data and creating tablulated data.
 License: MIT
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
+Imports: 
+    janitor,
+    lubridate
