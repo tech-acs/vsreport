@@ -60,7 +60,8 @@ create_t3.5_and_3.7 <- function(data, est_data, date_var, data_year = NA, topic 
     mutate(completeness := round((total / total_est) * 100, 2)) |>
     pivot_wider(names_from = sex, values_from = c(total, total_est, completeness), names_sep = " ") |>
     mutate(rgn = ifelse(rgn %in% c("", " ", NA), "not stated", rgn)) |>
-    arrange(rgn)
+    arrange(rgn) %>%
+    adorn_totals("row")
 
   write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
 
