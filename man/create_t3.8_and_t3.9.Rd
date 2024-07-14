@@ -8,7 +8,7 @@ create_t3.8_and_t3.9(
   data,
   est_data,
   date_var,
-  data_year,
+  data_year = NA,
   by_var,
   topic = NA,
   tablename = NA
