@@ -1,17 +1,19 @@
 #' calcualtes age specific and total fertility rates per year
 #'
 #' @param data births data frame
+#' @param pops population data frame
 #'
 #' @return tablulated age specific and total fertility rates per year
 #' @export
 #'
 #' @import stringr
 #'
-#' @examples fertility_rates <- calculate_fertility_rates(bth_data)
+#' @examples
+#' fertility_rates <- calculate_fertility_rates(bth_data, population)
 #'
-calculate_fertility_rates <- function(data){
+calculate_fertility_rates <- function(data, pops){
 
-curr_year <- max(bth_data$dobyr, na.rm = TRUE)
+curr_year <- max(data$dobyr, na.rm = TRUE)
 
 # Generate the year sequence
 year_sequence <- generate_year_sequence(curr_year)
