@@ -1,11 +1,15 @@
 #' Create Table 3.1
 #'
-#'Table 3.1 Number of vital events by registration timeliness, year
+#' Table 3.1 Number of vital events by registration timeliness, year
 #'
-#' @param births_data name of births data frame
-#' @param deaths_data name of deaths data frame
+#' @param bth_data Birth Registration Data
+#' @param dth_data Death Registration Data
+#' @param bth_yr_var Date of occurrence variable (Birth Data)
+#' @param dth_yr_var Date of occurrence variable (Death Data)
+#' @param tablename Name for csv output use _ instead of . for names
+#' @param output_path The path to export the generated table
 #'
-#' @return Data frame with tabulated result
+#' @return Data frame with tabulated results (if an output_path is given, it will export a .csv)
 #' @export
 #'
 #' @import dplyr
@@ -14,7 +18,7 @@
 #'
 #' @examples t3.1 <- create_t3.1(bth_data = bth_data, dth_data = dth_data, bth_yr_var = dobyr, dth_yr_var = dodyr)
 #'
-create_t3.1 <- function(bth_data, dth_data, bth_yr_var, dth_yr_var){
+create_t3.1 <- function(bth_data, dth_data, bth_yr_var, dth_yr_var, tablename = "Table_4_3", output_path = NULL){
   max_value <- bth_data %>% pull({{bth_yr_var}}) %>% max(na.rm = TRUE)
 
   outputb <- bth_data |>
