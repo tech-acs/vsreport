@@ -1,4 +1,7 @@
 test_that("create_t4.3 function works correctly", {
+  working_dir <- getwd()
+  setwd("../../")
+
   # Sample data
   bth_data <- data.frame(
     dobyr = c(2022, 2022, 2022, 2022, 2022),
@@ -14,12 +17,15 @@ test_that("create_t4.3 function works correctly", {
   expect_s3_class(result, "data.frame")
 
   # Check if the file is written
-  expect_true(file.exists("../../outputs/Table_4_3.csv"))
+  expect_true(file.exists("outputs/Table_4_3.csv"))
 
   # Check for expected columns in the result
   expected_cols <- c("rgnpob", "same", "other", "Total")
   expect_equal(colnames(result), expected_cols)
 
   # Clean up the generated file after the test
-  unlink("../../outputs/Table_4_3.csv")
+  unlink("outputs/Table_4_3.csv")
+
+  # Reset working dir
+  setwd(working_dir)
 })
