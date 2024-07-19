@@ -1,4 +1,7 @@
 test_that("create_t4.7 function works correctly", {
+  working_dir <- getwd()
+  setwd("../../")
+
   # Sample data
   bth_data <- data.frame(
     dobyr = c(2022, 2022, 2022, 2022, 2022, 2022),
@@ -14,5 +17,11 @@ test_that("create_t4.7 function works correctly", {
   # Check if result is a data frame
   expect_s3_class(result, "data.frame")
 
+  # Check if the file is written
+  expect_true(file.exists("outputs/Table_4_7.csv"))
 
+  # Clean up the generated file after the test
+  unlink("outputs/Table_4_7.csv")
+  # Reset working dir
+  setwd(working_dir)
 })
