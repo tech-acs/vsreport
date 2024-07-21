@@ -4,10 +4,12 @@
 \alias{create_t3.10}
 \title{Create Table 3.10}
 \usage{
-create_t3.10(data, date_var, data_year = NA, tablename = NA)
+create_t3.10(data, dth_est, date_var, data_year = NA, tablename = NA)
 }
 \arguments{
 \item{data}{dataframe being used}
+
+\item{dth_est}{dataframe being used with estimated Death data}
 
 \item{date_var}{occurrence data being used e.g. dobyr, dodyr etc}
 
