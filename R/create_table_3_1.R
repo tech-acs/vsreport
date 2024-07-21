@@ -1,6 +1,6 @@
 #' Create Table 3.1
 #'
-#'Table 3.1 Number of vital events by registration timeliness, year
+#' Table 3.1 Number of vital events by registration timeliness, year
 #'
 #' @param bth_data name of births data frame
 #' @param dth_data name of deaths data frame
@@ -8,7 +8,7 @@
 #' @param dth_yr_var name of year variable (Deaths)
 #' @param tablename name of the table being saved as a csv file
 #'
-#' @return Data frame with tabulated result
+#' @return Data frame with tabulated results (if an output_path is given, it will export a .csv)
 #' @export
 #'
 #' @import dplyr
