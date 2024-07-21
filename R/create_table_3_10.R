@@ -3,6 +3,7 @@
 #'Table 3.10 Adjustment of deaths by age group and sex of decedent
 #'
 #' @param data dataframe being used
+#' @param dth_est dataframe being used with estimated Death data
 #' @param date_var occurrence data being used e.g. dobyr, dodyr etc
 #' @param data_year year the data is for
 #' @param tablename name of the table being saved as a csv file
@@ -16,7 +17,7 @@
 #'
 #' @examples t3.10 <- create_t3.10(dth_data, date_var = dodyr, data_year = 2022, tablename = "Table_3_10")
 #'
-create_t3.10 <- function(data, date_var, data_year=NA, tablename = NA){
+create_t3.10 <- function(data, dth_est, date_var, data_year=NA, tablename = NA){
 
   # if data_year is not provided, take the latest year in the data
   if (is.na(data_year)){
