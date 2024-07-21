@@ -22,7 +22,6 @@ create_t3.1(
 \item{dth_yr_var}{name of year variable (Deaths)}
 
 \item{tablename}{name of the table being saved as a csv file}
-
 }
 \value{
 Data frame with tabulated results (if an output_path is given, it will export a .csv)
