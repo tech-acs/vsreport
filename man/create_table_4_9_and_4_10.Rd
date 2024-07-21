@@ -7,6 +7,7 @@
 create_table_4_9_and_4_10(
   data,
   est_data,
+  pops,
   data_year = NA,
   ruindicator = "urban",
   tablename = NA
@@ -16,6 +17,8 @@ create_table_4_9_and_4_10(
 \item{data}{data frame being used}
 
 \item{est_data}{data frame for estimate data}
+
+\item{pops}{population estimates}
 
 \item{data_year}{year of data}
 

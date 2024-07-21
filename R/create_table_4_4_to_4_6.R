@@ -31,11 +31,10 @@ create_t4.4_to_4_6 <- function(data, data_year = NA, col_var = fert_age_grp, by_
   if (is.na(data_year)){
     data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
   }
-  !!sym(date_var)
 
   if(rural_urban == "no"){
   output <- data |>
-    filter(doryr == year & is.na(sbind)) |>
+    filter(doryr == data_year & is.na(sbind)) |>
     group_by(!!sym(col_var), !!sym(by_var)) |>
     mutate(!!sym(by_var) := ifelse(is.na(!!sym(by_var)), 0, !!sym(by_var)),
            !!sym(col_var) := ifelse(is.na(!!sym(col_var)), "Not Stated", !!sym(col_var))) |>
@@ -44,6 +43,7 @@ create_t4.4_to_4_6 <- function(data, data_year = NA, col_var = fert_age_grp, by_
     adorn_totals(c("col","row"))
 
   output <- output[c(9, 1:8, 10),]
+  write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
   return(output)
   } else {
     output <- data |>
