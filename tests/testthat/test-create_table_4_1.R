@@ -2,6 +2,7 @@ test_that("create_t4.1 function works correctly", {
   # Sample data
   bth_data <- data.frame(
     dobyr = c(2018, 2018, 2019, 2019, 2020),
+    fert_age_grp = c("15-19", "15-19", "15-19", "15-19", "15-19"),
     sbind = c(NA, NA, NA, NA, NA),
     sex = c("male", "female", "male", "female", "male")
   )
@@ -12,21 +13,12 @@ test_that("create_t4.1 function works correctly", {
     male = c(150, 250, 350)
   )
 
-  # pops <- data.frame(
-  #   popu_2018_male = c(5000),
-  #   popu_2018_female = c(6000),
-  #   popu_2019_male = c(5200),
-  #   popu_2019_female = c(6200),
-  #   popu_2020_male = c(5400),
-  #   popu_2020_female = c(6400),
-  #   sex = c("male", "female")
-  # )
-
-  pops <-data.frame(
+  pops <- data.frame(
     population_2018 = c(5000, 6000),
     population_2019 = c(5200, 6200),
     population_2020 = c(5400, 6400),
-    sex = c("male", "female")
+    sex = c("male", "female"),
+    fert_age_grp = c("15-19", "15-19")
   )
 
   # Call the function

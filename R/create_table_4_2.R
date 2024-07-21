@@ -24,7 +24,7 @@ create_t4.2 <- function(data, est_data, date_var, data_year = NA, tablename = "T
     data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
   }
 
-    output <- data |>
+  output <- data |>
     filter(!!sym(date_var) == data_year & is.na(sbind)) |>
     group_by(rgn, sex) |>
     summarise(total = n()) |>
@@ -41,7 +41,7 @@ create_t4.2 <- function(data, est_data, date_var, data_year = NA, tablename = "T
     mutate(completeness = round_excel(Total/total*100, 1)) |>
     select("rgn", "male", "female", "not stated", "Total", "ratio", "completeness")
 
-  write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
+  write.csv(output, paste0("outputs/", tablename, ".csv"), row.names = FALSE)
   return(output)
 }
 

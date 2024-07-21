@@ -7,6 +7,7 @@
 create_t4.8(
   data,
   est_data,
+  pops,
   date_var,
   data_year = NA,
   by_var = NA,
@@ -17,6 +18,8 @@ create_t4.8(
 \item{data}{data frame being used}
 
 \item{est_data}{data frame for estimate data}
+
+\item{pops}{estimated population sizes by year}
 
 \item{date_var}{occurrence data variable being used}
 

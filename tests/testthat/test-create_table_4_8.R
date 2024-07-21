@@ -1,4 +1,7 @@
 test_that("create_t4.8 function works correctly", {
+  working_dir <- getwd()
+  setwd("../../")
+
   # Sample data
   bth_data <- data.frame(
     dobyr = c(2022, 2022, 2022, 2022, 2022),
@@ -17,7 +20,7 @@ test_that("create_t4.8 function works correctly", {
   )
 
   # Call the function
-  result <- create_t4.8(bth_data, pops, bth_est, date_var = "dobyr", data_year = 2022, by_var = "rgn", tablename = "Table_4_8")
+  result <- create_t4.8(bth_data, bth_est, pops, date_var = "dobyr", data_year = 2022, by_var = "rgn", tablename = "Table_4_8")
 
   # Check if result is a data frame
   expect_s3_class(result, "data.frame")
@@ -27,10 +30,11 @@ test_that("create_t4.8 function works correctly", {
   expect_equal(colnames(result), expected_cols)
 
   # Check if the file is written
-  expect_true(file.exists("../../outputs/Table_4_8.csv"))
+  expect_true(file.exists("outputs/Table_4_8.csv"))
 
   # Clean up the generated file after the test
-  unlink("../../outputs/Table_4_8.csv")
-
+  unlink("outputs/Table_4_8.csv")
+  # Reset working dir
+  setwd(working_dir)
 
 })

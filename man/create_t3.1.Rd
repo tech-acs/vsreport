@@ -9,22 +9,20 @@ create_t3.1(
   dth_data,
   bth_yr_var,
   dth_yr_var,
-  tablename = "Table_4_3",
-  output_path = NULL
+  tablename = "Table_3_1"
 )
 }
 \arguments{
-\item{bth_data}{Birth Registration Data}
+\item{bth_data}{name of births data frame}
 
-\item{dth_data}{Death Registration Data}
+\item{dth_data}{name of deaths data frame}
 
-\item{bth_yr_var}{Date of occurrence variable (Birth Data)}
+\item{bth_yr_var}{name of year variable (Births)}
 
-\item{dth_yr_var}{Date of occurrence variable (Death Data)}
+\item{dth_yr_var}{name of year variable (Deaths)}
 
-\item{tablename}{Name for csv output use _ instead of . for names}
+\item{tablename}{name of the table being saved as a csv file}
 
-\item{output_path}{The path to export the generated table}
 }
 \value{
 Data frame with tabulated results (if an output_path is given, it will export a .csv)
@@ -33,6 +31,6 @@ Data frame with tabulated results (if an output_path is given, it will export a 
 Table 3.1 Number of vital events by registration timeliness, year
 }
 \examples{
-t3.1 <- create_t3.1(bth_data = bth_data, dth_data = dth_data, bth_yr_var = dobyr, dth_yr_var = dodyr)
+t3.1 <- create_t3.1(bth_data = bth_data, dth_data = dth_data, bth_yr_var = dobyr, dth_yr_var = dodyr, tablename = "Table_3_1")
 
 }
