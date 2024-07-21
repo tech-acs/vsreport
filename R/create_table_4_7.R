@@ -29,25 +29,18 @@ create_t4.7 <- function(data, date_var, data_year = NA, tablename = NA){
     pivot_wider(names_from = attend, values_from = total, values_fill = 0) |>
     adorn_totals("col")
 
-  outputall <- output |>
-    group_by(pob) |>
-    summarise(`1` = sum(`1`), `2` = sum(`2`), `3` = sum(`3`), `4` = sum(`4`), `5` = sum(`5`)) |>
-    mutate(rgnpob = "all") |>
-    select(rgnpob, pob, `1`:`5`) |>
-    adorn_totals(c("row", "col"))
+  outputall <- data |>
+    group_by(pob,attend) |>
+    count() |>
+    pivot_wider(names_from = attend, values_from = n, values_fill = 0)
+  outputall <- cbind(data.frame(rgnpob = rep("All Births",nrow(outputall))),outputall)
 
-  outputrgn <- output |>
-    group_by(rgnpob) |>
-    summarise(`1` = sum(`1`), `2` = sum(`2`), `3` = sum(`3`), `4` = sum(`4`), `5` = sum(`5`)) |>
-    mutate(pob = "total") |>
-    select(rgnpob, pob, `1`:`5`) |>
-    adorn_totals("col")
+  outputrgn <- data |>
+    group_by(rgnpob,pob,attend) |>
+    count() |>
+    pivot_wider(names_from = attend, values_from = n, values_fill = 0)
 
-  output <- rbind(output, outputrgn) |>
-    arrange(rgnpob)
-
-  output <- rbind(outputall, output)
-
+  output <- rbind(outputall, outputrgn) |> adorn_totals(c("row","col"))
 
   write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
   return(output)
