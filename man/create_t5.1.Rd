@@ -17,7 +17,7 @@ create_t5.1(data, num_yrs = 5, tablename = "Table_5_1")
 data frame with tabulated results
 }
 \description{
-Table 5.1 Summary statistics on mortality by year of occurrence
+Calculates Table 5.1 Deaths summary table
 }
 \examples{
 t5.1 <- create_t5.1(dth_data, tablename = "Table_5_1")

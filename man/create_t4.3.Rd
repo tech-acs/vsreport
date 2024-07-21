@@ -2,25 +2,27 @@
 % Please edit documentation in R/create_table_4_3.R
 \name{create_t4.3}
 \alias{create_t4.3}
-\title{Creates Table 4.3}
+\title{Create Table 4.3}
 \usage{
 create_t4.3(data, date_var, data_year = NA, tablename = "Table_4_3")
 }
 \arguments{
-\item{data}{data frame being used}
+\item{data}{Birth registration data}
 
-\item{date_var}{occurrence data being used e.g. dobyr, dodyr etc}
+\item{date_var}{Date of occurrence variable}
 
-\item{data_year}{year the data is for}
+\item{data_year}{Chosen year}
 
-\item{tablename}{name for csv output use _ instead of . for names}
+\item{tablename}{Name for csv output use _ instead of . for names}
+
+\item{output_path}{The path to export the generated table}
 }
 \value{
-data frame with tablutated results
+Data frame with tabulated results (if an output_path is given, it will export a .csv)
 }
 \description{
 Table 4.3 Live births by place of occurrence and place of usual residence of mother
 }
 \examples{
-t4.3 <- create_t4.3(bth_data, dobyr, 2022)
+table4_3 <- create_t4.3(sample_data1, date_var = birth1a, data_year = 2021, tablename = "Table_4_3")
 }
