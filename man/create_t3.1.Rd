@@ -4,15 +4,30 @@
 \alias{create_t3.1}
 \title{Create Table 3.1}
 \usage{
-create_t3.1(bth_data, dth_data, bth_yr_var, dth_yr_var)
+create_t3.1(
+  bth_data,
+  dth_data,
+  bth_yr_var,
+  dth_yr_var,
+  tablename = "Table_4_3",
+  output_path = NULL
+)
 }
 \arguments{
-\item{births_data}{name of births data frame}
+\item{bth_data}{Birth Registration Data}
 
-\item{deaths_data}{name of deaths data frame}
+\item{dth_data}{Death Registration Data}
+
+\item{bth_yr_var}{Date of occurrence variable (Birth Data)}
+
+\item{dth_yr_var}{Date of occurrence variable (Death Data)}
+
+\item{tablename}{Name for csv output use _ instead of . for names}
+
+\item{output_path}{The path to export the generated table}
 }
 \value{
-Data frame with tabulated result
+Data frame with tabulated results (if an output_path is given, it will export a .csv)
 }
 \description{
 Table 3.1 Number of vital events by registration timeliness, year
