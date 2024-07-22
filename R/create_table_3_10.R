@@ -18,47 +18,51 @@
 #' @examples t3.10 <- create_t3.10(dth_data, date_var = dodyr, data_year = 2022, tablename = "Table_3_10")
 #'
 create_t3.10 <- function(data, dth_est, date_var, data_year=NA, tablename = NA){
-
   # if data_year is not provided, take the latest year in the data
   if (is.na(data_year)){
     data_year = data %>% pull({{date_var}}) %>% max(na.rm = TRUE)
   }
 
-output <- data |>
-  filter(!!sym(date_var) == data_year, sex != "not stated") |>
-  group_by(age_grp_wide, sex) |>
-  summarise(reg_deaths = n()) |>
-  rename(age_grp = age_grp_wide)
+  output <- data |>
+    filter(!!sym(date_var) == data_year, sex != "not stated") |>
+    group_by(age_grp_wide, sex) |>
+    summarise(reg_deaths = n()) |>
+    rename(age_grp = age_grp_wide)
 
-output_all <- output  |>
-   mutate(sex = "total") |>
-   group_by(age_grp, sex) |>
-   summarise(reg_deaths = sum(reg_deaths))
+  output_all <- output  |>
+     mutate(sex = "total") |>
+     group_by(age_grp, sex) |>
+     summarise(reg_deaths = sum(reg_deaths))
 
-output <- rbind(output_all, output)
+  output <- rbind(output_all, output)
 
-d_est_prop <- dth_est  |>
-  filter(year == data_year ) |>
-  group_by(age_grp) |>
-  summarise(female = sum(female), male = sum(male)) |>
-  pivot_longer(cols = c(female, male) , names_to = "sex", values_to = "est_count")
+  d_est_prop <- dth_est  |>
+    filter(year == data_year ) |>
+    group_by(age_grp) |>
+    summarise(female = sum(female), male = sum(male)) |>
+    pivot_longer(cols = c(female, male) , names_to = "sex", values_to = "est_count")
 
-d_est_prop_all <- d_est_prop |>
-  mutate(sex = "total") |>
-  group_by(age_grp, sex) |>
-  summarise(est_count = sum(est_count))
+  d_est_prop_all <- d_est_prop |>
+    mutate(sex = "total") |>
+    group_by(age_grp, sex) |>
+    summarise(est_count = sum(est_count))
 
-d_est_prop <- rbind(d_est_prop_all, d_est_prop)
+  d_est_prop <- rbind(d_est_prop_all, d_est_prop)
 
-output <- left_join(output, d_est_prop, by= c("age_grp", "sex")) |>
-  mutate(completeness = round_excel((reg_deaths/est_count),2)) |>
-  mutate(adjusted = floor((reg_deaths/ completeness)),
-         completeness = completeness * 100) |>
-  select(-c(est_count)) |>
-  pivot_wider(names_from = sex, values_from = c(reg_deaths, completeness, adjusted))
+  output <- left_join(output, d_est_prop, by= c("age_grp", "sex")) |>
+    mutate(completeness = round_excel((reg_deaths/est_count),2)) |>
+    mutate(adjusted = floor((reg_deaths/ completeness)),
+           completeness = completeness * 100) |>
+    select(-c(est_count)) |>
+    pivot_wider(names_from = sex, values_from = c(reg_deaths, completeness, adjusted))
 
-write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
-return(output)
+  output_dir <- "./outputs"
+  if (!dir.exists(output_dir)) {
+    dir.create(output_dir, recursive = TRUE)
+  }
+
+  write.csv(output, paste0(output_dir, "/", tablename, ".csv"), row.names = FALSE)
+  return(output)
 }
 
 

@@ -39,7 +39,12 @@ create_t3.1 <- function(bth_data, dth_data, bth_yr_var, dth_yr_var, tablename = 
     arrange(match(timeliness, c("Current", "Late", "Delayed"))) |>
     adorn_totals("row", name = "Grand total")
 
-  write.csv(output, paste0("outputs/", tablename, ".csv"), row.names = FALSE)
+  output_dir <- "./outputs"
+  if (!dir.exists(output_dir)) {
+    dir.create(output_dir, recursive = TRUE)
+  }
+
+  write.csv(output, paste0(output_dir, "/", tablename, ".csv"), row.names = FALSE)
   return(output)
 }
 

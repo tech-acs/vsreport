@@ -17,7 +17,7 @@ curr_year <- max(data$dobyr, na.rm = TRUE)
 
 # Generate the year sequence
 year_sequence <- generate_year_sequence(curr_year)
-output <- bth_data |>
+output <- data |>
   filter(is.na(sbind) & !is.na(fert_age_grp) & dobyr %in% year_sequence) |>
   group_by(fert_age_grp, dobyr) |>
   summarise(total = n(), .groups = "drop_last") |>
@@ -42,7 +42,6 @@ total_fertility_rates <- output |>
   select(fert_age_grp, starts_with("20"))
 
 output <- rbind(output, total_fertility_rates)
-
 
 return(output)
 }
