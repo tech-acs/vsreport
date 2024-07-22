@@ -16,8 +16,6 @@ create_t4.2(data, est_data, date_var, data_year = NA, tablename = "Table_4_2")
 \item{data_year}{year the data is for}
 
 \item{tablename}{name of the table being saved as a csv file}
-
-\item{output_path}{The path to export the generated table}
 }
 \value{
 data frame of tabulated counts
@@ -26,5 +24,6 @@ data frame of tabulated counts
 Table 4.2 Live births by place of occurrence and sex of newborn
 }
 \examples{
-t4.2 <- create_t4.2(birth_data, birth1a, data_year = 2022)
+t4.2 <- create_t4.2(data = bth_data, est_data = bth_est, date_var = dobyr,
+                             data_year = 2022, tablename = "Table_4_2")
 }

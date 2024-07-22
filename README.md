@@ -109,6 +109,14 @@ install()   # Installs the package
 After these steps the package should be installed with the latest changes to the functions.
 This should mean the package is in the right state to be updated on the online repo.
 
+Before you make any big changes, double check that all the unit test are working
+as expected, by running them manually:
+
+```R
+testthat::test_dir("tests/testthat")
+```
+
+
 ## Documentation
 
 We are currently working on our documentation, this will soon be available in

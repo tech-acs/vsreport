@@ -4,7 +4,7 @@
 \alias{create_t5.2}
 \title{Creates Tables 5.2}
 \usage{
-create_t5.2(data, date_var, data_year = NA, tablename = "Table_5_2")
+create_t5.2(data, date_var, data_year)
 }
 \arguments{
 \item{data}{death registration data frame}
