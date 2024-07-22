@@ -44,10 +44,10 @@ jobs:
           ls("package:crvsreportpackage")
         shell: Rscript {0}
 
-        - name: List installed packages
-          run: |
-            installed.packages()
-          shell: Rscript {0}
+      - name: List installed packages
+        run: |
+          installed.packages()
+        shell: Rscript {0}
 
       - name: Run tests
         run: |
