@@ -41,6 +41,7 @@ Imports:
     crosstalk,
     desc,
     dplyr,
+    fs,
     htmlwidgets,
     janitor,
     reactable,
@@ -49,4 +50,5 @@ Imports:
     stringr,
     testthat,
     tidyr,
-    tidyverse
+    tidyverse,
+    writexl
