@@ -4,7 +4,13 @@
 \alias{create_t4.3}
 \title{Create Table 4.3}
 \usage{
-create_t4.3(data, date_var, data_year = 2022, tablename = "Table_4_3")
+create_t4.3(
+  data,
+  date_var,
+  data_year = 2022,
+  tablename = "Table_4_3",
+  output_path = NULL
+)
 }
 \arguments{
 \item{data}{Birth registration data}
@@ -14,9 +20,11 @@ create_t4.3(data, date_var, data_year = 2022, tablename = "Table_4_3")
 \item{data_year}{Chosen year}
 
 \item{tablename}{Name for csv output use _ instead of . for names}
+
+\item{output_path}{The path to export the generated table}
 }
 \value{
-Data frame with tabulated results
+Data frame with tabulated results (if an output_path is given, it will export a .csv)
 }
 \description{
 Live births by place of occurrence and place of usual residence of mother, year

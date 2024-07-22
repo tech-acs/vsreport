@@ -1,7 +1,7 @@
 Package: crvsreportpackage
 Type: Package
 Title: Package for CRVS Report
-Version: 0.1.6
+Version: 0.1.8
 Authors@R: c(
   person(given="Tesfaye",
          family="Belay",
@@ -42,6 +42,7 @@ Imports:
     crosstalk,
     desc,
     dplyr,
+    fs,
     htmlwidgets,
     janitor,
     reactable,
@@ -50,5 +51,6 @@ Imports:
     stringr,
     testthat,
     tidyr,
-    tidyverse
-URL: https://tech-acs.github.io/crvsreportpackage/
+    tidyverse,
+    writexl
+    URL: https://tech-acs.github.io/crvsreportpackage/
