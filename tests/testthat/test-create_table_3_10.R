@@ -28,5 +28,5 @@ test_that("create_t3.10 function works correctly", {
   expect_equal(colnames(result), expected_cols)
 
   # Clean up the generated file after the test
-  unlink("outputs/Table_3_1.csv")
+  unlink("outputs/Table_3_10.csv")
 })
