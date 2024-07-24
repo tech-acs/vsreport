@@ -1,5 +1,5 @@
 ---
-title: "CRVS table templates"
+title: "CRVS tables"
 output: rmarkdown::html_vignette
 figures:
   dpi: 300
@@ -33,7 +33,7 @@ img {
 }
 ```
 
-The following tables derive from the Vital Strategies' [Production of a Vital Statistics Report: Template](https://www.vitalstrategies.org/resources/production-of-a-vital-statistics-report). 
+This vignette presents all of the tables needed in a CRVS report. The variables required for each table are shown alongside a template for each table. The table templates derive from the Vital Strategies' [Production of a Vital Statistics Report: Template](https://www.vitalstrategies.org/resources/production-of-a-vital-statistics-report). 
 
 ## Quality, timeliness and completeness
 
@@ -54,6 +54,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_3_01.png){fig-alt="Template for Table 3.1." width=80% fig-align="left"}
 
+---
+
+
 ### Table 3.2 
 *Proportion (%) of births by year of registration and year of occurrence*   
 <br>
@@ -70,6 +73,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_3_02.png){fig-alt="Template for Table 3.2." width=80% fig-align="left"}
+
+---
+
 
 ### Table 3.3 
 *Proportion (%) of deaths by year of registration and year of occurrence*   
@@ -88,6 +94,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_3_03.png){fig-alt="Template for Table 3.3." width=80% fig-align="left"}
 
+---
+
+
 ### Table 3.4 
 *Birth registration completeness by year of occurrence and sex of newborn*  
 <br>
@@ -104,6 +113,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_3_04.png){fig-alt="Template for Table 3.4." width=80% fig-align="left"}
+
+---
+
 
 ### Table 3.5 
 *Birth registration completeness by place of usual residence of mother and sex of newborn, year*    
@@ -122,6 +134,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_3_05.png){fig-alt="Template for Table 3.5." width=80% fig-align="left"}
 
+---
+
+
 ### Table 3.6 
 *Death registration completeness by year of occurrence and sex of decedent*    
 <br>
@@ -138,6 +153,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_3_06.png){fig-alt="Template for Table 3.6." width=80% fig-align="left"}
+
+---
+
 
 ### Table 3.7 
 *Death registration completeness by place of usual residence and sex of decedent, year*    
@@ -156,6 +174,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_3_07.png){fig-alt="Template for Table 3.7." width=80% fig-align="left"}
 
+---
+
+
 ### Table 3.8 
 *Adjustment of births by place of usual residence of mother and sex of newborn, year*    
 <br>
@@ -172,6 +193,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_3_08.png){fig-alt="Template for Table 3.8." width=80% fig-align="left"}
+
+---
+
 
 ### Table 3.9 
 *Adjustment of deaths by place of usual residence and sex of decedent, year*     
@@ -190,6 +214,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_3_09.png){fig-alt="Template for Table 3.9." width=80% fig-align="left"}
 
+---
+
+
 ### Table 3.10 
 *Adjustment of deaths by age group and sex of decedent, year*    
 <br>
@@ -206,6 +233,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_3_10.png){fig-alt="Template for Table 3.10." width=80% fig-align="left"}
+
+---
+
 
 ### Table 3.11 
 *Redistribution of births with incomplete data on ‘age of mother’, year*    
@@ -224,6 +254,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_3_11.png){fig-alt="Template for Table 3.11." width=80% fig-align="left"}
 
+---
+
+
 ### Table 3.12 
 *Redistribution of deaths with incomplete data on ‘age of decedent’, year*    
 <br>
@@ -240,6 +273,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_3_12.png){fig-alt="Template for Table 3.12." width=80% fig-align="left"}
+
+---
+
 
 ## Births
 
@@ -260,6 +296,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_4_01.png){fig-alt="Template for Table 4.1." width=80% fig-align="left"}
 
+---
+
+
 ### Table 4.2 
 *Live births by place of occurrence and sex of newborn, year*    
 <br>
@@ -276,6 +315,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_4_02.png){fig-alt="Template for Table 4.2." width=80% fig-align="left"}
+
+---
+
 
 ### Table 4.3 
 *Live births by place of occurrence and place of usual residence of mother, year*    
@@ -294,6 +336,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_4_03.png){fig-alt="Template for Table 4.3." width=80% fig-align="left"}
 
+---
+
+
 ### Table 4.4 
 *Live births by age of mother and type of birth, year*    
 <br>
@@ -310,6 +355,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_4_04.png){fig-alt="Template for Table 4.4." width=80% fig-align="left"}
+
+---
+
 
 ### Table 4.5 
 *Live births by age and marital status of mother, urban areas, year*    
@@ -328,6 +376,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_4_05.png){fig-alt="Template for Table 4.5." width=80% fig-align="left"}
 
+---
+
+
 ### Table 4.6 
 *Live births by age and marital status of mother, rural areas, year*    
 <br>
@@ -344,6 +395,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_4_06.png){fig-alt="Template for Table 4.6." width=80% fig-align="left"}
+
+---
+
 
 ### Table 4.7 
 *Live births by place of occurrence, site of delivery and attendant at birth, year*    
@@ -362,6 +416,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_4_07.png){fig-alt="Template for Table 4.7." width=80% fig-align="left"}
 
+---
+
+
 ### Table 4.8 
 *Crude birth rate (CBR) by place of usual residence of mother, year*    
 <br>
@@ -378,6 +435,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_4_08.png){fig-alt="Template for Table 4.8." width=80% fig-align="left"}
+
+---
+
 
 ### Table 4.9 
 *Age-specific fertility rates by usual residence of mother, urban areas, year*    
@@ -396,6 +456,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_4_09.png){fig-alt="Template for Table 4.9." width=80% fig-align="left"}
 
+---
+
+
 ### Table 4.10 
 *Age-specific fertility rates by usual residence of mother, rural areas, year*    
 <br>
@@ -413,6 +476,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_4_10.png){fig-alt="Template for Table 4.10." width=80% fig-align="left"}
 
+---
+
+
 ### Table 4.11
 *Total fertility rate (TFR) by usual residence of mother, year*     
 <br>
@@ -429,6 +495,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_4_11.png){fig-alt="Template for Table 4.11." width=80% fig-align="left"}
+
+---
+
 
 ## Deaths
 
@@ -449,6 +518,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_5_01.png){fig-alt="Template for Table 5.1." width=80% fig-align="left"}
 
+---
+
+
 ### Table 5.2 
 *Deaths by place of usual residence and sex of decedent, year*    
 <br>
@@ -465,6 +537,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_5_02.png){fig-alt="Template for Table 5.2." width=80% fig-align="left"}
+
+---
+
 
 ### Table 5.3 
 *Deaths by place of occurrence and place of usual residence of decedent, males, year*    
@@ -483,6 +558,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_5_03.png){fig-alt="Template for Table 5.3." width=80% fig-align="left"}
 
+---
+
+
 ### Table 5.4 
 *Deaths by place of occurrence and place of usual residence of decedent, females, year*    
 <br>
@@ -499,6 +577,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_5_04.png){fig-alt="Template for Table 5.4." width=80% fig-align="left"}
+
+---
+
 
 ### Table 5.5 
 *Deaths by place of occurrence and site of occurrence, year*    
@@ -517,6 +598,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_5_05.png){fig-alt="Template for Table 5.5." width=80% fig-align="left"}
 
+---
+
+
 ### Table 5.6 
 *Deaths by age and sex of decedent, urban areas, year*    
 <br>
@@ -533,6 +617,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_5_06.png){fig-alt="Template for Table 5.6." width=80% fig-align="left"}
+
+---
+
 
 ### Table 5.7 
 *Deaths by age and sex of decedent, rural areas, year*    
@@ -551,6 +638,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_5_07.png){fig-alt="Template for Table 5.7." width=80% fig-align="left"}
 
+---
+
+
 ### Table 5.8
 *Crude death rate (CDR) by place of usual residence of decedent, year*    
 <br>
@@ -567,6 +657,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_5_08.png){fig-alt="Template for Table 5.8." width=80% fig-align="left"}
+
+---
+
 
 ### Table 5.9 
 *Infant and child mortality (deaths per 1,000 live births) by year of occurrence*     
@@ -585,6 +678,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_5_09.png){fig-alt="Template for Table 5.9." width=80% fig-align="left"}
 
+---
+
+
 ### Table 5.10 
 *Maternal mortality by year of occurrence*    
 <br>
@@ -601,6 +697,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_5_10.png){fig-alt="Template for Table 5.10." width=80% fig-align="left"}
+
+---
+
 
 ### Table 5.11 
 *Foetal deaths by year of occurrence and sex of foetus*    
@@ -619,6 +718,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_5_11.png){fig-alt="Template for Table 5.11." width=80% fig-align="left"}
 
+---
+
+
 ### Table 5.12 
 *Foetal deaths by gestational age and birth weight of foetus, year*    
 <br>
@@ -635,6 +737,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_5_12.png){fig-alt="Template for Table 5.12." width=80% fig-align="left"}
+
+---
+
 
 ## Cause of death
 
@@ -655,6 +760,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_6_01.png){fig-alt="Template for Table 6.1." width=80% fig-align="left"}
 
+---
+
+
 ### Table 6.2 
 *Top 10 causes of death (all ages, both sexes), year*    
 <br>
@@ -671,6 +779,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_6_02.png){fig-alt="Template for Table 6.2." width=80% fig-align="left"}
+
+---
+
 
 ### Table 6.3 
 *Ten leading causes of death, males, year*    
@@ -689,6 +800,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_6_03.png){fig-alt="Template for Table 6.3." width=80% fig-align="left"}
 
+---
+
+
 ### Table 6.4 
 *Ten leading causes of death, females, year*    
 <br>
@@ -705,6 +819,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_6_04.png){fig-alt="Template for Table 6.4." width=80% fig-align="left"}
+
+---
+
 
 ### Table 6.5 
 *Ten leading causes of death, infants and children (0–4 years, both sexes combined), year*     
@@ -723,6 +840,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_6_05.png){fig-alt="Template for Table 6.5." width=80% fig-align="left"}
 
+---
+
+
 ### Table 6.6 
 *Ten leading causes of death, children (5–14 years, both sexes combined), year*    
 <br>
@@ -739,6 +859,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_6_06.png){fig-alt="Template for Table 6.6." width=80% fig-align="left"}
+
+---
+
 
 ### Table 6.7 
 *Ten leading causes of death, adolescents and adults (15–69 years, males), year*    
@@ -757,6 +880,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_6_07.png){fig-alt="Template for Table 6.7." width=80% fig-align="left"}
 
+---
+
+
 ### Table 6.8 
 *Ten leading causes of death, adolescents and adults (15–69 years, females), year*    
 <br>
@@ -773,6 +899,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_6_08.png){fig-alt="Template for Table 6.8." width=80% fig-align="left"}
+
+---
+
 
 ### Table 6.9 
 *Ten leading causes of death, older adults (70+ years, males), year*    
@@ -791,6 +920,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_6_09.png){fig-alt="Template for Table 6.9." width=80% fig-align="left"}
 
+---
+
+
 ### Table 6.10 
 *Ten leading causes of death, older adults (70+ years, females), year*     
 <br>
@@ -807,6 +939,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_6_10.png){fig-alt="Template for Table 6.10." width=80% fig-align="left"}
+
+---
+
 
 ## Marriage
 
@@ -827,6 +962,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_7_01.png){fig-alt="Template for Table 7.1." width=80% fig-align="left"}
 
+---
+
+
 ### Table 7.2 
 *Marriages by place of usual residence of groom and age of bride and groom, urban areas, year*    
 <br>
@@ -843,6 +981,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_7_02.png){fig-alt="Template for Table 7.2." width=80% fig-align="left"}
+
+---
+
 
 ### Table 7.3 
 *Marriages by place of usual residence of groom and age of bride and groom, rural areas, year*    
@@ -861,6 +1002,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_7_03.png){fig-alt="Template for Table 7.3." width=80% fig-align="left"}
 
+---
+
+
 ### Table 7.4 
 *Marriages by age of groom and previous marital status, year*    
 <br>
@@ -878,6 +1022,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_7_04.png){fig-alt="Template for Table 7.4." width=80% fig-align="left"}
 
+---
+
+
 ### Table 7.5 
 *Marriages by age of bride and previous marital status, year*    
 <br>
@@ -894,6 +1041,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_7_05.png){fig-alt="Template for Table 7.5." width=80% fig-align="left"}
+
+---
+
 
 ## Divorce
 
@@ -914,6 +1064,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_7_06.png){fig-alt="Template for Table 7.6." width=80% fig-align="left"}
 
+---
+
+
 ### Table 7.7 
 *Divorces by duration of marriage and age of husband, year*    
 <br>
@@ -930,6 +1083,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_7_07.png){fig-alt="Template for Table 7.7." width=80% fig-align="left"}
+
+---
+
 
 ### Table 7.8 
 *Divorces by duration of marriage and age of wife, year*   
@@ -948,6 +1104,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_7_08.png){fig-alt="Template for Table 7.8." width=80% fig-align="left"}
 
+---
+
+
 ### Table 7.9 
 *Divorces by duration of marriage and number of dependent children, year*   
 <br>
@@ -964,6 +1123,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_7_09.png){fig-alt="Template for Table 7.9." width=80% fig-align="left"}
+
+---
+
 
 ## Summary tables
 
@@ -984,6 +1146,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_8_01.png){fig-alt="Template for Table 8.1." width=80% fig-align="left"}
 
+---
+
+
 ### Table 8.2 
 *Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths), year*    
 <br>
@@ -1000,6 +1165,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_8_02.png){fig-alt="Template for Table 8.2." width=80% fig-align="left"}
+
+---
+
 
 ### Table 8.3 
 *Fertility and mortality indicators by year of occurrence*    
@@ -1018,6 +1186,9 @@ cat(paste('-', bullets), sep = '\n')
 <br>
 ![](img/table_8_03.png){fig-alt="Template for Table 8.3." width=80% fig-align="left"}
 
+---
+
+
 ### Table 8.4 
 *Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths), year*    
 <br>
@@ -1034,6 +1205,9 @@ cat(paste('-', bullets), sep = '\n')
 
 <br>
 ![](img/table_8_04.png){fig-alt="Template for Table 8.4." width=80% fig-align="left"}
+
+---
+
 
 ### Table 8.5 
 *Marriage and divorce indicators by year of occurrence*    
