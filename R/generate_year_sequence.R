@@ -16,12 +16,12 @@
 generate_year_sequence <- function(latest_year, num_yrs = 5) {
   # Check if the inputs are numeric
   if (!is.numeric(latest_year) || !is.numeric(num_yrs)) {
-    stop("Both latest_year and num_yr must be numeric")
+    stop("Both latest_year and num_yrs must be numeric")
   }
 
   # Check if the inputs are positive
   if (latest_year <= 0 || num_yrs <= 0) {
-    stop("Both latest_year and num_yr must be positive")
+    stop("Both latest_year and num_yrs must be positive")
   }
 
   # Check if latest_year is a realistic year
