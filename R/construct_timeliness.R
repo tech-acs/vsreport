@@ -7,7 +7,7 @@
 #' @param data A data frame containing the columns `birth1a` and `birth1b` of date type.
 #' @param threshold_late A days threshold to determine whether a registration is current or late. 30 by default.
 #' @param threshold_delayed A days threshold to determine whether a registration is delayes. 365 by default.
-#' 
+#'
 #' @return A data frame with the original columns plus `datac1` and `datac2`.
 #' @import dplyr
 #' @export
@@ -18,7 +18,7 @@
 #' )
 #' compute_date_differences(df)
 construct_timeliness <- function(data, threshold_late = 30, threshold_delayed = 365) {
-  data %>%
+  data <- data %>%
     mutate(
       datac1 = as.numeric(difftime(birth1b, birth1a, units = "days")),
       datac2 = case_when(
@@ -28,4 +28,5 @@ construct_timeliness <- function(data, threshold_late = 30, threshold_delayed = 
         TRUE ~ NA_character_  # Handle any other unexpected cases
       )
     )
+  return(data)
 }
