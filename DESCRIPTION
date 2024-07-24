@@ -50,6 +50,7 @@ Imports:
     reactable,
     readr,
     renv,
+    rlang,
     sf,
     shiny,
     stringr,
