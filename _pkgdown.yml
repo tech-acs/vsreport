@@ -10,3 +10,10 @@ articles:
   - data_cleaning
   - data_mapping
   - table_templates
+
+home:
+  links:
+  - text: Browse source code
+    href: https://github.com/tech-acs/crvsreportpackage
+  - text: Report a bug
+    href: https://github.com/tech-acs/crvsreportpackage/issues
