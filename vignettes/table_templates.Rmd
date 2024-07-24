@@ -15,11 +15,7 @@ knitr::opts_chunk$set(
   comment = "#>",
   echo = FALSE,
   message = FALSE,
-  warning = FALSE,
-  fig.align = "left",
-  fig.retina = 2, 
-  out.width = "90%",
-  knitr.table.format = "html"
+  warning = FALSE
 )
 
 library(tidyverse)
