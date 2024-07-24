@@ -1,4 +1,10 @@
 url: https://tech-acs.github.io/crvsreportpackage/
 template:
   bootstrap: 5
-
+articles:
+- title: All vignettes
+  contents:
+  - introduction
+  - data_cleaning
+  - data_mapping
+  - table_templates
