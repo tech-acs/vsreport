@@ -22,7 +22,7 @@ test_that("create_t4.1 function works correctly", {
   )
 
   # Call the function
-  result <- create_t4.1(bth_data, est_data, pops, date_var = "dobyr", tablename = "Table_4_2", output_path = "outputs/")
+  result <- create_t4.1(bth_data, est_data, pops, date_var = "dobyr", tablename = "Table_4_1", output_path = "outputs/")
 
   # Check if result is a data frame
   expect_s3_class(result, "data.frame")

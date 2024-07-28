@@ -10,7 +10,8 @@ create_t4.4_to_4_6(
   col_var = fert_age_grp,
   by_var = birth1g,
   rural_urban = "no",
-  tablename = NA
+  tablename = "Table_4_4",
+  output_path = NULL
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ create_t4.4_to_4_6(
 \item{rural_urban}{if this is no then no rural/urban split is used. Else specify "rural" or "urban"}
 
 \item{tablename}{name of the table being saved as a csv file}
+
+\item{output_path}{The path to export the generated table}
 }
 \value{
 tabulated data

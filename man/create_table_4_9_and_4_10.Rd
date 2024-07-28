@@ -10,7 +10,8 @@ create_table_4_9_and_4_10(
   pops,
   data_year = NA,
   ruindicator = "urban",
-  tablename = NA
+  tablename = "Table_4_9",
+  output_path = NULL
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ create_table_4_9_and_4_10(
 \item{ruindicator}{whether table is for urban or rural data}
 
 \item{tablename}{name for csv output use _ instead of . for names}
+
+\item{output_path}{The path to export the generated table}
 }
 \value{
 data frame with tabulated result

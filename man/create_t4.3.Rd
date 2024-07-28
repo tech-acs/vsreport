@@ -4,7 +4,13 @@
 \alias{create_t4.3}
 \title{Creates Table 4.3}
 \usage{
-create_t4.3(data, date_var, data_year = NA, tablename = "Table_4_3")
+create_t4.3(
+  data,
+  date_var,
+  data_year = NA,
+  tablename = "Table_4_3",
+  output_path = NULL
+)
 }
 \arguments{
 \item{data}{data frame being used}
@@ -14,6 +20,8 @@ create_t4.3(data, date_var, data_year = NA, tablename = "Table_4_3")
 \item{data_year}{year the data is for}
 
 \item{tablename}{name for csv output use _ instead of . for names}
+
+\item{output_path}{The path to export the generated table}
 }
 \value{
 data frame with tablutated results
