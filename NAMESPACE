@@ -2,6 +2,8 @@
 
 export(calculate_fertility_rates)
 export(construct_age)
+export(construct_age_group)
+export(construct_empty_var)
 export(construct_timeliness)
 export(construct_year)
 export(convert_config_args)

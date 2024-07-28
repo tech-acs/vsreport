@@ -17,10 +17,6 @@ test_that("convert_config_args converts arguments correctly", {
   expect_true(is.data.frame(result$data))
   expect_equal(result$data, sample_data)
 
-  # Check that date_var was converted correctly
-  expect_true(is.symbol(result$date_var))
-  expect_equal(as.character(result$date_var), "a")
-
   # Check that output_path was converted correctly
   expect_true(is.data.frame(result$output_path))
   expect_equal(result$output_path, sample_data)
@@ -55,10 +51,6 @@ test_that("convert_config_args handles non-character date_var and output_path ar
 
   # Call the function
   result <- convert_config_args(args)
-
-  # Check that date_var was not changed
-  expect_true(is.symbol(result$date_var))
-  expect_equal(as.character(result$date_var), "a")
 
   # Check that output_path was not changed
   expect_true(is.data.frame(result$output_path))

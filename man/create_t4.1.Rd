@@ -8,7 +8,7 @@ create_t4.1(
   data,
   est_data,
   pops,
-  date_var,
+  date_var = "dobyr",
   tablename = "Table_4_1",
   output_path = NULL
 )

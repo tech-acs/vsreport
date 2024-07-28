@@ -25,7 +25,7 @@ construct_year <- function(dataset, date_col = "birth1c", year_col = "dobyr") {
 
   # Add the year_col column by extracting the year from date_col
   dataset <- dataset %>%
-    mutate(!!year_col := format(.data[[date_col]], "%Y"))
+    mutate(!!year_col := as.integer(format(.data[[date_col]], "%Y")))
 
   return(dataset)
 }

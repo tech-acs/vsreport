@@ -6,7 +6,7 @@
 \usage{
 create_t4.3(
   data,
-  date_var,
+  date_var = "dobyr",
   data_year = NA,
   tablename = "Table_4_3",
   output_path = NULL

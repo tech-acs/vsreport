@@ -7,7 +7,7 @@
 create_t4.2(
   data,
   est_data,
-  date_var,
+  date_var = "dobyr",
   data_year = NA,
   tablename = "Table_4_2",
   output_path = NULL

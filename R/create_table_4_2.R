@@ -18,7 +18,7 @@
 #'
 #' @examples t4.2 <- create_t4.2(data = bth_data, est_data = bth_est, date_var = dobyr,
 #'                              data_year = 2022, tablename = "Table_4_2")
-create_t4.2 <- function(data, est_data, date_var, data_year = NA, tablename = "Table_4_2", output_path = NULL){
+create_t4.2 <- function(data, est_data, date_var = "dobyr", data_year = NA, tablename = "Table_4_2", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
   if (is.na(data_year)){

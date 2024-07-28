@@ -41,6 +41,6 @@ Table 4.6 Live births by age and marital status of mother, rural areas
 }
 \examples{
 t4.4 <- create_t4.4_to_4_6(bth_data, data_year = 2022, col_var = fert_age_grp, by_var = birth1g, rural_urban = "no", tablename = "Table_4_4")
-t4.5 <- create_t4.4_to_4_6(bth_data, year = 2022, col_var = fert_age_grp, by_var = birth3c, rural_urban = "no", tablename = "Table_4_5")
-t4.6 <- create_t4.4_to_4_6(bth_data, year = 2022, col_var = fert_age_grp, by_var = birth3c, rural_urban = "no", tablename = "Table_4_6")
+t4.5 <- create_t4.4_to_4_6(bth_data, year = 2022, col_var = fert_age_grp, by_var = birth3c, rural_urban = "urban", tablename = "Table_4_5")
+t4.6 <- create_t4.4_to_4_6(bth_data, year = 2022, col_var = fert_age_grp, by_var = birth3c, rural_urban = "rural", tablename = "Table_4_6")
 }

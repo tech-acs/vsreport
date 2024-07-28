@@ -21,7 +21,7 @@
 #'
 #' @examples t4.1 <- create_t4.1(bth_data, est_data, pops, date_var = dobyr, tablename = "Table_4_1")
 #'
-create_t4.1 <- function(data, est_data, pops, date_var, tablename = "Table_4_1", output_path = NULL){
+create_t4.1 <- function(data, est_data, pops, date_var = "dobyr", tablename = "Table_4_1", output_path = NULL){
   curr_year <- data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
   years <- generate_year_sequence(curr_year)
 
