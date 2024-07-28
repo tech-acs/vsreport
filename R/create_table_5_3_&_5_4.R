@@ -31,7 +31,7 @@ create_t5.3_and_t5.4 <- function(data, date_var, data_year = NA, sex_filter = NA
 
   output <- data |>
     filter(birth2a == sex_filter & !!sym(date_var) == data_year) |>
-    group_by(rgnpod, death2o) |>
+    group_by(death1c, death2o) |>
     summarise(total = n()) |>
     pivot_wider(names_from = death2o, values_from = total, values_fill = 0) |>
     adorn_totals(c("col", "row"))
