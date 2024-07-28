@@ -21,11 +21,11 @@
 #' @import tidyr
 #' @import janitor
 #'
-#' @examples t4.4 <- create_t4.4_to_4_6(bth_data, data_year = 2022, col_var = fert_age_grp, by_var = multbth, rural_urban = "no", tablename = "Table_4_4")
+#' @examples t4.4 <- create_t4.4_to_4_6(bth_data, data_year = 2022, col_var = fert_age_grp, by_var = birth1g, rural_urban = "no", tablename = "Table_4_4")
 #' t4.5 <- create_t4.4_to_4_6(bth_data, year = 2022, col_var = fert_age_grp, by_var = marstat, rural_urban = "no", tablename = "Table_4_5")
 #' t4.6 <- create_t4.4_to_4_6(bth_data, year = 2022, col_var = fert_age_grp, by_var = marstat, rural_urban = "no", tablename = "Table_4_6")
 
-create_t4.4_to_4_6 <- function(data, data_year = NA, col_var = fert_age_grp, by_var = multbth, rural_urban = "no", tablename = NA) {
+create_t4.4_to_4_6 <- function(data, data_year = NA, col_var = fert_age_grp, by_var = birth1g, rural_urban = "no", tablename = NA) {
 
   # if data_year is not provided, take the latest year in the data
   if (is.na(data_year)){
