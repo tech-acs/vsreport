@@ -23,7 +23,7 @@ create_t8.2 <- function(data_year = NA, tablename = NA){
 
   outputb <- bth_data |>
     filter(is.na(sbind) & dobyr == data_year) |>
-    group_by(rgn, sex) |>
+    group_by(birth1c, sex) |>
     summarise(total = n()) |>
     pivot_wider(names_from = sex, values_from = total) |>
     adorn_totals("col")
@@ -31,7 +31,7 @@ create_t8.2 <- function(data_year = NA, tablename = NA){
 
   outputd <- dth_data |>
     filter(dodyr == data_year) |>
-    group_by(rgn, sex) |>
+    group_by(birth1c, sex) |>
     summarise(total = n()) |>
     pivot_wider(names_from = sex, values_from = total) |>
     adorn_totals("col")
@@ -39,7 +39,7 @@ create_t8.2 <- function(data_year = NA, tablename = NA){
 
   outputi <- dth_data |>
     filter(ageinyrs < 5 & dodyr == data_year) |>
-    group_by(rgn, sex) |>
+    group_by(birth1c, sex) |>
     summarise(total = n()) |>
     pivot_wider(names_from = sex, values_from = total) |>
     adorn_totals("col")

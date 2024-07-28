@@ -39,28 +39,28 @@ create_t3.5_and_3.7 <- function(data, est_data, date_var, data_year = NA, topic 
   counts <- data |>
     # filter({{date_var}} == data_year & tolower(sex) %in% c("male", "female") &
     #          if (topic == "births") is.na(sbind) else TRUE) |>
-    group_by(rgn, sex) |>
+    group_by(birth1c, sex) |>
     summarise(total = n())
 
   ests <- est_data |>
     filter(year == data_year) |>
     pivot_longer(cols = c("male", "female"), names_to = "sex", values_to = "count" ) |>
-    group_by(rgn, sex) |>
+    group_by(birth1c, sex) |>
     summarise(total_est = sum(count))
 
-  #output <- left_join(counts, ests, by.x = c("rgn", "sex"), by.y = c("rgn", "sex"), all.x = TRUE)
-  output <- left_join(counts, ests, by = c("rgn", "sex"))
+  #output <- left_join(counts, ests, by.x = c("birth1c", "sex"), by.y = c("birth1c", "sex"), all.x = TRUE)
+  output <- left_join(counts, ests, by = c("birth1c", "sex"))
 
   output2 <- output |>
-    group_by(rgn) |>
+    group_by(birth1c) |>
     summarise(total = sum(total), total_est = sum(total_est)) |>
-    mutate(sex = "total", .after = "rgn")
+    mutate(sex = "total", .after = "birth1c")
 
   output <- rbind(output, output2) |>
     mutate(completeness := round((total / total_est) * 100, 2)) |>
     pivot_wider(names_from = sex, values_from = c(total, total_est, completeness), names_sep = " ") |>
-    mutate(rgn = ifelse(rgn %in% c("", " ", NA), "not stated", rgn)) |>
-    arrange(rgn) %>%
+    mutate(birth1c = ifelse(birth1c %in% c("", " ", NA), "not stated", birth1c)) |>
+    arrange(birth1c) %>%
     adorn_totals("row")
 
   write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
