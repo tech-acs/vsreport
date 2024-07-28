@@ -7,6 +7,7 @@
 #' @param date_var name of date variable
 #' @param data_year year the data is for
 #' @param tablename name of the table being saved as a csv file
+#' @param output_path The path to export the generated table
 #'
 #' @return data frame of tabulated counts
 #' @export
@@ -17,7 +18,7 @@
 #'
 #' @examples t4.2 <- create_t4.2(data = bth_data, est_data = bth_est, date_var = dobyr,
 #'                              data_year = 2022, tablename = "Table_4_2")
-create_t4.2 <- function(data, est_data, date_var, data_year = NA, tablename = "Table_4_2"){
+create_t4.2 <- function(data, est_data, date_var, data_year = NA, tablename = "Table_4_2", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
   if (is.na(data_year)){
@@ -41,7 +42,11 @@ create_t4.2 <- function(data, est_data, date_var, data_year = NA, tablename = "T
     mutate(completeness = round_excel(Total/total*100, 1)) |>
     select("birth1c", "male", "female", "not stated", "Total", "ratio", "completeness")
 
-  write.csv(output, paste0("outputs/", tablename, ".csv"), row.names = FALSE)
-  return(output)
+  if (is.null(output_path)){
+    return(output)
+  } else {
+    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
+    return(output)
+  }
 }
 
