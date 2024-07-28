@@ -2,6 +2,7 @@
 
 export(calculate_fertility_rates)
 export(construct_timeliness)
+export(construct_year)
 export(convert_config_args)
 export(create_t3.1)
 export(create_t3.10)

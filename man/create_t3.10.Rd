@@ -21,7 +21,7 @@ create_t3.10(data, dth_est, date_var, data_year = NA, tablename = NA)
 data frame of tabulated results
 }
 \description{
-Table 3.10 Adjustment of deaths by age group and sex of decedent
+Table 3.10 Adjustment of deaths by age group and birth2a of decedent
 }
 \examples{
 t3.10 <- create_t3.10(dth_data, date_var = dodyr, data_year = 2022, tablename = "Table_3_10")

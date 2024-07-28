@@ -21,7 +21,7 @@ create_t4.2(data, est_data, date_var, data_year = NA, tablename = "Table_4_2")
 data frame of tabulated counts
 }
 \description{
-Table 4.2 Live births by place of occurrence and sex of newborn
+Table 4.2 Live births by place of occurrence and birth2a of newborn
 }
 \examples{
 t4.2 <- create_t4.2(data = bth_data, est_data = bth_est, date_var = dobyr,

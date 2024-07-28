@@ -36,5 +36,5 @@ data frame with tabulated result
 Table 4.8 Crude birth rate (CBR) by place of usual residence of mother
 }
 \examples{
-t4.8 <- create_t4.8(bth_data, bth_est, dobyr, data_year = 2022, by_var = rgn, tablename = "Table_4_8")
+t4.8 <- create_t4.8(bth_data, bth_est, dobyr, data_year = 2022, by_var = birth1c, tablename = "Table_4_8")
 }

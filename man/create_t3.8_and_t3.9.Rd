@@ -39,10 +39,10 @@ Table 3.9 Adjustment of deaths by place of usual residence and sex of decedent
 }
 \examples{
 t3.8 <- create_t3.8_and_t3.9(data = bth_data, est_data = bth_est,
-date_var = dobyr, data_year = 2022, by_var = rgn,
+date_var = dobyr, data_year = 2022, by_var = birth1c,
 topic = "births", tablename = "Table_3_8")
 t3.9 <- create_t3.8_and_t3.9(data = dth_data, est_data = dth_est,
-                            date_var = dodyr, data_year = 2022, by_var = rgn,
+                            date_var = dodyr, data_year = 2022, by_var = birth1c,
                             topic = "deaths", tablename = "Table_3_9")
 
 }
