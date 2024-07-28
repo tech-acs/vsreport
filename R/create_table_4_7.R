@@ -24,21 +24,21 @@ create_t4.7 <- function(data, date_var, data_year = NA, tablename = NA){
 
   output <- data |>
     filter(!!sym(date_var) == data_year & is.na(birth1j)) |>
-    group_by(rgnpob, pob, birth1g) |>
+    group_by(rgnpob, pob, birth1h) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = birth1g, values_from = total, values_fill = 0) |>
+    pivot_wider(names_from = birth1h, values_from = total, values_fill = 0) |>
     adorn_totals("col")
 
   outputall <- data |>
-    group_by(pob,birth1g) |>
+    group_by(pob,birth1h) |>
     count() |>
-    pivot_wider(names_from = birth1g, values_from = n, values_fill = 0)
+    pivot_wider(names_from = birth1h, values_from = n, values_fill = 0)
   outputall <- cbind(data.frame(rgnpob = rep("All Births",nrow(outputall))),outputall)
 
   outputrgn <- data |>
-    group_by(rgnpob,pob,birth1g) |>
+    group_by(rgnpob,pob,birth1h) |>
     count() |>
-    pivot_wider(names_from = birth1g, values_from = n, values_fill = 0)
+    pivot_wider(names_from = birth1h, values_from = n, values_fill = 0)
 
   output <- rbind(outputall, outputrgn) |> adorn_totals(c("row","col"))
 
