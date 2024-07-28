@@ -23,8 +23,8 @@ test_that("create_table_4_9_and_4_10 function works correctly", {
   )
 
   # Call the function
-  result4_9 <- create_table_4_9_and_4_10(bth_data, bth_est, pops, data_year = 2022, ruindicator = "urban", tablename = "Table_4_9", output_path = "outputs/")
-  result4_10 <- create_table_4_9_and_4_10(bth_data, bth_est, pops, data_year = 2022, ruindicator = "rural", tablename = "Table_4_10", output_path = "outputs/")
+  result4_9 <- create_table_4_9_and_4_10(bth_data, bth_est, pops, data_year = 2022, rural_urban = "urban", tablename = "Table_4_9", output_path = "outputs/")
+  result4_10 <- create_table_4_9_and_4_10(bth_data, bth_est, pops, data_year = 2022, rural_urban = "rural", tablename = "Table_4_10", output_path = "outputs/")
 
   # Check if result is a data frame
   expect_s3_class(result4_9, "data.frame")

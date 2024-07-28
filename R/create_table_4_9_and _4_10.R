@@ -9,7 +9,7 @@
 #' @param est_data data frame for estimate data
 #' @param pops population estimates
 #' @param data_year year of data
-#' @param ruindicator whether table is for urban or rural data
+#' @param rural_urban whether table is for urban or rural data
 #' @param tablename name for csv output use _ instead of . for names
 #' @param output_path The path to export the generated table
 #'
@@ -22,19 +22,19 @@
 #'
 #' @examples
 #' t4.9 <- create_table_4_9_and_4_10(data = bth_data, est_data = bth_est, data_year = 2022,
-#'                                  ruindicator = "urban", tablename = "Table_4_9")
+#'                                  rural_urban = "urban", tablename = "Table_4_9")
 #' t4.10 <- create_table_4_9_and_4_10(data = bth_data, est_data = bth_est, data_year = 2022,
-#'                                  ruindicator = "rural", tablename = "Table_4_10")
+#'                                  rural_urban = "rural", tablename = "Table_4_10")
 
 create_table_4_9_and_4_10 <- function(data, est_data, pops, data_year = NA,
-                                      ruindicator = "urban", tablename = "Table_4_9", output_path = NULL){
+                                      rural_urban = "urban", tablename = "Table_4_9", output_path = NULL){
   # if data_year is not provided, take the latest year in the data
   if (is.na(data_year)){
     data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
   }
 
   output <- data |>
-    filter(birth3n == ruindicator, is.na(birth1j) & dobyr == data_year) |>
+    filter(birth3n == rural_urban, is.na(birth1j) & dobyr == data_year) |>
     group_by(fert_age_grp) |>
     summarise(total = n())
 
