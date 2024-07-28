@@ -31,7 +31,7 @@ create_t5.6_and_t5.7 <- function(data, ru_filter, date_var, datayear = NA, table
   }
 
   output <- data |>
-    filter(ruind == ru_filter & !!sym(date_var) == datayear) |>
+    filter(death2r == ru_filter & !!sym(date_var) == datayear) |>
     group_by(birth2a, age_grp_80) |>
     summarise(total = n()) |>
     pivot_wider(names_from = birth2a, values_from = total, values_fill = 0) |>

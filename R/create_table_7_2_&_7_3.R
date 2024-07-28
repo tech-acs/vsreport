@@ -30,7 +30,7 @@ create_t7.2_and_7.3 <- function(data, data_year = NA, ruindicator = "urban", tab
 
 
 output <- data |>
-  filter(year == data_year & ruind == "urban") |>
+  filter(year == data_year & marriage3n == "urban") |>
   group_by(g_age_grp, b_age_grp) |>
   summarise(total = n()) |>
   pivot_wider(names_from = b_age_grp, values_from = total, values_fill = 0) |>

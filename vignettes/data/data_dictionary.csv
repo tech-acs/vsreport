@@ -33,6 +33,7 @@ marriage3a,Date of birth,Marriage,Groom,Direct,Date
 marriage3b,Age,Marriage,Groom,Derived,Integer
 marriage3c,Marital status (previous),Marriage,Groom,Additional,Character
 marriage3m,Place of usual residence,Marriage,Groom,Direct,Character
+marriage3n,Urban/rural residence,Marriage,Groom,Direct,Character
 divorce1a,Date of occurrence,Divorce,Event,Direct,Date
 divorce1b,Date of registration,Divorce,Event,Direct,Date
 divorce2a,Date of birth,Divorce,Wife,Direct,Date

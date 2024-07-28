@@ -5,7 +5,7 @@ test_that("create_table_4_9_and_4_10 function works correctly", {
   # Sample data
   bth_data <- data.frame(
     dobyr = c(2022, 2022, 2022, 2022, 2022),
-    ruind = c("urban", "urban", "rural", "rural", "urban"),
+    birth3n = c("urban", "urban", "rural", "rural", "urban"),
     fert_age_grp = c("15-19", "20-24", "15-19", "20-24", "25-29"),
     birth1j = c(NA, NA, NA, NA, NA)
   )

@@ -9,7 +9,7 @@ test_that("create_t4.4_to_4_6 function works correctly", {
     fert_age_grp = c("15-19", "20-24", "25-29", "30-34", "35-39"),
     birth1g = c("Single", "Multiple", "Single", "Single", "Multiple"),
     birth3c = c("Married", "Single", "Married", "Single", "Married"),
-    ruind = c("urban", "urban", "rural", "rural", "urban")
+    birth3n = c("urban", "urban", "rural", "rural", "urban")
   )
 
 
