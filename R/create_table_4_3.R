@@ -25,7 +25,7 @@ create_t4.3 <- function(data, date_var, data_year = NA, tablename = "Table_4_3")
 
   output <- data |>
     filter(is.na(birth1j) & !!sym(date_var) == data_year) |>
-    group_by(rgnpob, birth3l) |>
+    group_by(birth1c, birth3l) |>
     summarise(total = n()) |>
     pivot_wider(names_from = birth3l, values_from = total, values_fill = 0) |>
     adorn_totals(c("col", "row"))

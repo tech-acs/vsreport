@@ -6,7 +6,7 @@ test_that("create_t4.7 function works correctly", {
   bth_data <- data.frame(
     dobyr = c(2022, 2022, 2022, 2022, 2022, 2022),
     birth1j = c(NA, NA, NA, NA, NA, NA),
-    rgnpob = c("Region_A", "Region_A", "Region_B", "Region_B", "Region_A", "Region_A"),
+    birth1c = c("Region_A", "Region_A", "Region_B", "Region_B", "Region_A", "Region_A"),
     birth1i = c("Hospital", "Home", "Hospital", "Home", "Hospital", "Home"),
     birth1h = c("Physician", "Nurse", "Midwife", "Other", "Nurse", "Not stated")
   )
