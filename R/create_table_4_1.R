@@ -10,6 +10,7 @@
 #' @param pops population data frame
 #' @param date_var variable for year
 #' @param tablename name for csv output use _ instead of . for names
+#' @param output_path The path to export the generated table
 #'
 #' @return data frame with tabulated results
 #' @export
@@ -20,7 +21,7 @@
 #'
 #' @examples t4.1 <- create_t4.1(bth_data, est_data, pops, date_var = dobyr, tablename = "Table_4_1")
 #'
-create_t4.1 <- function(data, est_data, pops, date_var, tablename = "Table_4_1"){
+create_t4.1 <- function(data, est_data, pops, date_var, tablename = "Table_4_1", output_path = NULL){
   curr_year <- data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
   years <- generate_year_sequence(curr_year)
 
@@ -89,11 +90,10 @@ create_t4.1 <- function(data, est_data, pops, date_var, tablename = "Table_4_1")
 
   output <- bind_rows(output_counts, output_comp, output_ratio, output_cbr, fertility_rates)
 
-  output_dir <- "./outputs"
-  if (!dir.exists(output_dir)) {
-    dir.create(output_dir, recursive = TRUE)
+  if (is.null(output_path)){
+    return(output)
+  } else {
+    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
+    return(output)
   }
-
-  write.csv(output, paste0(output_dir, "/", tablename, ".csv"), row.names = FALSE)
-  return(output)
 }

@@ -6,6 +6,7 @@
 #' @param date_var occurrence data variable being used
 #' @param data_year year of data
 #' @param tablename name of the table being saved as a csv file
+#' @param output_path The path to export the generated table
 #'
 #' @return data frames for tabulated versions of Table 4.7
 #' @export
@@ -15,7 +16,7 @@
 #' @import janitor
 #' @examples t4.7 <- create_table_4.7(bth_data, dobyr, 2022, tablename = "Table_4_7")
 #'
-create_t4.7 <- function(data, date_var, data_year = NA, tablename = NA){
+create_t4.7 <- function(data, date_var, data_year = NA, tablename = "Table_4_7", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
   if (is.na(data_year)){
@@ -42,6 +43,10 @@ create_t4.7 <- function(data, date_var, data_year = NA, tablename = NA){
 
   output <- rbind(outputall, outputrgn) |> adorn_totals(c("row","col"))
 
-  write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
-  return(output)
+  if (is.null(output_path)){
+    return(output)
+  } else {
+    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
+    return(output)
+  }
 }

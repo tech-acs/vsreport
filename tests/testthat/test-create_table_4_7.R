@@ -12,7 +12,7 @@ test_that("create_t4.7 function works correctly", {
   )
 
   # Call the function
-  result <- create_t4.7(bth_data, date_var = "dobyr", data_year = 2022, tablename = "Table_4_7")
+  result <- create_t4.7(bth_data, date_var = "dobyr", data_year = 2022, tablename = "Table_4_7", output_path = "outputs/")
 
   # Check if result is a data frame
   expect_s3_class(result, "data.frame")

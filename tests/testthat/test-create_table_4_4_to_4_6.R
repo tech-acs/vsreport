@@ -13,7 +13,7 @@ test_that("create_t4.4_to_4_6 function works correctly", {
   )
 
 
-  result <- create_t4.4_to_4_6(bth_data, data_year = 2022, col_var = "fert_age_grp", by_var = "birth1g", rural_urban = "no", tablename = "Table_4_4")
+  result <- create_t4.4_to_4_6(bth_data, data_year = 2022, col_var = "fert_age_grp", by_var = "birth1g", rural_urban = "no", tablename = "Table_4_4", output_path = "outputs/")
 
   # Check if result is a data frame
   expect_s3_class(result, "data.frame")

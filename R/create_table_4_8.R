@@ -9,6 +9,7 @@
 #' @param data_year year of data
 #' @param by_var variable the data is grouped by
 #' @param tablename name for csv output use _ instead of . for names
+#' @param output_path The path to export the generated table
 #'
 #' @return data frame with tabulated result
 #' @export
@@ -19,7 +20,7 @@
 #'
 #' @examples t4.8 <- create_t4.8(bth_data, bth_est, dobyr, data_year = 2022, by_var = birth1c, tablename = "Table_4_8")
 
-create_t4.8 <- function(data, est_data, pops, date_var, data_year = NA, by_var = NA, tablename = "Table_4_8"){
+create_t4.8 <- function(data, est_data, pops, date_var, data_year = NA, by_var = NA, tablename = "Table_4_8", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
   if (is.na(data_year)){
@@ -49,7 +50,10 @@ create_t4.8 <- function(data, est_data, pops, date_var, data_year = NA, by_var =
     mutate(cbr = round_excel(adjusted/total_pop*1000, 1)) |>
     select(birth1c, total, adjusted, cbr)
 
-  write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
-
-  return(output)
+  if (is.null(output_path)){
+    return(output)
+  } else {
+    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
+    return(output)
+  }
 }

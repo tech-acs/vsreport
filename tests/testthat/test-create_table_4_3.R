@@ -11,7 +11,7 @@ test_that("create_t4.3 function works correctly", {
   )
 
   # Call the function
-  result <- create_t4.3(bth_data, date_var = "dobyr", data_year = 2022, tablename = "Table_4_3")
+  result <- create_t4.3(bth_data, date_var = "dobyr", data_year = 2022, tablename = "Table_4_3", output_path = "outputs/")
 
   # Check if result is a data frame
   expect_s3_class(result, "data.frame")

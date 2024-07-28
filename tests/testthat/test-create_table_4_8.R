@@ -20,7 +20,7 @@ test_that("create_t4.8 function works correctly", {
   )
 
   # Call the function
-  result <- create_t4.8(bth_data, bth_est, pops, date_var = "dobyr", data_year = 2022, by_var = "birth1c", tablename = "Table_4_8")
+  result <- create_t4.8(bth_data, bth_est, pops, date_var = "dobyr", data_year = 2022, by_var = "birth1c", tablename = "Table_4_8", output_path = "outputs/")
 
   # Check if result is a data frame
   expect_s3_class(result, "data.frame")

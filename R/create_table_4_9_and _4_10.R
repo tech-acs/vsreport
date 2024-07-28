@@ -11,6 +11,7 @@
 #' @param data_year year of data
 #' @param ruindicator whether table is for urban or rural data
 #' @param tablename name for csv output use _ instead of . for names
+#' @param output_path The path to export the generated table
 #'
 #' @return data frame with tabulated result
 #' @export
@@ -26,38 +27,42 @@
 #'                                  ruindicator = "rural", tablename = "Table_4_10")
 
 create_table_4_9_and_4_10 <- function(data, est_data, pops, data_year = NA,
-                                      ruindicator = "urban", tablename = NA){
+                                      ruindicator = "urban", tablename = "Table_4_9", output_path = NULL){
   # if data_year is not provided, take the latest year in the data
   if (is.na(data_year)){
     data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
   }
 
-output <- data |>
-  filter(birth3n == ruindicator, is.na(birth1j) & dobyr == data_year) |>
-  group_by(fert_age_grp) |>
-  summarise(total = n())
+  output <- data |>
+    filter(birth3n == ruindicator, is.na(birth1j) & dobyr == data_year) |>
+    group_by(fert_age_grp) |>
+    summarise(total = n())
 
-outputb <- est_data |>
-  filter(year == data_year) |>
-  group_by(fert_age_grp) |>
-  summarise(total_est = sum(total)) |>
-  rename(fert_age_est = fert_age_grp)
+  outputb <- est_data |>
+    filter(year == data_year) |>
+    group_by(fert_age_grp) |>
+    summarise(total_est = sum(total)) |>
+    rename(fert_age_est = fert_age_grp)
 
-output <- left_join(output, outputb, by = c("fert_age_grp"="fert_age_est")) |>
-  mutate(completeness = total/total_est) |>
-  mutate(adjusted = floor(total/completeness)) |>
-  select(-c(total_est, completeness))
+  output <- left_join(output, outputb, by = c("fert_age_grp"="fert_age_est")) |>
+    mutate(completeness = total/total_est) |>
+    mutate(adjusted = floor(total/completeness)) |>
+    select(-c(total_est, completeness))
 
-popn <- pops |>
-  filter(birth2a == "Female") |>
-  group_by(fert_age_grp) |>
-  summarise(total_pop = sum(population_2022))
+  popn <- pops |>
+    filter(birth2a == "Female") |>
+    group_by(fert_age_grp) |>
+    summarise(total_pop = sum(population_2022))
 
-output <- merge(output, popn, by = "fert_age_grp", all.x = TRUE) |>
-  mutate(asfr = round_excel(adjusted/total_pop*1000, 2))
+  output <- merge(output, popn, by = "fert_age_grp", all.x = TRUE) |>
+    mutate(asfr = round_excel(adjusted/total_pop*1000, 2))
 
-write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
-return(output)
+  if (is.null(output_path)){
+    return(output)
+  } else {
+    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
+    return(output)
+  }
 }
 
 
