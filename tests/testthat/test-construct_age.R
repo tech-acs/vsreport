@@ -1,3 +1,6 @@
+# Load necessary library
+library(dplyr)
+
 # Define the tests
 test_that("construct_age works correctly with default age column and today's date", {
   df <- data.frame(dob = as.Date(c("1990-05-15", "1985-10-30", "2000-07-22")))
@@ -63,9 +66,9 @@ test_that("construct_age handles different date formats", {
   today <- Sys.Date()
   expected_ages <- as.integer((today - df$dob) / 365.25)
   expected_df <- df %>%
-    mutate(age = expected_ages)
+    mutate(birth3b = expected_ages)
 
-  result_df <- add_age_column(df, dob_col = "dob")
+  result_df <- construct_age(df, dob_col = "dob")
 
   expect_equal(result_df, expected_df)
 })
