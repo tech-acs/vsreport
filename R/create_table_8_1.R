@@ -18,7 +18,7 @@ create_t8.1 <- function(tablename = NA){
   latest_year <- data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
 
   outputb <- bth_data |>
-    filter(is.na(sbind) & dobyr %in% generate_year_sequence(latest_year)) |>
+    filter(is.na(birth1j) & dobyr %in% generate_year_sequence(latest_year)) |>
     group_by(dobyr, birth2a) |>
     summarise(total = n()) |>
     pivot_wider(names_from = birth2a, values_from = total) |>

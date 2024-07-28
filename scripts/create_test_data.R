@@ -21,6 +21,7 @@ generate_data <- function(var_info) {
            "Sex" = sample(c("Male", "Female"), n, replace = TRUE),
            "Date of birth" = sample(seq(as.Date('1970/01/01'), as.Date('2005/01/01'), by="day"), n, replace = TRUE),
            "Age" = sample(18:50, n, replace = TRUE),
+           "Still Birth Indicator" = sample(c("1", NA), n, replace = TRUE),
            "Marital status" = sample(c("Single", "Married", "Widowed", "Divorced"), n, replace = TRUE),
            "Marital status (previous)" = sample(c("Single", "Widowed", "Divorced"), n, replace = TRUE),
            "Place of usual residence" = sample(c("RegionA", "RegionB", "RegionC", "RegionD"), n, replace = TRUE),

@@ -41,13 +41,13 @@ create_t3.8_and_t3.9 <- function(data, est_data, date_var, data_year=NA, by_var,
   # filter data based on topic
 
   if(topic == 'births'){
-    data <- data %>% filter(!!sym(date_var) == data_year, is.na(sbind))
+    data <- data %>% filter(!!sym(date_var) == data_year, is.na(birth1j))
   } else {
     data <- data %>% filter(!!sym(date_var) == data_year)
   }
 
   counts <- data |>
-   # filter({{date_var}} == data_year & if (topic == "births") is.na(sbind) else TRUE) |>
+   # filter({{date_var}} == data_year & if (topic == "births") is.na(birth1j) else TRUE) |>
    # group_by(!!by_var, birth2a) |>
     group_by(birth1c, birth2a) |>
     summarise(total = n()) |>

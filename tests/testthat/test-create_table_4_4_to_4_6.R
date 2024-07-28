@@ -5,7 +5,7 @@ test_that("create_t4.4_to_4_6 function works correctly", {
   # Sample data
   bth_data <- data.frame(
     doryr = c(2022, 2022, 2022, 2022, 2022),
-    sbind = c(NA, NA, NA, NA, NA),
+    birth1j = c(NA, NA, NA, NA, NA),
     fert_age_grp = c("15-19", "20-24", "25-29", "30-34", "35-39"),
     multbth = c("Single", "Multiple", "Single", "Single", "Multiple"),
     marstat = c("Married", "Single", "Married", "Single", "Married"),

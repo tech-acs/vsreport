@@ -22,7 +22,7 @@ create_t8.2 <- function(data_year = NA, tablename = NA){
   }
 
   outputb <- bth_data |>
-    filter(is.na(sbind) & dobyr == data_year) |>
+    filter(is.na(birth1j) & dobyr == data_year) |>
     group_by(birth1c, birth2a) |>
     summarise(total = n()) |>
     pivot_wider(names_from = birth2a, values_from = total) |>

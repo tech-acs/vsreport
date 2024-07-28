@@ -4,7 +4,7 @@ test_that("create_t3.1 function works correctly", {
     bth_data <- data.frame(
       dobyr = c(2019, 2020, 2021, 2022, 2023),
       timeliness = c("Current", "Late", "Delayed", "Current", "Late"),
-      sbind = c(NA, NA, NA, 1, NA)
+      birth1j = c(NA, NA, NA, 1, NA)
     )
 
     dth_data <- data.frame(

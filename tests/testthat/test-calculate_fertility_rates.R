@@ -3,7 +3,7 @@ test_that("calculate_fertility_rates calculates age-specific and total fertility
   # Mock data for testing
   bth_data <- data.frame(
     dobyr = c(2018, 2018, 2019, 2019, 2019, 2020, 2019),
-    sbind = c(NA, NA, NA, NA, NA, NA, 1),
+    birth1j = c(NA, NA, NA, NA, NA, NA, 1),
     fert_age_grp = c("15-19", "20-24", "15-19", "20-24", "25-29", "20-24", "20-24")
   )
 

@@ -25,7 +25,7 @@ create_t4.2 <- function(data, est_data, date_var, data_year = NA, tablename = "T
   }
 
   output <- data |>
-    filter(!!sym(date_var) == data_year & is.na(sbind)) |>
+    filter(!!sym(date_var) == data_year & is.na(birth1j)) |>
     group_by(birth1c, birth2a) |>
     summarise(total = n()) |>
     pivot_wider(names_from = birth2a, values_from = total, values_fill = 0) |>

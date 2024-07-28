@@ -23,7 +23,7 @@ create_t4.7 <- function(data, date_var, data_year = NA, tablename = NA){
   }
 
   output <- data |>
-    filter(!!sym(date_var) == data_year & is.na(sbind)) |>
+    filter(!!sym(date_var) == data_year & is.na(birth1j)) |>
     group_by(rgnpob, pob, attend) |>
     summarise(total = n()) |>
     pivot_wider(names_from = attend, values_from = total, values_fill = 0) |>

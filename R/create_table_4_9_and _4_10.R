@@ -33,7 +33,7 @@ create_table_4_9_and_4_10 <- function(data, est_data, pops, data_year = NA,
   }
 
 output <- data |>
-  filter(ruind == ruindicator, is.na(sbind) & dobyr == data_year) |>
+  filter(ruind == ruindicator, is.na(birth1j) & dobyr == data_year) |>
   group_by(fert_age_grp) |>
   summarise(total = n())
 

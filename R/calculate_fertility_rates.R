@@ -18,7 +18,7 @@ curr_year <- max(data$dobyr, na.rm = TRUE)
 # Generate the year sequence
 year_sequence <- generate_year_sequence(curr_year)
 output <- data |>
-  filter(is.na(sbind) & !is.na(fert_age_grp) & dobyr %in% year_sequence) |>
+  filter(is.na(birth1j) & !is.na(fert_age_grp) & dobyr %in% year_sequence) |>
   group_by(fert_age_grp, dobyr) |>
   summarise(total = n(), .groups = "drop_last") |>
   pivot_wider(names_from = dobyr, values_from = total)

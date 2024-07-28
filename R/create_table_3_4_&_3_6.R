@@ -19,7 +19,7 @@ create_t3.4_and_3.6 <- function(data, est_data, by_var, topic = NA, tablename = 
 
   counts <- data |>
     filter(({{by_var}}) %in% generate_year_sequence(max_value) &
-             if (tolower(topic) == "births") is.na(sbind) else TRUE) |>
+             if (tolower(topic) == "births") is.na(birth1j) else TRUE) |>
     group_by({{by_var}}, birth2a) |>
     summarise(total = n())
 

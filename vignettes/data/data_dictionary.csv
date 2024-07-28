@@ -5,6 +5,7 @@ birth1c,Place of occurrence,Birth,Event,Direct,Character
 birth1g,"Type of birth (i.e., single, twin, triplet, quadruplet or higher multiple delivery)",Birth,Event,Direct,Character
 birth1h,Attendant at birth,Birth,Event,Direct,Character
 birth1i,"Type of place of occurrence (hospital, home, etc.)",Birth,Event,Additional,Character
+birth1j,"Still Birth Indicator",Birth,Event,Direct,Character
 birth2a,Sex,Birth,Newborn,Direct,Character
 birth3a,Date of birth,Birth,Mother,Direct,Date
 birth3b,Age,Birth,Mother,Derived,Integer

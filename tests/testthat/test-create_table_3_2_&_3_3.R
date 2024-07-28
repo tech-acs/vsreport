@@ -5,13 +5,13 @@ library(janitor)
 
 # Sample data
 bth_data <- data.frame(
-  sbind = c(NA, NA, NA, NA, NA),
+  birth1j = c(NA, NA, NA, NA, NA),
   doryr = c(2018, 2018, 2019, 2019, 2020),
   dobyr = c(2018, 2017, 2018, 2019, 2020)
 )
 
 deaths_data <- data.frame(
-  sbind = c(NA, NA, NA, NA, NA),
+  birth1j = c(NA, NA, NA, NA, NA),
   doryr = c(2018, 2018, 2019, 2019, 2020),
   dobyr = c(2018, 2017, 2018, 2019, 2020)
 )

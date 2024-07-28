@@ -34,7 +34,7 @@ create_t4.4_to_4_6 <- function(data, data_year = NA, col_var = fert_age_grp, by_
 
   if(rural_urban == "no"){
   output <- data |>
-    filter(doryr == data_year & is.na(sbind)) |>
+    filter(doryr == data_year & is.na(birth1j)) |>
     group_by(!!sym(col_var), !!sym(by_var)) |>
     mutate(!!sym(by_var) := ifelse(is.na(!!sym(by_var)), 0, !!sym(by_var)),
            !!sym(col_var) := ifelse(is.na(!!sym(col_var)), "Not Stated", !!sym(col_var))) |>
@@ -47,7 +47,7 @@ create_t4.4_to_4_6 <- function(data, data_year = NA, col_var = fert_age_grp, by_
   return(output)
   } else {
     output <- data |>
-      filter(doryr == year & is.na(sbind) & ruind == rural_urban) |>
+      filter(doryr == year & is.na(birth1j) & ruind == rural_urban) |>
       group_by(!!sym(col_var), !!sym(by_var)) |>
       mutate(!!sym(by_var) := ifelse(is.na(!!sym(by_var)), 0, !!sym(by_var)),
              !!sym(col_var) := ifelse(is.na(!!sym(col_var)), "Not Stated", !!sym(col_var))) |>

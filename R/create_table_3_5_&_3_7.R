@@ -31,14 +31,14 @@ create_t3.5_and_3.7 <- function(data, est_data, date_var, data_year = NA, topic 
   # filter data based on topic
 
   if(topic == 'births'){
-    data <- data %>% filter(!!sym(date_var) == data_year , tolower(birth2a) %in% c("male", "female") , is.na(sbind))
+    data <- data %>% filter(!!sym(date_var) == data_year , tolower(birth2a) %in% c("male", "female") , is.na(birth1j))
   } else {
     data <- data %>% filter(!!sym(date_var) == data_year , tolower(birth2a) %in% c("male", "female") )
   }
 
   counts <- data |>
     # filter({{date_var}} == data_year & tolower(birth2a) %in% c("male", "female") &
-    #          if (topic == "births") is.na(sbind) else TRUE) |>
+    #          if (topic == "births") is.na(birth1j) else TRUE) |>
     group_by(birth1c, birth2a) |>
     summarise(total = n())
 

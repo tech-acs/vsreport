@@ -7,7 +7,7 @@ test_that("create_table_4_9_and_4_10 function works correctly", {
     dobyr = c(2022, 2022, 2022, 2022, 2022),
     ruind = c("urban", "urban", "rural", "rural", "urban"),
     fert_age_grp = c("15-19", "20-24", "15-19", "20-24", "25-29"),
-    sbind = c(NA, NA, NA, NA, NA)
+    birth1j = c(NA, NA, NA, NA, NA)
   )
 
   bth_est <- data.frame(

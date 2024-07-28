@@ -3,7 +3,7 @@ test_that("create_t4.1 function works correctly", {
   bth_data <- data.frame(
     dobyr = c(2018, 2018, 2019, 2019, 2020),
     fert_age_grp = c("15-19", "15-19", "15-19", "15-19", "15-19"),
-    sbind = c(NA, NA, NA, NA, NA),
+    birth1j = c(NA, NA, NA, NA, NA),
     birth2a = c("male", "female", "male", "female", "male")
   )
 

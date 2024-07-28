@@ -25,7 +25,7 @@ create_t4.1 <- function(data, est_data, pops, date_var, tablename = "Table_4_1")
   years <- generate_year_sequence(curr_year)
 
   output <- data |>
-    filter(is.na(sbind) & !!sym(date_var) %in% years & birth2a != "not stated") |>
+    filter(is.na(birth1j) & !!sym(date_var) %in% years & birth2a != "not stated") |>
     group_by(birth2a, !!sym(date_var)) |>
     rename(Indicator = birth2a) |>
     summarise(total = n(), .groups = "drop")
