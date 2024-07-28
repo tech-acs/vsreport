@@ -48,10 +48,10 @@ create_t3.8_and_t3.9 <- function(data, est_data, date_var, data_year=NA, by_var,
 
   counts <- data |>
    # filter({{date_var}} == data_year & if (topic == "births") is.na(sbind) else TRUE) |>
-   # group_by(!!by_var, sex) |>
-    group_by(birth1c, sex) |>
+   # group_by(!!by_var, birth2a) |>
+    group_by(birth1c, birth2a) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = sex, values_from = total, values_fill = 0) |>
+    pivot_wider(names_from = birth2a, values_from = total, values_fill = 0) |>
     select(-`not stated`) |>
     adorn_totals("col")
 

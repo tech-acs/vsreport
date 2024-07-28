@@ -25,9 +25,9 @@ create_t4.1 <- function(data, est_data, pops, date_var, tablename = "Table_4_1")
   years <- generate_year_sequence(curr_year)
 
   output <- data |>
-    filter(is.na(sbind) & !!sym(date_var) %in% years & sex != "not stated") |>
-    group_by(sex, !!sym(date_var)) |>
-    rename(Indicator = sex) |>
+    filter(is.na(sbind) & !!sym(date_var) %in% years & birth2a != "not stated") |>
+    group_by(birth2a, !!sym(date_var)) |>
+    rename(Indicator = birth2a) |>
     summarise(total = n(), .groups = "drop")
 
   output_counts <- output |>
@@ -57,14 +57,14 @@ create_t4.1 <- function(data, est_data, pops, date_var, tablename = "Table_4_1")
   population <- pops |>
     pivot_longer(cols = starts_with("population_"), names_to = "year", values_to = "count") |>
     mutate(year = as.integer(gsub("population_", "", year))) |>
-    group_by(year, sex) |>
+    group_by(year, birth2a) |>
     summarise(total_pop = sum(count), .groups = "drop") |>
-    arrange(sex)
+    arrange(birth2a)
 
   output <- output %>%
     rename("year" = all_of(date_var))
 
-  output_cbr <- left_join(output, population, by = c("year" = "year", "Indicator" = "sex")) |>
+  output_cbr <- left_join(output, population, by = c("year" = "year", "Indicator" = "birth2a")) |>
     group_by(year) |>
     summarise(total = sum(total), total_pop = sum(total_pop), .groups = "drop") |>
     mutate(cbr = round((total / total_pop) * 1000, 2)) |>

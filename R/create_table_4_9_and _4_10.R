@@ -49,7 +49,7 @@ output <- left_join(output, outputb, by = c("fert_age_grp"="fert_age_est")) |>
   select(-c(total_est, completeness))
 
 popn <- pops |>
-  filter(sex == "F") |>
+  filter(birth2a == "Female") |>
   group_by(fert_age_grp) |>
   summarise(total_pop = sum(population_2022))
 

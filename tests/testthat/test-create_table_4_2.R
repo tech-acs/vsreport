@@ -7,7 +7,7 @@ test_that("create_t4.2 function works correctly", {
     dobyr = c(2022, 2022, 2022, 2022, 2022, 2022),
     sbind = c(NA, NA, NA, NA, NA, NA),
     birth1c = c("Region1", "Region1", "Region2", "Region2", "Region2", "Region1"),
-    sex = c("male", "female", "male", "female", "male", "not stated")
+    birth2a = c("male", "female", "male", "female", "male", "not stated")
   )
 
   bth_est <- data.frame(

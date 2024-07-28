@@ -18,7 +18,7 @@ test_that("create_table_4_9_and_4_10 function works correctly", {
 
   pops <- data.frame(
     fert_age_grp = c("15-19", "20-24", "25-29"),
-    sex = c("F", "F", "F"),
+    birth2a = c("Female", "Female", "Female"),
     population_2022 = c(1000, 800, 600)
   )
 

@@ -19,25 +19,25 @@ create_t8.1 <- function(tablename = NA){
 
   outputb <- bth_data |>
     filter(is.na(sbind) & dobyr %in% generate_year_sequence(latest_year)) |>
-    group_by(dobyr, sex) |>
+    group_by(dobyr, birth2a) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = sex, values_from = total) |>
+    pivot_wider(names_from = birth2a, values_from = total) |>
     adorn_totals("col")
   colnames(outputb) <- c("Year_of_Occurrence", "Live_Births_Female", "Live_Births_Male", "NS", "Live_Biths_Total")
 
   outputd <- dth_data |>
     filter(dodyr %in% generate_year_sequence(latest_year)) |>
-    group_by(dodyr, sex) |>
+    group_by(dodyr, birth2a) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = sex, values_from = total) |>
+    pivot_wider(names_from = birth2a, values_from = total) |>
     adorn_totals("col")
   colnames(outputd) <- c("Year_of_OccurrenceD", "Deaths_Female", "Deaths_Male", "NS",  "Deaths_Total")
 
   outputi <- dth_data |>
     filter(ageinyrs < 5 & dodyr %in% generate_year_sequence(latest_year)) |>
-    group_by(dodyr, sex) |>
+    group_by(dodyr, birth2a) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = sex, values_from = total) |>
+    pivot_wider(names_from = birth2a, values_from = total) |>
     adorn_totals("col")
   colnames(outputi) <- c("Year_of_OccurrenceI", "Under5_Deaths_Female", "Under5_Deaths_Male", "NS",  "Under5_Deaths_Total")
 

@@ -36,7 +36,7 @@ create_t6.5_t6.10 <- function(data, data_year = NA, sex_value = "male", age_grou
   }
 
   output <- data |>
-    filter(doryr == data_year & sex %in% sex_value & age_grp_lead == age_group) |>
+    filter(doryr == data_year & birth2a %in% sex_value & age_grp_lead == age_group) |>
     group_by(substr(fic10und,1,3)) |>
     summarise(total = n()) |>
     rename(causecd = `substr(fic10und, 1, 3)`)

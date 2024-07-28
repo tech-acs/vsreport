@@ -7,7 +7,7 @@ library(janitor)
 bth_data <- data.frame(
   sbind = c(NA, NA, NA, NA, NA),
   dobyr = c(2018, 2018, 2019, 2019, 2020),
-  sex = c("male", "female", "male", "female", "male")
+  birth2a = c("male", "female", "male", "female", "male")
 )
 
 # Sample data for estimated births

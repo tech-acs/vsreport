@@ -24,10 +24,10 @@ create_t6.1 <- function(data, cause, date_var, data_year = NA){
   }
 
 output <- data |>
-  filter(!!sym(date_var) == data_year & fic10und != "" & sex %in% c("male", "female")) |>
-  group_by(sex, substr(fic10und,1,3), age_grp_lead) |>
+  filter(!!sym(date_var) == data_year & fic10und != "" & birth2a %in% c("male", "female")) |>
+  group_by(birth2a, substr(fic10und,1,3), age_grp_lead) |>
   summarise(total = n()) |>
-  pivot_wider(names_from = sex, values_from = total, values_fill = 0) |>
+  pivot_wider(names_from = birth2a, values_from = total, values_fill = 0) |>
   arrange(age_grp_lead) |>
   rename(causecd = `substr(fic10und, 1, 3)`)
 

@@ -32,9 +32,9 @@ create_t5.6_and_t5.7 <- function(data, ru_filter, date_var, datayear = NA, table
 
   output <- data |>
     filter(ruind == ru_filter & !!sym(date_var) == datayear) |>
-    group_by(sex, age_grp_80) |>
+    group_by(birth2a, age_grp_80) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = sex, values_from = total, values_fill = 0) |>
+    pivot_wider(names_from = birth2a, values_from = total, values_fill = 0) |>
     arrange(age_grp_80) |>
     adorn_totals(c("col", "row")) |>
     rename(`Age of decedent (years)` = age_grp_80,

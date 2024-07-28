@@ -19,7 +19,7 @@ create_t6.2 <- function(data, date_var){
   latest_year <- data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
 
 output <- data |>
-  filter(!substr(fic10und,1,1) %in% c("", "U") & sex %in% c("male", "female") & !!sym(date_var) %in% generate_year_sequence(latest_year)) |>
+  filter(!substr(fic10und,1,1) %in% c("", "U") & birth2a %in% c("male", "female") & !!sym(date_var) %in% generate_year_sequence(latest_year)) |>
   group_by(!!sym(date_var), substr(fic10und,1,3)) |>
   summarise(total = n()) |>
   arrange(!!sym(date_var)) |>

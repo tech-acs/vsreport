@@ -1,6 +1,6 @@
 #' Creates Table 4.2
 #'
-#'Table 4.2 Live births by place of occurrence and sex of newborn
+#'Table 4.2 Live births by place of occurrence and birth2a of newborn
 #'
 #' @param data data frame being used
 #' @param est_data data frame of estimated data being used
@@ -26,9 +26,9 @@ create_t4.2 <- function(data, est_data, date_var, data_year = NA, tablename = "T
 
   output <- data |>
     filter(!!sym(date_var) == data_year & is.na(sbind)) |>
-    group_by(birth1c, sex) |>
+    group_by(birth1c, birth2a) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = sex, values_from = total, values_fill = 0) |>
+    pivot_wider(names_from = birth2a, values_from = total, values_fill = 0) |>
     adorn_totals(c("row","col")) |>
     mutate(ratio = round_excel(male/female,1))
 
