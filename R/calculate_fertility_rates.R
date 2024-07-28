@@ -25,7 +25,7 @@ output <- data |>
 
 # Aggregate population data dynamically for each year
 gfr_pops <- pops |>
-  filter(birth2a == "Female") |>
+  filter(birth2a == "female") |>
   group_by(fert_age_grp) |>
   summarise(across(starts_with("population"), sum))
 

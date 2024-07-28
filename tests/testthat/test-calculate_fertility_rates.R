@@ -9,7 +9,7 @@ test_that("calculate_fertility_rates calculates age-specific and total fertility
 
   population <- data.frame(
     fert_age_grp = c("15-19", "20-24", "25-29"),
-    birth2a = c("Female", "Female", "Female"),
+    birth2a = c("female", "female", "female"),
     population_2018 = c(10000, 15000, 12000),
     population_2019 = c(10000, 15000, 12000),
     population_2020 = c(10000, 15000, 12000)

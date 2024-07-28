@@ -50,7 +50,7 @@ create_table_4_9_and_4_10 <- function(data, est_data, pops, data_year = NA,
     select(-c(total_est, completeness))
 
   popn <- pops |>
-    filter(birth2a == "Female") |>
+    filter(birth2a == "female") |>
     group_by(fert_age_grp) |>
     summarise(total_pop = sum(population_2022))
 
