@@ -27,7 +27,7 @@ generate_data <- function(var_info) {
            "Place of usual residence" = sample(c("RegionA", "RegionB", "RegionC", "RegionD"), n, replace = TRUE),
            "Place of usual residence of the mother (for deaths under 1 year of age)" = sample(c("RegionA", "RegionB", "RegionC", "RegionD", NA), n, replace = TRUE),
            "Urban/rural residence" = sample(c("Urban", "Rural"), n, replace = TRUE),
-           "Cause of death" = sample(("A01", "B02", "C03", "D04", "E05", "F06", "G07", "H08", "I09", "J10", ""), n, replace = TRUE),
+           "Cause of death" = sample(c("A01", "B02", "C03", "D04", "E05", "F06", "G07", "H08", "I09", "J10", ""), n, replace = TRUE),
            "Death occurring during pregnancy, childbirth and puerperium (for females between 15 and 49 years of age)" = sample(c("Yes", "No"), n, replace = TRUE),
            "Number of dependent children of divorced persons" = sample(0:5, n, replace = TRUE),
            "Date of marriage" = sample(seq(as.Date('1990/01/01'), as.Date('2020/01/01'), by="day"), n, replace = TRUE),
