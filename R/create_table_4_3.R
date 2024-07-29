@@ -27,8 +27,10 @@ create_t4.3 <- function(data, date_var = "dobyr", data_year = NA, tablename = "T
   output <- data |>
     filter(is.na(birth1j) & !!sym(date_var) == data_year) |>
     group_by(birth1c, birth3l) |>
+    mutate(match = if_else(birth1c == birth3l, "Same as place of occurrence", "Other location")) |>
+    group_by(birth1c, match) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = birth3l, values_from = total, values_fill = 0) |>
+    pivot_wider(names_from = match, values_from = total, values_fill = 0) |>
     adorn_totals(c("col", "row"))
 
   if (is.null(output_path)){
