@@ -35,8 +35,10 @@ create_t4.3 <- function(data, date_var, data_year = 2022, tablename = "Table_4_3
     mutate(birth1a = year(birth1a)) |>
     filter({{date_var}} == data_year) |>
     group_by(birth1c, birth3l) |>
+    mutate(match = if_else(birth1c == birth3l, "Same as place of occurrence", "Other location")) |>
+    group_by(birth1c, match) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = birth1c, values_from = total, values_fill = 0) |>
+    pivot_wider(names_from = match, values_from = total, values_fill = 0) |>
     adorn_totals(c("col", "row"))
 
   #write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
