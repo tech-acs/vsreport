@@ -11,7 +11,7 @@ test_that("create_t6.1 function works correctly", {
   dth_data <- data.frame(
     dodyr = sample(2019:2022, 200, replace = TRUE),
     death1g = sample(c("A01", "B02", "C03", "D04", "E05", "F06", "G07", "H08", "I09", "J10", ""), 200, replace = TRUE),
-    birth2a = sample(c("male", "female", "not stated"), 200, replace = TRUE),
+    death2c = sample(c("male", "female", "not stated"), 200, replace = TRUE),
     age_grp_lead = sample(c("0-4", "5-14", "15-69", "70+"), 200, replace = TRUE)
   )
 

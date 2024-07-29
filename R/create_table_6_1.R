@@ -27,14 +27,14 @@ create_t6.1 <- function(data, cause, date_var = "dodyr", data_year = NA, tablena
 
   # Filter and summarize data
   output <- data %>%
-    filter(!!sym(date_var) == data_year & death1g != "" & birth2a %in% c("male", "female")) %>%
+    filter(!!sym(date_var) == data_year & death1g != "" & death2c %in% c("male", "female")) %>%
     mutate(causecd = substr(death1g, 1, 3)) %>%
-    group_by(birth2a, causecd, age_grp_lead) %>%
+    group_by(death2c, causecd, age_grp_lead) %>%
     summarise(total = n(), .groups = 'drop')
 
   # Pivot wider to create columns for male and female
   output <- output %>%
-    pivot_wider(names_from = birth2a, values_from = total, values_fill = list(total = 0)) %>%
+    pivot_wider(names_from = death2c, values_from = total, values_fill = list(total = 0)) %>%
     arrange(age_grp_lead)
 
   # Ensure the cause data frame has unique cause codes
