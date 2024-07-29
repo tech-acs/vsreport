@@ -22,10 +22,10 @@ create_t5.11 <- function(data, date_var, num_yrs = 5, tablename = NA){
   years <- generate_year_sequence(latest_year = latest_year, num_yrs = num_yrs)
 
   output <- data |>
-    filter(!is.na(sbind) & !!sym(date_var) %in% years) |>
-    group_by(sex, !!sym(date_var)) |>
+    filter(!is.na(birth1j) & !!sym(date_var) %in% years) |>
+    group_by(birth2a, !!sym(date_var)) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = sex, values_from = total, values_fill = 0) |>
+    pivot_wider(names_from = birth2a, values_from = total, values_fill = 0) |>
     adorn_totals("col")
 
   write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)

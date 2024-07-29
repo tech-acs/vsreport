@@ -11,7 +11,8 @@ create_t4.8(
   date_var,
   data_year = NA,
   by_var = NA,
-  tablename = "Table_4_8"
+  tablename = "Table_4_8",
+  output_path = NULL
 )
 }
 \arguments{
@@ -28,6 +29,8 @@ create_t4.8(
 \item{by_var}{variable the data is grouped by}
 
 \item{tablename}{name for csv output use _ instead of . for names}
+
+\item{output_path}{The path to export the generated table}
 }
 \value{
 data frame with tabulated result
@@ -36,5 +39,5 @@ data frame with tabulated result
 Table 4.8 Crude birth rate (CBR) by place of usual residence of mother
 }
 \examples{
-t4.8 <- create_t4.8(bth_data, bth_est, dobyr, data_year = 2022, by_var = rgn, tablename = "Table_4_8")
+t4.8 <- create_t4.8(bth_data, bth_est, dobyr, data_year = 2022, by_var = birth1c, tablename = "Table_4_8")
 }

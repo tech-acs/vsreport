@@ -3,7 +3,7 @@ test_that("create_t3.10 function works correctly", {
   dth_data <- data.frame(
     dodyr = c(2022, 2022, 2022, 2021, 2021),
     age_grp_wide = c("0-4", "5-9", "10-14", "15-19", "20-24"),
-    sex = c("male", "female", "male", "female", "male")
+    birth2a = c("male", "female", "male", "female", "male")
   )
 
   dth_est <- data.frame(

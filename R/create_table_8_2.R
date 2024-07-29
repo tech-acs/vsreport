@@ -22,26 +22,26 @@ create_t8.2 <- function(data_year = NA, tablename = NA){
   }
 
   outputb <- bth_data |>
-    filter(is.na(sbind) & dobyr == data_year) |>
-    group_by(rgn, sex) |>
+    filter(is.na(birth1j) & dobyr == data_year) |>
+    group_by(birth1c, birth2a) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = sex, values_from = total) |>
+    pivot_wider(names_from = birth2a, values_from = total) |>
     adorn_totals("col")
   colnames(outputb) <- c("Region_of_Occurrence", "Live_Births_Female", "Live_Births_Male", "NS", "Live_Biths_Total")
 
   outputd <- dth_data |>
     filter(dodyr == data_year) |>
-    group_by(rgn, sex) |>
+    group_by(birth1c, birth2a) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = sex, values_from = total) |>
+    pivot_wider(names_from = birth2a, values_from = total) |>
     adorn_totals("col")
   colnames(outputd) <- c("Region_of_Occurrenced", "Deaths_Female", "Deaths_Male", "NS",  "Deaths_Total")
 
   outputi <- dth_data |>
     filter(ageinyrs < 5 & dodyr == data_year) |>
-    group_by(rgn, sex) |>
+    group_by(birth1c, birth2a) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = sex, values_from = total) |>
+    pivot_wider(names_from = birth2a, values_from = total) |>
     adorn_totals("col")
   colnames(outputi) <- c("Region_of_Occurrencei", "Under5_Deaths_Female", "Under5_Deaths_Male", "NS",  "Under5_Deaths_Total")
 

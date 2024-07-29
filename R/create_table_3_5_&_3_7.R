@@ -31,36 +31,36 @@ create_t3.5_and_3.7 <- function(data, est_data, date_var, data_year = NA, topic 
   # filter data based on topic
 
   if(topic == 'births'){
-    data <- data %>% filter(!!sym(date_var) == data_year , tolower(sex) %in% c("male", "female") , is.na(sbind))
+    data <- data %>% filter(!!sym(date_var) == data_year , tolower(birth2a) %in% c("male", "female") , is.na(birth1j))
   } else {
-    data <- data %>% filter(!!sym(date_var) == data_year , tolower(sex) %in% c("male", "female") )
+    data <- data %>% filter(!!sym(date_var) == data_year , tolower(birth2a) %in% c("male", "female") )
   }
 
   counts <- data |>
-    # filter({{date_var}} == data_year & tolower(sex) %in% c("male", "female") &
-    #          if (topic == "births") is.na(sbind) else TRUE) |>
-    group_by(rgn, sex) |>
+    # filter({{date_var}} == data_year & tolower(birth2a) %in% c("male", "female") &
+    #          if (topic == "births") is.na(birth1j) else TRUE) |>
+    group_by(birth1c, birth2a) |>
     summarise(total = n())
 
   ests <- est_data |>
     filter(year == data_year) |>
-    pivot_longer(cols = c("male", "female"), names_to = "sex", values_to = "count" ) |>
-    group_by(rgn, sex) |>
+    pivot_longer(cols = c("male", "female"), names_to = "birth2a", values_to = "count" ) |>
+    group_by(birth1c, birth2a) |>
     summarise(total_est = sum(count))
 
-  #output <- left_join(counts, ests, by.x = c("rgn", "sex"), by.y = c("rgn", "sex"), all.x = TRUE)
-  output <- left_join(counts, ests, by = c("rgn", "sex"))
+  #output <- left_join(counts, ests, by.x = c("birth1c", "birth2a"), by.y = c("birth1c", "birth2a"), all.x = TRUE)
+  output <- left_join(counts, ests, by = c("birth1c", "birth2a"))
 
   output2 <- output |>
-    group_by(rgn) |>
+    group_by(birth1c) |>
     summarise(total = sum(total), total_est = sum(total_est)) |>
-    mutate(sex = "total", .after = "rgn")
+    mutate(birth2a = "total", .after = "birth1c")
 
   output <- rbind(output, output2) |>
     mutate(completeness := round((total / total_est) * 100, 2)) |>
-    pivot_wider(names_from = sex, values_from = c(total, total_est, completeness), names_sep = " ") |>
-    mutate(rgn = ifelse(rgn %in% c("", " ", NA), "not stated", rgn)) |>
-    arrange(rgn) %>%
+    pivot_wider(names_from = birth2a, values_from = c(total, total_est, completeness), names_sep = " ") |>
+    mutate(birth1c = ifelse(birth1c %in% c("", " ", NA), "not stated", birth1c)) |>
+    arrange(birth1c) %>%
     adorn_totals("row")
 
   write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)

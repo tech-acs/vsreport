@@ -8,9 +8,10 @@ create_t4.4_to_4_6(
   data,
   data_year = NA,
   col_var = fert_age_grp,
-  by_var = multbth,
+  by_var = birth1g,
   rural_urban = "no",
-  tablename = NA
+  tablename = "Table_4_4",
+  output_path = NULL
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ create_t4.4_to_4_6(
 \item{rural_urban}{if this is no then no rural/urban split is used. Else specify "rural" or "urban"}
 
 \item{tablename}{name of the table being saved as a csv file}
+
+\item{output_path}{The path to export the generated table}
 }
 \value{
 tabulated data
@@ -37,7 +40,7 @@ Table 4.5 Live births by age and marital status of mother, urban areas
 Table 4.6 Live births by age and marital status of mother, rural areas
 }
 \examples{
-t4.4 <- create_t4.4_to_4_6(bth_data, data_year = 2022, col_var = fert_age_grp, by_var = multbth, rural_urban = "no", tablename = "Table_4_4")
-t4.5 <- create_t4.4_to_4_6(bth_data, year = 2022, col_var = fert_age_grp, by_var = marstat, rural_urban = "no", tablename = "Table_4_5")
-t4.6 <- create_t4.4_to_4_6(bth_data, year = 2022, col_var = fert_age_grp, by_var = marstat, rural_urban = "no", tablename = "Table_4_6")
+t4.4 <- create_t4.4_to_4_6(bth_data, data_year = 2022, col_var = fert_age_grp, by_var = birth1g, rural_urban = "no", tablename = "Table_4_4")
+t4.5 <- create_t4.4_to_4_6(bth_data, year = 2022, col_var = fert_age_grp, by_var = birth3c, rural_urban = "urban", tablename = "Table_4_5")
+t4.6 <- create_t4.4_to_4_6(bth_data, year = 2022, col_var = fert_age_grp, by_var = birth3c, rural_urban = "rural", tablename = "Table_4_6")
 }

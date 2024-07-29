@@ -21,7 +21,7 @@ create_t3.1 <- function(bth_data, dth_data, bth_yr_var, dth_yr_var, tablename = 
   max_value <- bth_data %>% pull({{bth_yr_var}}) %>% max(na.rm = TRUE)
 
   outputb <- bth_data |>
-    filter(is.na(sbind) & {{bth_yr_var}} %in% c((max_value - 5):(max_value - 1))) |>
+    filter(is.na(birth1j) & {{bth_yr_var}} %in% c((max_value - 5):(max_value - 1))) |>
     group_by({{bth_yr_var}}, timeliness) |>
     summarise(total = n()) |>
     mutate(type = "1 Live births") |>

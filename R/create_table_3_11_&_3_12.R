@@ -32,13 +32,13 @@ create_t3.11_and_3.12 <- function(data, date_var, data_year = NA, by_var, tablen
   # filter data based on topic
 
   if(topic == 'births'){
-    data <- data %>% filter(!!sym(date_var) == data_year ,  is.na(sbind))
+    data <- data %>% filter(!!sym(date_var) == data_year ,  is.na(birth1j))
   } else {
     data <- data %>% filter(!!sym(date_var) == data_year )
   }
 
 output <- data |>
-  #filter({{date_var}} == data_year & if (topic == "births") is.na(sbind) else TRUE) |>
+  #filter({{date_var}} == data_year & if (topic == "births") is.na(birth1j) else TRUE) |>
   group_by({{by_var}}) |>
   summarise(total = n()) |>
   mutate(total = ifelse({{by_var}} == "unknown", 200, total))

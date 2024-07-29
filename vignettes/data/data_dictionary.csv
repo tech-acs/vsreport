@@ -5,6 +5,7 @@ birth1c,Place of occurrence,Birth,Event,Direct,Character
 birth1g,"Type of birth (i.e., single, twin, triplet, quadruplet or higher multiple delivery)",Birth,Event,Direct,Character
 birth1h,Attendant at birth,Birth,Event,Direct,Character
 birth1i,"Type of place of occurrence (hospital, home, etc.)",Birth,Event,Additional,Character
+birth1j,"Still Birth Indicator",Birth,Event,Direct,Character
 birth2a,Sex,Birth,Newborn,Direct,Character
 birth3a,Date of birth,Birth,Mother,Direct,Date
 birth3b,Age,Birth,Mother,Derived,Integer
@@ -32,6 +33,7 @@ marriage3a,Date of birth,Marriage,Groom,Direct,Date
 marriage3b,Age,Marriage,Groom,Derived,Integer
 marriage3c,Marital status (previous),Marriage,Groom,Additional,Character
 marriage3m,Place of usual residence,Marriage,Groom,Direct,Character
+marriage3n,Urban/rural residence,Marriage,Groom,Direct,Character
 divorce1a,Date of occurrence,Divorce,Event,Direct,Date
 divorce1b,Date of registration,Divorce,Event,Direct,Date
 divorce2a,Date of birth,Divorce,Wife,Direct,Date

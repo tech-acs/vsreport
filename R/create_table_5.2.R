@@ -20,21 +20,21 @@ create_t5.2 <- function(data, date_var, data_year = NA, tablename = "Table_5_2")
   }
 
 outputa <- data |>
-  #filter({{date_var}} == data_year & substr(rgn,1,1) %in% c("E","W")) |>
-  filter(dodyr == data_year & substr(rgn,1,1) %in% c("E","W")) |>
-  group_by(sex_orig, ruind) |>
+  #filter({{date_var}} == data_year & substr(birth1c,1,1) %in% c("E","W")) |>
+  filter(dodyr == data_year & substr(birth1c,1,1) %in% c("E","W")) |>
+  group_by(birth2a, death2r) |>
   summarise(total = n()) |>
-  pivot_wider(names_from = sex_orig, values_from = total, values_fill = 0) |>
+  pivot_wider(names_from = birth2a, values_from = total, values_fill = 0) |>
   adorn_totals("col") |>
-  rename(area = ruind)
+  rename(area = death2r)
 
 outputb <- data |>
-  filter(dodyr == data_year & substr(rgn,1,1) %in% c("E","W")) |>
-  group_by(sex_orig, rgn) |>
+  filter(dodyr == data_year & substr(birth1c,1,1) %in% c("E","W")) |>
+  group_by(birth2a, birth1c) |>
   summarise(total = n()) |>
-  pivot_wider(names_from = sex_orig, values_from = total, values_fill = 0) |>
+  pivot_wider(names_from = birth2a, values_from = total, values_fill = 0) |>
   adorn_totals("col")|>
-  rename(area = rgn)
+  rename(area = birth1c)
 
 output <- rbind(outputa, outputb)
 

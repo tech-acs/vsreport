@@ -30,10 +30,10 @@ create_t5.3_and_t5.4 <- function(data, date_var, data_year = NA, sex_filter = NA
   }
 
   output <- data |>
-    filter(sex == sex_filter & !!sym(date_var) == data_year) |>
-    group_by(rgnpod, usual_res_plocc) |>
+    filter(birth2a == sex_filter & !!sym(date_var) == data_year) |>
+    group_by(death1c, death2o) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = usual_res_plocc, values_from = total, values_fill = 0) |>
+    pivot_wider(names_from = death2o, values_from = total, values_fill = 0) |>
     adorn_totals(c("col", "row"))
 
   write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)

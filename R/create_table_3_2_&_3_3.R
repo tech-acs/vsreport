@@ -21,7 +21,7 @@ create_t3.2_t3.3 <- function(data, occ_var, topic = NA, tablename = "table_3_2")
 
   if(tolower(topic) == "births"){
     output <- data |>
-      filter(is.na(sbind) & !is.na(doryr) &
+      filter(is.na(birth1j) & !is.na(doryr) &
                {{occ_var}} %in% generate_year_sequence(max_value)) |>
       group_by(doryr, {{occ_var}}) |>
       summarise(Total = n())

@@ -16,7 +16,7 @@
 #'   birth1a = as.Date(c('2023-01-01', '2022-01-01', '2020-01-01', '2023-06-01')),
 #'   birth1b = as.Date(c('2023-01-15', '2022-02-15', '2021-06-01', '2024-06-01'))
 #' )
-#' compute_date_differences(df)
+#' df <- construct_timeliness(df)
 construct_timeliness <- function(data, threshold_late = 30, threshold_delayed = 365) {
   data <- data %>%
     mutate(

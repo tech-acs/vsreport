@@ -10,6 +10,7 @@
 #' @param pops population data frame
 #' @param date_var variable for year
 #' @param tablename name for csv output use _ instead of . for names
+#' @param output_path The path to export the generated table
 #'
 #' @return data frame with tabulated results
 #' @export
@@ -20,14 +21,14 @@
 #'
 #' @examples t4.1 <- create_t4.1(bth_data, est_data, pops, date_var = dobyr, tablename = "Table_4_1")
 #'
-create_t4.1 <- function(data, est_data, pops, date_var, tablename = "Table_4_1"){
+create_t4.1 <- function(data, est_data, pops, date_var = "dobyr", tablename = "Table_4_1", output_path = NULL){
   curr_year <- data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
   years <- generate_year_sequence(curr_year)
 
   output <- data |>
-    filter(is.na(sbind) & !!sym(date_var) %in% years & sex != "not stated") |>
-    group_by(sex, !!sym(date_var)) |>
-    rename(Indicator = sex) |>
+    filter(is.na(birth1j) & !!sym(date_var) %in% years & birth2a != "not stated") |>
+    group_by(birth2a, !!sym(date_var)) |>
+    rename(Indicator = birth2a) |>
     summarise(total = n(), .groups = "drop")
 
   output_counts <- output |>
@@ -57,14 +58,14 @@ create_t4.1 <- function(data, est_data, pops, date_var, tablename = "Table_4_1")
   population <- pops |>
     pivot_longer(cols = starts_with("population_"), names_to = "year", values_to = "count") |>
     mutate(year = as.integer(gsub("population_", "", year))) |>
-    group_by(year, sex) |>
+    group_by(year, birth2a) |>
     summarise(total_pop = sum(count), .groups = "drop") |>
-    arrange(sex)
+    arrange(birth2a)
 
   output <- output %>%
     rename("year" = all_of(date_var))
 
-  output_cbr <- left_join(output, population, by = c("year" = "year", "Indicator" = "sex")) |>
+  output_cbr <- left_join(output, population, by = c("year" = "year", "Indicator" = "birth2a")) |>
     group_by(year) |>
     summarise(total = sum(total), total_pop = sum(total_pop), .groups = "drop") |>
     mutate(cbr = round((total / total_pop) * 1000, 2)) |>
@@ -89,11 +90,10 @@ create_t4.1 <- function(data, est_data, pops, date_var, tablename = "Table_4_1")
 
   output <- bind_rows(output_counts, output_comp, output_ratio, output_cbr, fertility_rates)
 
-  output_dir <- "./outputs"
-  if (!dir.exists(output_dir)) {
-    dir.create(output_dir, recursive = TRUE)
+  if (is.null(output_path)){
+    return(output)
+  } else {
+    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
+    return(output)
   }
-
-  write.csv(output, paste0(output_dir, "/", tablename, ".csv"), row.names = FALSE)
-  return(output)
 }

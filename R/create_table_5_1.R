@@ -22,9 +22,9 @@ create_t5.1 <- function(data, num_yrs=5, tablename = "Table_5_1"){
   years <- generate_year_sequence(max_year, num_yrs = num_yrs)
 
   output <- data |>
-    filter(dodyr %in% years & sex != "not stated")|>
-    group_by(sex, dodyr) |>
-    rename(Indicator = sex) |>
+    filter(dodyr %in% years & birth2a != "not stated")|>
+    group_by(birth2a, dodyr) |>
+    rename(Indicator = birth2a) |>
     summarise(total = n())
 
 output_counts <- output |>
@@ -46,12 +46,12 @@ output_counts <- output_counts |>
     pivot_wider(names_from = dodyr, values_from = counts)
 
   population <- pops |>
-    select(starts_with("popu"), sex) |>
+    select(starts_with("popu"), birth2a) |>
     pivot_longer(cols = starts_with("popu"), names_to = "year", values_to = "count" ) |>
     mutate(year = gsub("population_", "", year)) |>
-    group_by(year, sex) |>
+    group_by(year, birth2a) |>
     summarise(total_pop = sum(count)) |>
-    arrange(sex)
+    arrange(birth2a)
 
   output_cdr <- cbind(output, population) |>
     select(year, Indicator, total, total_pop ) |>
