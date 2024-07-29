@@ -21,6 +21,10 @@ convert_config_args <- function(args) {
   if (!is.null(args$est_data) && is.character(args$est_data)) {
     args$est_data <- get(args$est_data, envir = .GlobalEnv)
   }
+  # Convert cause to the actual data frame if it's a string representing a variable name
+  if (!is.null(args$cause) && is.character(args$cause)) {
+    args$cause <- get(args$cause, envir = .GlobalEnv)
+  }
   # Convert pops to the actual data frame if it's a string representing a variable name
   if (!is.null(args$pops) && is.character(args$pops)) {
     args$pops <- get(args$pops, envir = .GlobalEnv)
