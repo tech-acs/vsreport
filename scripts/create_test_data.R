@@ -20,7 +20,7 @@ generate_data <- function(var_info) {
            "Type of place of occurrence (hospital, home, etc.)" = sample(c("Hospital", "Home", "Clinic", "Other"), n, replace = TRUE),
            "Sex" = sample(c("male", "female", "not stated"), n, replace = TRUE),
            "Date of birth" = sample(seq(as.Date('1970/01/01'), as.Date('2005/01/01'), by="day"), n, replace = TRUE),
-           "Age" = sample(18:50, n, replace = TRUE),
+           "Age" = sample(1:90, n, replace = TRUE),
            "Still Birth Indicator" = sample(c("1", NA), n, replace = TRUE),
            "Marital status" = sample(c("Single", "Married", "Widowed", "Divorced"), n, replace = TRUE),
            "Marital status (previous)" = sample(c("Single", "Widowed", "Divorced"), n, replace = TRUE),
