@@ -1,7 +1,7 @@
 Package: crvsreportpackage
 Type: Package
 Title: Package for CRVS Report
-Version: 0.2.2
+Version: 0.2.3
 Authors@R: c(person(given="Tesfaye",
          family="Belay",
          role=c("aut","cre"),
@@ -49,6 +49,7 @@ Imports:
     purrr,
     reactable,
     readr,
+    readxl,
     renv,
     rlang,
     sf,
