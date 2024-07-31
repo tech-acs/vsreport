@@ -1,5 +1,9 @@
 # crvsreportpackage
 
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
 ## Overview
 
 This package contains some useful functions to create a crvs report.
@@ -27,6 +31,9 @@ You need to provide the repository address in the format username/repository.
 devtools::install_github("tech-acs/crvsreportpackage")
 ```
 
+During this installation, you will be asked to install some required packages that are used within `crvsreportpackage`.
+This might take a minute or two.
+
 ### Use the `crvsreportpackage` in your Script
 
 Once you have installed the package, here is a basic example of how to use
@@ -41,75 +48,9 @@ age_grp_80 <- derive_age_groups(ageinyrs,
                                         step_size = 5, under_1 = TRUE)
 ```
 
-## Developer Installation
-
-If you want to develop the package, you may want to consider cloning the repository and following the steps below to have the correct environment to improve the package. First, install the `crvsreportpackage` from GitHub, then ensure all package dependencies are correctly managed and installed using `renv`:
-
-1.__Clone the repository__:
-
-```sh
-git clone https://github.com/tech-acs/crvsreportpackage.git
-cd crvsreportpackage
-```
-
-2.__Initialize the `renv` environment__: Upon first entering the package directory, `renv` will activate the specific package environment defined for `crvsreportpackage`. You need to run the following R commands to restore the required packages:
-
-```R
-install.packages("renv")
-renv::restore()
-```
-
-This will read the `renv.lock` file which contains the dependencies and install the correct versions of all required packages.
-
-3.__Install the package__: Once the environment is set up, you can install the package using:
-
-```R
-devtools::install()
-```
-
-By following these steps, you will ensure that you have all the necessary dependencies and the correct versions installed, allowing `crvsreportpackage` to function as intended. It will also mean you can now open the project and develop the package further.
-
-## Maintenance
-
-Once you have made significant changes to the package, it might be worth considering changing the package version.
-This can be done in the DESCRIPTION file, bumping up the `Version` variable.
-In order to rebuild and update the `crvsreportpackage` after making some changes to the functions in it follow these steps:
-
-```r
-# Remove the installed version of the package
-remove.packages("crvsreportpackage")
-
-# Clear your R environment
-rm(list = ls())
-
-# Restart R session (do this manually or with RStudio shortcut Ctrl+Shift+F10)
-
-# Initialize renv if not already done
-if (!"renv" %in% installed.packages()) {
-  install.packages("renv")
-}
-library(renv)
-
-# Restore the environment
-renv::restore()
-
-# Update the lockfile
-renv::snapshot()
-
-# Recreate documentation and rebuild the package
-library(devtools)
-document()  # Generates the NAMESPACE file and documentation using roxygen2
-build()     # Builds the package
-install()   # Installs the package
-```
-
-After these steps the package should be installed with the latest changes to the functions.
-This should mean the package is in the right state to be updated on the online repo.
-
 ## Documentation
 
-We are currently working on our documentation, this will soon be available in
-website format.
+The documentation for the package is available in the website link that should be highlighted on the main page of the repository on the top right.
 
 ## Contributing
 
