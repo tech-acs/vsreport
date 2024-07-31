@@ -15,45 +15,93 @@ vignette: >
 CRVS reports from record level data. It will produce tables in line with the
 best practice for CRVS reports.
 
-## Installation
+## Developer Installation
 
-You can install this development version from GitHub, you can use the `devtools`
-package:
+If you want to develop the package, you may want to consider cloning the repository and following the steps below to have the correct environment to improve the package. First, install the `crvsreportpackage` from GitHub, then ensure all package dependencies are correctly managed and installed using `renv`:
 
-```r
+1.__Clone the repository__:
 
-# Install devtools if you don't already have it
-install.packages(devtools)
-
-# Install the crvsreportpackage from GitHub
-devtools::install_github("tech-acs/crvsreportpackage")
+```sh
+git clone https://github.com/tech-acs/crvsreportpackage.git
+cd crvsreportpackage
 ```
 
-Once installed, you can load the package using:
+2.__Initialize the `renv` environment__: Upon first entering the package directory, `renv` will activate the specific package environment defined for `crvsreportpackage`. You need to run the following R commands to restore the required packages:
 
-```r
-library(crvsreportpackage)
+```R
+install.packages("renv")
+renv::restore()
 ```
 
-## Usage
+This will read the `renv.lock` file which contains the dependencies and install the correct versions of all required packages.
 
-This should outline how someone can use the package to build a particular table
-or check what tables they can produce given the data they have.
+3.__Install the package__: Once the environment is set up, you can install the package using:
+
+```R
+devtools::install()
+```
+
+By following these steps, you will ensure that you have all the necessary dependencies and the correct versions installed, allowing `crvsreportpackage` to function as intended. It will also mean you can now open the project and develop the package further.
+
+## Maintenance
+
+Once you have made significant changes to the package, it might be worth considering changing the package version.
+This can be done in the DESCRIPTION file, bumping up the `Version` variable.
+In order to rebuild and update the `crvsreportpackage` after making some changes to the functions in it follow these steps:
+
+```r
+# Remove the installed version of the package
+remove.packages("crvsreportpackage")
+
+# Clear your R environment
+rm(list = ls())
+
+# Restart R session (do this manually or with RStudio shortcut Ctrl+Shift+F10)
+
+# Initialize renv if not already done
+if (!"renv" %in% installed.packages()) {
+  install.packages("renv")
+}
+library(renv)
+
+# Restore the environment
+renv::restore()
+
+# Update the lockfile
+renv::snapshot()
+
+# Recreate documentation and rebuild the package
+library(devtools)
+document()  # Generates the NAMESPACE file and documentation using roxygen2
+build()     # Builds the package
+install()   # Installs the package
+```
+
+After these steps the package should be installed with the latest changes to the functions.
+This should mean the package is in the right state to be updated on the online repo.
+
+Before you make any big changes, double check that all the unit test are working
+as expected, by running them manually:
+
+```R
+testthat::test_dir("tests/testthat")
+```
 
 ## Data Included in the Package
 
-Ideally the package will have some test data that is synthetic so that people
-can see what the desired input data should look like as well as see how the
-validation checks take place as well as test outputs.
+The package has four test datasets, one for each of:
+
+- Birth data: Use the `read_sample_birth_data()` function.
+- Death data: Use the `read_sample_death_data()` function.
+- Marriages data: Use the `read_sample_marriage_data()` function.
+- Divorce data: Use the `read_sample_divorce_data()` function.
 
 This test data should also serve as a good tool in order to test existing features
 or develop new ones.
 
-## Conclusion
-
-A short bit on information on what the package can be used for.
-
 ## Further Reading
 
-Links to some of the material that shows how to implement this, such as the
-report_crvs codebase and the best practice documents for CRVS reports.
+[R packages](https://r-pkgs.org/) by Hadley Wickham and Jenny Bryan is the canonical guide to R package development.
+
+The [PsyTeachR](https://psyteachr.github.io) Coding Club at the University of Glasgow School of Psychology & Neuroscience also have some really [helpful resources](
+https://psyteachr.github.io/intro-r-pkgs/) (a book, YouTube videos) on building R packages.
