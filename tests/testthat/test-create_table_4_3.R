@@ -20,7 +20,7 @@ test_that("create_t4.3 function works correctly", {
   expect_true(file.exists("outputs/Table_4_3.csv"))
 
   # Check for expected columns in the result
-  expected_cols <- c("birth1c", "Region_A", "Region_B", "Region_D", "Region_C", "Total")
+  expected_cols <- c("birth1c", "Other location", "Same as place of occurrence", "Total")
   expect_equal(colnames(result), expected_cols)
 
   # Clean up the generated file after the test

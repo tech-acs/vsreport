@@ -17,6 +17,14 @@ convert_config_args <- function(args) {
   if (!is.null(args$data) && is.character(args$data)) {
     args$data <- get(args$data, envir = .GlobalEnv)
   }
+  # Convert death data to the actual data frame if it's a string representing a variable name
+  if (!is.null(args$death_data) && is.character(args$death_data)) {
+    args$death_data <- get(args$death_data, envir = .GlobalEnv)
+  }
+  # Convert birth data to the actual data frame if it's a string representing a variable name
+  if (!is.null(args$birth_data) && is.character(args$birth_data)) {
+    args$birth_data <- get(args$birth_data, envir = .GlobalEnv)
+  }
   # Convert est_data to the actual data frame if it's a string representing a variable name
   if (!is.null(args$est_data) && is.character(args$est_data)) {
     args$est_data <- get(args$est_data, envir = .GlobalEnv)
