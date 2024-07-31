@@ -8,7 +8,7 @@ create_t6.2(
   death_data,
   cause,
   date_var = "dodyr",
-  tablename = "Table_6_1",
+  tablename = "Table_6_2",
   output_path = NULL
 )
 }
