@@ -7,6 +7,8 @@
 #' @param population_data The population data.
 #' @param date_var The variable to use the year from
 #' @param data_year A particular year to choose from
+#' @param tablename name of the table being saved as a csv file
+#' @param output_path The path to export the generated table
 #'
 #' @return A data frame containing the summary statistics on marriages and divorces by year.
 #'
@@ -16,9 +18,9 @@
 #' @import tidyr
 #'
 #' @examples
-#' create_t7.1(marriage_data, divorce_data, population_data)
-create_t7.1 <- function(marriage_data, divorce_data, population_data, date_var = "domyr", data_year = NA) {
-  date_var <- enquo(date_var)
+#' result_table <- create_t7.1(marriage_data, divorce_data, population_data, tablename = "Table_7_1", output_path = "outputs/")
+create_t7.1 <- function(marriage_data, divorce_data, population_data, date_var = "domyr", data_year = NA, tablename = "Table_7_1", output_path = NULL){
+  #date_var <- enquo(date_var)
 
   # if data_year is not provided, take the latest year in the data
   if (is.na(data_year)){
@@ -37,34 +39,12 @@ create_t7.1 <- function(marriage_data, divorce_data, population_data, date_var =
     ) %>%
     rename("year" = !!date_var)
 
-  # Process divorce data
-  divorce_summary <- divorce_data %>%
-    filter(!!date_var %in% years) %>%
-    group_by(!!date_var) %>%
-    summarise(
-      num_divorces = n(),
-      avg_age_divorce_male = mean(divorce3b, na.rm = TRUE),
-      avg_age_divorce_female = mean(divorce2b, na.rm = TRUE)
-    ) %>%
-    rename("year" = !!date_var)
+  final_output <- marriage_summary
 
-  # Combine the summaries
-  summary_table <- marriage_summary %>%
-    full_join(divorce_summary, by = "year") %>%
-    arrange(year)
-
-  # Calculate crude rates using population data
-  population_data_long <- population_data %>%
-    gather(year, population, -birth1c, -birth2a, -age) %>%
-    mutate(year = as.integer(gsub("population_", "", year)))
-
-  summary_table <- summary_table %>%
-    left_join(population_data_long %>% filter(age == 0) %>% select(year, population), by = c("year" = "year")) %>%
-    mutate(
-      crude_marriage_rate = (num_marriages / population) * 1000,
-      crude_divorce_rate = (num_divorces / population) * 1000
-    ) %>%
-    select(year, num_marriages, crude_marriage_rate, avg_age_first_marriage_male, avg_age_first_marriage_female, num_divorces, crude_divorce_rate, avg_age_divorce_male, avg_age_divorce_female)
-
-  return(summary_table)
+  if (is.null(output_path)){
+    return(final_output)
+  } else {
+    write.csv(final_output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
+    return(final_output)
+  }
 }

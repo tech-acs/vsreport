@@ -16,7 +16,7 @@
 #'
 #' @examples
 #' t6.2 <- create_t6.2(dth_data, cause)
-create_t6.2 <- function(death_data, cause, date_var = 'dodyr', tablename = "Table_6_1", output_path = NULL){
+create_t6.2 <- function(death_data, cause, date_var = 'dodyr', tablename = "Table_6_2", output_path = NULL){
   # Join death_data with cause descriptions
   death_data <- death_data %>%
     left_join(cause, by = c("death1g" = "code"))
