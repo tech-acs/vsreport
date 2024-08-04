@@ -14,9 +14,9 @@ test_that("create_t4.1 function works correctly", {
   bth_data <- construct_timeliness(bth_data)
   # Add dobyr
   bth_data <- construct_year(bth_data, date_col = "birth1a", year_col = "dobyr")
-  # Add boryr
+  # Add doryr
   bth_data <- construct_year(bth_data, date_col = "birth1b",  year_col = "doryr")
-  # Add empty birth1j
+  # Add empty birth1j (stillbirth)
   bth_data <- construct_empty_var(bth_data)
   # Add fertility age groups
   bth_data <- construct_age_group(bth_data, "birth3b")
