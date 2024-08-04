@@ -1,10 +1,13 @@
 test_that("create_t4.1 function works correctly", {
+  working_dir <- getwd()
+  setwd("../../")
+
   # Sample data
   bth_data <- data.frame(
-    dobyr = c(2018, 2018, 2019, 2019, 2020),
-    fert_age_grp = c("15-19", "15-19", "15-19", "15-19", "15-19"),
-    birth1j = c(NA, NA, NA, NA, NA),
-    birth2a = c("male", "female", "male", "female", "male")
+    dobyr = c(2018, 2018, 2019, 2019, 2020, 2018, 2018, 2019, 2019, 2020),
+    fert_age_grp = c("15-19", "15-19", "15-19", "15-19", "15-19", "20-24", "20-24", "20-24", "20-24", "20-24"),
+    birth1j = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
+    birth2a = c("male", "female", "male", "female", "male", "male","male","female","female","male")
   )
 
   est_data <- data.frame(
@@ -14,11 +17,11 @@ test_that("create_t4.1 function works correctly", {
   )
 
   pops <- data.frame(
-    population_2018 = c(5000, 6000),
-    population_2019 = c(5200, 6200),
-    population_2020 = c(5400, 6400),
-    birth2a = c("male", "female"),
-    fert_age_grp = c("15-19", "15-19")
+    population_2018 = c(5000, 6000, 4500, 5500),
+    population_2019 = c(5200, 6200, 4500, 5500),
+    population_2020 = c(5400, 6400, 4500, 5500),
+    birth2a = c("male", "female", "male", "female"),
+    fert_age_grp = c("15-19", "15-19","20-24","20-24")
   )
 
   # Call the function
@@ -36,4 +39,6 @@ test_that("create_t4.1 function works correctly", {
 
   # Clean up the generated file after the test
   unlink("./outputs/Table_4_1.csv")
+
+  setwd(working_dir)
 })
