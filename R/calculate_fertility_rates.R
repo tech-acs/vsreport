@@ -36,7 +36,7 @@ output <- merge(output, gfr_pops, by = "fert_age_grp") |>
   select(fert_age_grp, starts_with("20"))
 
 total_fertility_rates <- output |>
-  summarise(across(starts_with("20"), sum)) |>
+  summarise(across(starts_with("20"), function(x) sum(x,na.rm=T) )) |>
   mutate(fert_age_grp = 'total') |>
   mutate(round_excel(across(starts_with("20"), ~ . * 5 / 1000),2)) |>
   select(fert_age_grp, starts_with("20"))
