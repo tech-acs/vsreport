@@ -21,7 +21,7 @@ h3 {
   border-bottom: 0; 
 }
 
-.container {
+#table2 {
   width:100%;
   max-width:none;
   padding-left:0;
@@ -73,7 +73,7 @@ variables_to_outputs <- read_csv("data/variables_to_outputs.csv") |>
     select(event, output_id_old = cat, output_type, variable_id, variable_name, characteristic)
 data <- SharedData$new(variables_to_outputs)
 
-div(class = "container-fluid",
+div(id = "table2", class = "container-fluid",
     div(class = "row",
         h3("Table 2: Mapping variables to Vital Statistics outputs"),
         fluidRow(
