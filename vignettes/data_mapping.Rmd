@@ -20,6 +20,13 @@ knitr::opts_chunk$set(
 h3 { 
   border-bottom: 0; 
 }
+
+.container {
+  width:100%;
+  max-width:none;
+  padding-left:0;
+  padding-right:0
+}
 ```
 
 
@@ -48,7 +55,7 @@ reactable(variables,
           compact = TRUE,
           ) -> table
 
-prependContent(table, h3(class = "title", "Table 1: Variables required for CRVS outputs"))
+prependContent(table, h3(class = "title", "Table 1: Variables required for Vital Statistics outputs"))
 ```
 </br>
 
@@ -68,7 +75,7 @@ data <- SharedData$new(variables_to_outputs)
 
 div(class = "container-fluid",
     div(class = "row",
-        h3("Table 2: Mapping variables to CRVS outputs"),
+        h3("Table 2: Mapping variables to Vital Statistics outputs"),
         fluidRow(
           column(
             3,
