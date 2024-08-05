@@ -1,8 +1,8 @@
 ---
-title: "Mapping variables to CRVS tables and figures"
+title: "Mapping variables to outputs"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Mapping variables to CRVS tables and figures}
+  %\VignetteIndexEntry{Mapping variables to outputs}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -16,52 +16,59 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{css, echo=FALSE}
+h3 { 
+  border-bottom: 0; 
+}
+```
+
+
 ```{r setup, echo = FALSE}
 library(tidyverse) ; library(reactable) ; library(htmlwidgets) ; library(shiny) ; library(crosstalk)
 ```
 
-There are several variables required to create the tables and figures included in a Civil Registration and Vital Statistics (CRVS) report. This vignette presents all of the necessary variables and maps them to the corresponding tables and figures.
+There are several civil registration variables required to create the tables and figures included in a Vital Statistics report. This vignette presents all of the necessary variables and maps them to the corresponding tables and figures.
 
-Table 1 shows all of the variables needed to populate the tables and figures required in the CRVS report. The table can be filtered by event registration type (Birth, Death, Marriage, Divorce) and by characteristic (Newborn, Mother, Decedent, Bride, Groom, Wife and Husband).
-
-The input data from civil registration systems need to be structured following the variable names and data types listed in Table 1.
+Table 1 shows all of the civil registration variables needed to populate the tables and figures required in a Vital Statistics report. The rows can be expanded by event registration type (Birth, Death, Marriage, Divorce) and by characteristic (Newborn, Mother, Decedent, Bride, Groom, Wife and Husband).
 
 </br>
 ```{r variables, echo = FALSE}
 variables <- read_csv("data/data_dictionary.csv")
 
 reactable(variables,
-          filterable = TRUE,
           columns = list(
-            variable_id = colDef(name = "ID", filterable = FALSE),
-            variable_name = colDef(name = "Name", filterable = FALSE),
+            variable_id = colDef(name = "ID"),
+            variable_name = colDef(name = "Name"),
             event = colDef(name = "Event"),
             characteristic = colDef(name = "Characteristic"),
-            source = colDef(name = "Source", filterable = FALSE),
-            type = colDef(name = "Type", filterable = FALSE)
+            source = colDef(name = "Source"),
+            type = colDef(name = "Type")
             ),
-          defaultPageSize = 5
+          groupBy = c("event", "characteristic"),
+          compact = TRUE,
           ) -> table
 
-prependContent(table, strong(class = "title", "Table 1: Variables required for CRVS outputs"))
+prependContent(table, h3(class = "title", "Table 1: Variables required for CRVS outputs"))
 ```
 </br>
 
-The tables and figures for the CRVS report are split by event registration type: Birth, Death, Marriage and Divorce. Filter Table 2 by event and characteristic then click to expand the row to show the variables required for each output. Each table has a number in brackets which refers to the number of variables needed to build it.
+The input data from civil registration systems need to be structured following the variable names and data types listed in Table 1.
+
+The tables and figures for the vital statistics report are split by event registration type: Birth, Death, Marriage and Divorce. Filter Table 2 by event and characteristic then click to expand the row to show the variables required for each output. Each table has a number in brackets which refers to the number of variables needed to build it.
 
 </br>
 ```{r mapping, echo = FALSE}
 variables_to_outputs <- read_csv("data/variables_to_outputs.csv") |>
   mutate(event = fct_relevel(event, "Birth","Death","Marriage","Divorce"),
-         output_type = case_when(str_detect(output_id, "T") ~ "Table", TRUE ~ "Figure"),
+         output_type = case_when(str_detect(output_id_old, "T") ~ "Table", TRUE ~ "Figure"),
          output_type = fct_relevel(output_type, "Table", "Figure")) |>
-  unite("cat", output_id, output_name, sep = ": ") |>
-    select(event, output_id = cat, output_type, variable_id, variable_name, characteristic)
+  unite("cat", output_id_old, output_name, sep = ": ") |>
+    select(event, output_id_old = cat, output_type, variable_id, variable_name, characteristic)
 data <- SharedData$new(variables_to_outputs)
 
 div(class = "container-fluid",
     div(class = "row",
-        strong("Table 2: Mapping variables to CRVS outputs", style = "padding-top: 25px; margin-bottom: 20px;"),
+        h3("Table 2: Mapping variables to CRVS outputs"),
         fluidRow(
           column(
             3,
@@ -71,12 +78,12 @@ div(class = "container-fluid",
           column(
             9,
             reactable(data,
-                      groupBy = "output_id",
+                      groupBy = "output_id_old",
                       columns = list(
-                        output_id = colDef(name = "Output reference", aggregate = "unique"),
+                        output_id_old = colDef(name = "Output reference", aggregate = "unique"),
                         variable_id = colDef(name = "Variable ID"),
                         variable_name = colDef(name = "Variable name"),
-                        characteristic = colDef(name = "Characteristics"),
+                        characteristic = colDef(name = "Characteristic"),
                         event = colDef(show = FALSE),
                         output_type = colDef(show = FALSE)
                         ),
@@ -91,21 +98,20 @@ div(class = "container-fluid",
 ```
 </br>
 
-Once the appropriate variables have been prepared you can start to generate the tables. 
+Once the appropriate variables have been prepared you can start to generate the tables. For example, if you want to create Table 4.7 which is 'Live births by site of occurrence'. If you enter 'T4.7' into the search box in Table 2 you will see that there are 5 variables required:
 
-For example, we'd like to create Table 4.7 which is 'Births by site of delivery'. If you enter 'T4.7' into the search box in Table 2 you will see that there are 5 variables required:
-
-- Date of occurrence
-- Date of registration
-- Place of occurrence
-- Attendant at birth; and Type of place of occurrence (hospital, home, etc.).
+- birth1a (Date of occurrence, Event)
+- birth1b (Date of registration, Event)
+- birth1c (Place of occurrence, Event)
+- birth1h (Attendant at birth, Event)
+- birth1i (Type of place of occurrence (hospital, home, etc.), Event)
 
 Each of these variables correspond to the Birth registration event rather than characteristics of the Newborn or Mother.
 
 To create Table 4.7 we can run:
 
 ```{r, eval=FALSE}
-t4.7 <- create_table_4.7(bth_data, 
+t4_07 <- create_table_4.7(bth_data, 
                          dobyr, 
                          2022, 
                          tablename = "Table_4_7")
