@@ -1,7 +1,8 @@
 ---
 title: "Mapping variables to outputs"
-output: rmarkdown::html_vignette
-  toc: false
+output: 
+  rmarkdown::html_vignette:
+    toc: false
 vignette: >
   %\VignetteIndexEntry{Mapping variables to outputs}
   %\VignetteEngine{knitr::rmarkdown}
