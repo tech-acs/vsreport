@@ -19,132 +19,150 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup, echo=FALSE}
-library(tidyverse) ; library(tidygeocoder) ; library(sf) 
+library(tidyverse) ; library(reactable)
 ```
 
-Preparing civil registration data for tabulation with the crvsreportpackage is a crucial step but there are several simple routines in R that can help make it less time consuming.
+There are several simple routines that can help make the preparation of civil registration data for tabulation less time consuming. This vignette uses the [tidyverse](https://www.tidyverse.org/) suite of R packages to deal with common problems such as incorrect data types, duplicate rows, and missing values.
 
-The [tidyverse](https://www.tidyverse.org/) collection of packages contains a number of useful functions for cleaning data. In particular, the [forcats](https://forcats.tidyverse.org/index.html) package helps to manage factors and [lubridate](https://lubridate.tidyverse.org/) is handy when dealing with dates.
+We will use a synthetic dataset that has the appearance of civil registration data to experiment with. The states of Nigeria are used but otherwise the data are completely fictional.
 
-Let's load the suite of packages.
+*Our synthetic dataset*
+```{r, echo=FALSE}
+n <- 1000
+id <- sample(1:n)
+birth1a <- as.character(sample(seq(as.Date("2017/01/01"), as.Date("2024/01/01"), by = "day"), n, replace = TRUE)) # coerce to character
+birth1b <- sample(seq(as.Date("2017/01/01"), as.Date("2024/01/01"), by = "day"), n, replace = TRUE)
+birth1c <- sample(c("Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","Federal Capital Territory","Gombe","Imo","Jigawa" ,"Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nassarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara", ""), n, replace = TRUE)
+birth1g <- sample(c("Single", "Twin", "Triplet", "Quadruplet or higher"), n, replace = TRUE)
+birth1h <- sample(c("Doctor", "Nurse", "Midwife", "Other"), n, replace = TRUE)
+birth1i <- sample(c("Hospital", "Home", "Clinic", "Other", "Unknown", NA), n, replace = TRUE)
+birth2a <- sample(c("M", "F"), n, replace = TRUE)
+birth3b <- sample(0:90, n, replace = TRUE)
+birth3b[c(3, 5, 7)] <- NA # add some missing values
 
-```{r, eval=FALSE}
+df <- data.frame(id, birth1a, birth1b, birth1c, birth1g, birth1h, birth1i, birth2a, birth3b)
+df <- rbind(df, df[rep(1, 10), ]) # duplicate rows
+rownames(df) <- NULL
+
+reactable(df)
+```
+
+Before we start we need to load the [tidyverse](https://www.tidyverse.org/) package.
+```{r}
 library(tidyverse)
 ```
 
-Then we'll load the sample `bth_data` to practice with.
-
+Then we can inspect our dataset. 
 ```{r}
-# import .csv file
-bth_data <- read_csv("../inst/extdata/created_birth_data.csv")
-
-# print the first 10 rows
-slice(bth_data, 1:10)
+glimpse(df)
 ```
 
-## Factors
-### Show unique values in character variables
-If you want to quickly scan all the known values of character variables in your dataset run:
+There are `r ncol(df)` variables in our data:
+
+- `id`
+- `birth1a` (Date of occurrence, Event)
+- `birth1b` (Date of registration, Event)
+- `birth1c` (Place of occurrence, Event)
+- `birth1g` (Type of birth, Event)
+- `bith1h`  (Attendant at birth, Event)
+- `birth1i` (Type of place of occurrence, Event)
+- `birth2a` (Sex, Newborn)
+- `birth3b` (Age, Mother)
+
+The variable `birth1b` is of type date, `birth3b` integer, and the others are all character.
+
+## Characters as dates
+Dates can be inputted in a variety of formats such as "1 August 24", Aug 1, 2024", and "2024-08-01". Sometimes R will not be able to parse a date and will read it as a character. 
+
+The variable `birth1a` is a character but it should be a date. We can coerce it to a date by passing it to the `as.Date()` function and choosing the corresponding date format. `birth1a` follows the [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) standard for dates or 'YYYY-MM-DD' so we need to format the data with "%Y-%m-%d". 
+
 ```{r}
-map(select_if(bth_data, is.character), unique)
+df <- mutate(df, birth1a = as.Date(birth1a, format = "%Y-%m-%d"))
+class(df$birth1a)
 ```
 
-### Convert character variable to a factor
+*Date formats in R*
+
+```{r, echo=FALSE}
+date_formats <- tribble(
+  ~Symbol, ~Description, ~Example,
+  "%d", "Day as a number", "01-31",
+  "%a", "Abbreviated weekday", "Wed",
+  "%A", "Unabbreviated weekday", "Wednesday",
+  "%m", "Month as a number", "1-12",
+  "%b", "Abbreviated month", "Feb",
+  "%B", "Unabbreviated month", "February",
+  "%y", "2-digit year", "24",
+  "%Y", "4-digit year", "2024"
+)
+reactable(date_formats)
+```
+
+You can also use the [`ymd()`](https://lubridate.tidyverse.org/reference/ymd.html) function which more intuitively transforms the date into year, month, and day. 
+
+```{r, eval=FALSE}
+mutate(df, birth1a = ymd(birth1a))
+```
+
+## Dates out of sequence
+There may be inputting errors in the civil registration data such as the date of occurrence being recorded *after* the date of registration. To identify those records that are out of sync we can use a simple filter. The code below selects all of the rows where the date of occurrence is after the date of registration and counts them.
+
+```{r}
+filter(df, birth1a > birth1b) |> 
+  nrow()
+```
+
+## Duplicate rows
+We can identify duplicate rows by using the `id` variable which should be unique. The code below groups the data by `id` and then filters those with more than one row.
+```{r}
+df |> 
+  group_by(id) |> 
+  filter(n()>1)
+```
+
+## Characters as factors
 It is common practice to read known values of a variable as characters, hence `stringsAsFactors = FALSE`. However, once you have read in the data you may wish to convert a character variable into a factor.
 ```{r}
-# check data type
-class(bth_data$birth1g)
-# convert character variable to factor
-bth_data$birth1g <- as_factor(bth_data$birth1g)
-# check data type again
-class(bth_data$birth1g)
+df$birth1g <- as_factor(df$birth1g)
+class(df$birth1g)
 ```
 
-### Change order of levels
-Sometimes the order of levels in a factor variable is not very helpful. The [`fct_relevel()`](https://forcats.tidyverse.org/reference/fct_relevel.html) function allows you to customise the order of levels.
+## Wrong order of levels
+Sometimes the order of levels in a factor variable is not very helpful. The [`fct_relevel()`](https://forcats.tidyverse.org/reference/fct_relevel.html) function allows you to customise the order of levels. Here we reorder the values of `birth1g` (Type of birth) so that "Quadruplet or higher" comes last.
 ```{r}
-# check the levels of the factor
-bth_data$birth1g |> levels()
-# manually change the order of levels
-bth_data$birth1g |> fct_relevel("Single", "Twin", "Triplet", "Quadruplet or higher") |> levels()
+df$birth1g |> levels()
+df$birth1g |> fct_relevel("Single", "Twin", "Triplet", "Quadruplet or higher") |> levels()
 ```
 
-### Recode levels
-Sometimes values of a variable are coded incorrectly. The [`fct_recode()`](https://forcats.tidyverse.org/reference/fct_recode.html) function enables you to change factor levels by hand.
+## Unhelpfully coded values
+Sometimes values of a variable are coded unhelpfully. For example, the sex of a newborn baby may be recorded as "M" and "F" or 0 and 1.
 ```{r}
-bth_data$birth3l <- as_factor(bth_data$birth3l)
-bth_data$birth3l |>  levels()
-bth_data$birth3l |>  fct_recode("Lagos" = "RegionA", "Kano" = "RegionB") %>% levels()
+df$birth2a |> levels()
 ```
 
-## Dates
-There are a few derived variables needed for the CRVS report tables that require handling dates. For example, we might need to derive the age of a mother from her date of birth.
-
-### Convert a date to a year
+We can easily recode these so that they are more readable. The [`fct_recode()`](https://forcats.tidyverse.org/reference/fct_recode.html) function enables you to change factor levels by hand.
 ```{r}
-year("1998-07-18")
-```
-
-### Convert string to a date
-```{r}
-dmy("18.07.2024")
+df$birth2a |> 
+  fct_recode(Female = "F", Male = "M") |> 
+  levels()
 ```
 
 ## Missing data
-How we handle missing data is a key consideration: impute or drop values? But first we need to identify any missing values in the data.
-
-### Count number of missing values in each column
+Missing values are recorded in a variety of ways e.g. 999999, NULL, or even "". For example, the place of occurrence might not be recorded and left blank. We can recode these missing values to a more explicit NA using the [`na_if()`](https://dplyr.tidyverse.org/reference/na_if.html) function.
 ```{r}
-bth_data |> map_dbl(~sum(is.na(.)))
+df <- mutate(df, birth1c = na_if(birth1c, ""))
 ```
 
-### Convert selected string in single column to NA
-We have identified no missing values in our dataset. However, if they were present you could adapt the code below to the variable.
-```{r, eval=FALSE}
-bth_data |> mutate(col1 = na_if(col1, "Unknown"))
-```
-
-## Geospatial
-Simple point in polygon analysis can be useful to help identify which region a birth was registered in or whether a usual place of residence is urban or rural. To demonstrate we will load the states of Nigeria and identify which state the [National Bureau of Statistics](https://nigerianstat.gov.ng/) is located in.
-
-First we load the necessary packages.
+To identify how many missing values there are in each column we can run:
 ```{r}
-library(tidygeocoder) # for retrieving coordinates for a location
-library(sf) # for handling spatial data
+df |> map_dbl(~sum(is.na(.)))
 ```
 
-Then load the 36 states of Nigeria using vector boundary data supplied by [Natural Earth](https://www.naturalearthdata.com).
-```{r}
-states <- read_sf("data/nigeria.geojson")
-```
+There are `r sum(is.na(df$birth1c))` NA values in `birth1c`, `r sum(is.na(df$birth1i))` in `birth1i`, and `r sum(is.na(df$birth3b))` in `birth3b`. 
 
-Note that you can also retrieve the state boundaries of Nigeria (and any country) using the [rnaturalearth](https://docs.ropensci.org/rnaturalearth/) package.
-```{r, eval=FALSE}
-states <- ne_states(country = "nigeria", returnclass = "sf")
-```
-
-Then we will retrieve the coordinates (lat,lon) of the NBS head office using the `geo()` function from the [geocoder](https://jessecambon.github.io/tidygeocoder/index.html) package. We'll then convert it into an sf object.
+In cases where there are missing values in an integer variable we can impute them as an average. For example, there are `r sum(is.na(df$birth3b))` missing values in `birth3b` which is the age of the mother. We can impute the mean age with:
 
 ```{r}
-nbs <- geo("1 Wole Olanipekun St, Abuja, Nigeria", method = "arcgis", full_results = FALSE) |> 
-  st_as_sf(crs = 4326, coords = c("long", "lat"))
-```
-
-Load nbs
-
-```{r, echo=FALSE}
-nbs
-```
-
-Next, we'll plot the results.
-```{r}
-plot(states$geometry)
-plot(nbs$geometry, add = T, col = "red", pch = 16)
-```
-
-Finally, we can use the [`st_intersection()`](https://r-spatial.github.io/sf/reference/geos_binary_ops.html) function from the [sf](https://r-spatial.github.io/sf/index.html) package to identify the state the NBS sits within.
-
-```
-st_intersection(nbs, states) |> 
-  st_drop_geometry() # convert the results into a dataframe
+df <- df |> 
+  mutate(birth3b = case_when(is.na(birth3b) ~ as.integer(mean(birth3b, na.rm = TRUE)), TRUE ~ birth3b))
 ```
