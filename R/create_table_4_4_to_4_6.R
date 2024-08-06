@@ -33,6 +33,10 @@ create_t4.4_to_4_6 <- function(data, data_year = NA, col_var = fert_age_grp, by_
     data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
   }
 
+  # Ensure data for fer_age_group is handled as a straight string, not a factor
+  # Avoids issues with fert_age_grp
+  data$fert_age_grp <- as.character(data$fert_age_grp)
+
   if(rural_urban == "no"){
     output <- data |>
       filter(doryr == data_year & is.na(birth1j)) |>
