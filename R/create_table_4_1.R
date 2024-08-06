@@ -90,6 +90,9 @@ create_t4.1 <- function(data, est_data, pops, date_var = "dobyr", tablename = "T
 
   output <- bind_rows(output_counts, output_comp, output_ratio, output_cbr, fertility_rates)
 
+  # reorder output in correct year-column order
+  output <- as_tibble(cbind(output[,1], output[,as.character(years)]))
+
   if (is.null(output_path)){
     return(output)
   } else {
