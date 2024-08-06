@@ -3,15 +3,17 @@ test_that("create_t4.4_to_4_6 function works correctly", {
   setwd("../../")
 
   # Sample data
-  bth_data <- data.frame(
-    doryr = c(2022, 2022, 2022, 2022, 2022),
-    birth1j = c(NA, NA, NA, NA, NA),
-    fert_age_grp = c("15-19", "20-24", "25-29", "30-34", "35-39"),
-    birth1g = c("Single", "Multiple", "Single", "Single", "Multiple"),
-    birth3c = c("Married", "Single", "Married", "Single", "Married"),
-    birth3n = c("urban", "urban", "rural", "rural", "urban")
-  )
-
+  bth_data <- read.csv("inst/extdata/created_birth_data.csv", header = T)
+  # Add timeliness data
+  bth_data <- construct_timeliness(bth_data)
+  # Add dobyr
+  bth_data <- construct_year(bth_data, date_col = "birth1a", year_col = "dobyr")
+  # Add boryr
+  bth_data <- construct_year(bth_data, date_col = "birth1b",  year_col = "doryr")
+  # Add empty birth1j
+  bth_data <- construct_empty_var(bth_data)
+  # Add fertility age groups
+  bth_data <- construct_age_group(bth_data, "birth3b")
 
   result <- create_t4.4_to_4_6(bth_data, data_year = 2022, col_var = "fert_age_grp", by_var = "birth1g", rural_urban = "no", tablename = "Table_4_4", output_path = "outputs/")
 
@@ -19,8 +21,10 @@ test_that("create_t4.4_to_4_6 function works correctly", {
   expect_s3_class(result, "data.frame")
 
   # Check for expected columns in the result
-  expected_cols <- c("fert_age_grp", "Single", "Multiple", "Total")
-  expect_equal(colnames(result), expected_cols)
+  # Establish number of columns expected (as dependent on levels in birth1g)
+  # Number of columns expected is number of levels +2 (fert_age_grp, Total):
+  ncols_expected <- nlevels(factor(bth_data$birth1g)) + 2
+  expect_equal(ncol(result), ncols_expected)
 
   # Check if the file is written
   ### NOTE ONLY ONE OF THREE IS CHECKED CURRENTLY
