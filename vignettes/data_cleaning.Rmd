@@ -128,19 +128,14 @@ class(df$birth1g)
 ```
 
 ## Wrong order of levels
-Sometimes the order of levels in a factor variable is not very helpful. The [`fct_relevel()`](https://forcats.tidyverse.org/reference/fct_relevel.html) function allows you to customise the order of levels. Here we reorder the values of `birth1g` (Type of birth) so that "Quadruplet or higher" comes last.
+Sometimes the order of levels in a factor variable is not very helpful. The [`fct_relevel()`](https://forcats.tidyverse.org/reference/fct_relevel.html) function allows you to customise the order of levels. Here we reorder the values of `birth1g` (Type of birth) so that "Single" comes first.
 ```{r}
 df$birth1g |> levels()
 df$birth1g |> fct_relevel("Single", "Twin", "Triplet", "Quadruplet or higher") |> levels()
 ```
 
 ## Unhelpfully coded values
-Sometimes values of a variable are coded unhelpfully. For example, the sex of a newborn baby may be recorded as "M" and "F" or 0 and 1.
-```{r}
-df$birth2a |> levels()
-```
-
-We can easily recode these so that they are more readable. The [`fct_recode()`](https://forcats.tidyverse.org/reference/fct_recode.html) function enables you to change factor levels by hand.
+Often values of a variable are coded unhelpfully. For example, the sex of a newborn baby may be recorded as "M" and "F" or 0 and 1. We can easily recode these so that they are more readable. The [`fct_recode()`](https://forcats.tidyverse.org/reference/fct_recode.html) function enables you to change factor levels by hand.
 ```{r}
 df$birth2a |> 
   fct_recode(Female = "F", Male = "M") |> 
