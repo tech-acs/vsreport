@@ -23,7 +23,7 @@ img {
 ```
 
 ```{r setup, echo=FALSE}
-library(tidyverse); library(knitr); library(gt)
+library(tidyverse); library(gt)
 
 df <- tribble(
   ~fert_age_grp, ~total, ~proportion, ~adjusted_total,
@@ -60,7 +60,7 @@ Before formatting and styling the table it is a good idea to understand the stru
 We have some summary data for Table 3.11 from the [Vital Strategies report template](https://www.vitalstrategies.org/resources/production-of-a-vital-statistics-report/). 
 
 ```{r, echo=FALSE}
-df |> kable()
+df
 ```
 
 ## Simple table
