@@ -373,3 +373,5 @@ tbl |> gtsave("gt_table_3_11.docx")
 # to a PDF
 tbl |> gtsave("gt_table_3_11.pdf")
 ```
+
+**NB** if you want to export an editable table (rather than an image) to a Word document then run `gtsave("gt_table_3_11.rtf")`.
