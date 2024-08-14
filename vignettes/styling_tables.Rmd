@@ -57,7 +57,7 @@ Before formatting and styling the table it is a good idea to understand the stru
 - **Table footer**: text at the bottom of the table containing optional footnotes and source notes
 
 ## Summary data
-We have some summary data for Table 3.11 from the [Vital Strategies report template](https://www.vitalstrategies.org/resources/production-of-a-vital-statistics-report/). 
+We have some summary data for Table 3.11 (Redistribution of births with incomplete data on ‘age of mother’, year) from the [Vital Strategies report template](https://www.vitalstrategies.org/resources/production-of-a-vital-statistics-report). 
 
 ```{r, echo=FALSE}
 df
@@ -66,7 +66,7 @@ df
 ## Simple table
 The default **gt** table can be created using the [`gt()`](https://gt.rstudio.com/reference/gt.html) function. It is a simple table with **4** columns.
 ```{r}
-gt(df)
+df |> gt()
 ```
 
 ## Rows
@@ -96,9 +96,9 @@ tbl
 
 The table now only contains **3** columns because we assigned 'fert_age_grp' to the stub.
 
-If you wanted to create row groups you can use the [`tab_row_group()`](https://gt.rstudio.com/reference/tab_row_group.html) function. Suppose we wanted to combine '40-44', '45-49', and '50+' to create a '40+' group.
+If you wanted to combine particular rows you can use the [`tab_row_group()`](https://gt.rstudio.com/reference/tab_row_group.html) function. Suppose we wanted to create a '40+' group we would just supply a vector of the relevant age groups to the `rows` argument of `tab_row_group()`.
 
-```{r, eval=FALSE}
+```{r}
 tbl |> 
   tab_row_group(
     label = "40+",
@@ -107,7 +107,11 @@ tbl |>
   tab_row_group(
     label = "Under 40",
     rows = 1:6
-  )
+  ) |> 
+  tab_style(
+    style = cell_text(weight = "bold", style = "italic"),
+    locations = cells_row_groups()
+    )
 ```
 
 ## Label columns
@@ -233,6 +237,24 @@ tbl <- tbl |>
 tbl
 ```
 
+If we wanted to draw attention to a specific value we could also highlight it with a colour fill. Here we locate the target cell by passing the column name and row number to the `cells_body()` location helper function in `tab_style()`. 
+```{r}
+tbl |> 
+  tab_style(
+    style = cell_fill(color = "tomato", alpha = 0.5),
+    locations = cells_body(columns = total, rows = 4)
+    )
+```
+
+Highlighting the whole row would require identifying the relevant row.
+```{r}
+tbl |> 
+  tab_style(
+    style = cell_fill(color = "tomato", alpha = 0.5),
+    locations = cells_body(rows = fert_age_grp == "25-20")
+    )
+```
+
 ## Table styling
 We can style the whole table in a number of ways. For example, we can use the [`opt_table_font()`](https://gt.rstudio.com/reference/opt_table_font.html) function to specify a specific typeface.
 
@@ -266,10 +288,10 @@ tbl
 ```
 
 ## Create a theme
-We can bundle this table styling into a theme so that we can reuse it in a single function.
+A theme is a function that applies consistent table styling options to any table.
 
 ```{r}
-vs_theme <- function(tbl) {
+theme_vs <- function(tbl) {
   tbl |> 
     opt_table_font(font = google_font("Montserrat")) |>
     tab_options(
@@ -294,7 +316,7 @@ This can then be applied as:
 
 ```{r, eval=FALSE}
 tbl |> 
-  vs_theme()
+  theme_vs()
 ```
 
 ## Full code
