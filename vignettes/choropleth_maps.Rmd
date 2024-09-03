@@ -92,7 +92,7 @@ Different classification schemes can produce very different choropleth maps (see
 
 ## Data
 
-We will be using data provided by the [2021 Nigeria Multiple Indicators Cluster Survey (MICS)](9https://mics.unicef.org/sites/mics/files/Nigeria%20MICS%202021%20Statistical%20Snapshots_English.pdf) on the percentage of children under age 5 whose births are registered by each Nigerian state.
+We will be using data provided by the [2021 Nigeria Multiple Indicators Cluster Survey (MICS)](https://mics.unicef.org/sites/mics/files/Nigeria%20MICS%202021%20Statistical%20Snapshots_English.pdf) on the percentage of children under age 5 whose births are registered by each Nigerian state.
 
 ```{r}
 head(df)
@@ -106,7 +106,7 @@ The main package that we will be using to create choropleth maps is the [tmap](h
 install.packages("tmap")
 ```
 
-We will also being using the [sf](https://cran.r-project.org/web/packages/sf/index.html) package to load spatial data, [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html) for colour palettes and [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html) for data manipulation.
+We will also be using the [sf](https://cran.r-project.org/web/packages/sf/index.html) package to load spatial data, [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html) for colour palettes and [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html) for data manipulation.
 
 ```{r, eval=FALSE}
 library(tmap)
