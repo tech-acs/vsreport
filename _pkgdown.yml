@@ -11,6 +11,7 @@ articles:
   - data_mapping
   - table_templates
   - styling_tables
+  - choropleth_maps
 
 home:
   links:
