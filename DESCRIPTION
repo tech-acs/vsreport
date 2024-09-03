@@ -48,6 +48,7 @@ Imports:
     lubridate,
     pkgdown,
     purrr,
+    RColorBrewer,
     reactable,
     readr,
     readxl,
@@ -60,7 +61,8 @@ Imports:
     tidygeocoder,
     tidyr,
     tidyverse,
+    tmap,
     writexl
 URL: https://tech-acs.github.io/crvsreportpackage/
-Remotes:  
+Remotes: 
     rstudio/gt
