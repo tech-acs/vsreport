@@ -10,9 +10,9 @@
 #' @export
 #'
 #' @examples
-#' t5.2 <- create_t5_2(dth_data, date_var=dodyr, data_year = 2022, tablename = "Table_5_2")
+#' t5.2 <- create_t5.2(dth_data, date_var=dodyr, data_year = 2022, tablename = "Table_5_2")
 
-create_t5_2 <- function(data, date_var, data_year = NA, tablename = "Table_5_2"){
+create_t5.2 <- function(data, date_var, data_year = NA, tablename = "Table_5_2"){
 
   # if data_year is not provided, take the latest year in the data
   if (is.na(data_year)){
