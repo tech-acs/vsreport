@@ -90,14 +90,6 @@ The Modifiable Areal Unit Problem or MAUP (Openshaw, 1984) points out that the s
 3.**Classification schemes**    
 Different classification schemes can produce very different choropleth maps (see below). As the distibution of a histogram is sensitive to the size of its bins so the spatial distribution visualised in a choropleth map can be affected by its intervals. It is good practice to inspect the values of your variable in a histogram before deciding which classification scheme to adopt.
 
-## Data
-
-We will be using data provided by the [2021 Nigeria Multiple Indicators Cluster Survey (MICS)](https://mics.unicef.org/sites/mics/files/Nigeria%20MICS%202021%20Statistical%20Snapshots_English.pdf) on the percentage of children under age 5 whose births are registered by each Nigerian state.
-
-```{r}
-head(df)
-```
-
 ## Getting started
 
 The main package that we will be using to create choropleth maps is the [tmap](https://cran.r-project.org/web/packages/tmap/index.html) package. To install the package you can run:
@@ -135,7 +127,7 @@ If you prefer to download the files manually from the website you need to select
 1 States (36 + Federal Capital Territory)    
 2 Local Government Areas (774)    
 
-We will download 'level 1' in GeoJSON format by copying the URL and unzipping it. We can then use the `st_read()` function from the [**sf**](https://r-spatial.github.io/sf/) package to load the file into the R session. The sf package converts the GeoJSON file into a simple features object, a data frame with features stored in rows and attributes in columns. The feature geometries of the object are stored in a list-column at the end. These are the coordinates that describe the boundary of each state.
+We will download 'level 1' in GeoJSON format by copying the URL and unzipping it. We can then use the `st_read()` function from the **sf** package to load the file into the R session. The sf package converts the GeoJSON file into a simple features object, a data frame with features stored in rows and attributes in columns. The feature geometries of the object are stored in a list-column at the end. These are the coordinates that describe the boundary of each state.
 
 ```{r, eval=FALSE}
 download.file("https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_NGA_1.json.zip",
@@ -216,7 +208,13 @@ tm_shape(nigeria) +
 
 ## Joining data
 
-We have the vector boundaries of each state in Nigeria but we need some statistical data to create a choropleth map. Both our spatial data and our birth registration data share a matching **state** variable which we can use to join the datasets. To check that all of the state names are consistent between datasets we can run an anti join.
+We have the boundaries of each state in Nigeria but we need some statistical data to create a choropleth map. We will be using data provided by the [2021 Nigeria Multiple Indicators Cluster Survey (MICS)](https://mics.unicef.org/sites/mics/files/Nigeria%20MICS%202021%20Statistical%20Snapshots_English.pdf) on the percentage of children under age 5 whose births are registered by each Nigerian state.
+
+```{r}
+head(df)
+```
+
+Both our spatial data and our birth registration data share a matching **state** variable which we can use to join the datasets. To check that all of the state names are consistent between datasets we can run an anti join.
 
 ```{r}
 anti_join(nigeria, df, by = "state")
