@@ -81,13 +81,13 @@ Choropleth or thematic maps visualise the variation in the values of a variable 
 
 However, there are three key issues to consider before choosing to display your data in a choropleth map.
 
-1.**Counts or rates**    
+1. **Counts or rates**    
 Choropleth maps that visualise the distribution of counts are sensitive to population size. The population distribution will be mapped rather than the variable of interest. It is therefore recommended to map rates or percentages so that the population at risk is accounted for.
 
-2.**Modifiable Areal Unit Problem**   
+2. **Modifiable Areal Unit Problem**   
 The Modifiable Areal Unit Problem or MAUP (Openshaw, 1984) points out that the spatial distribution of values in a choropleth map may be a function of the size and shape of geographical areas. There is not much that we can do about MAUP but we need to be aware of its potential impact.
 
-3.**Classification schemes**    
+3. **Classification schemes**    
 Different classification schemes can produce very different choropleth maps (see below). As the distibution of a histogram is sensitive to the size of its bins so the spatial distribution visualised in a choropleth map can be affected by its intervals. It is good practice to inspect the values of your variable in a histogram before deciding which classification scheme to adopt.
 
 ## Data
@@ -115,17 +115,58 @@ library(RColorBrewer)
 library(dplyr)
 ```
 
+## Sourcing geospatial data
+
+Subnational administrative boundaries are available from two sources: [GADM](https://gadm.org) and [Natural Earth](https://www.naturalearthdata.com/). The data are free to use for non-commercial purposes.
+
+### GADM
+You can either download vector boundary files using the [`geodata`](https://cran.r-project.org/web/packages/geodata/) package or directly from the website. The function `gadm()` has two key arguments. You need to supply the three-letter [ISO code](https://www.iso.org/obp/ui/#search) to `country` and choose a `level` of administrative subdivision. 0 is the value for country and 1 is for the next administrative level down. 
+
+The code below loads the states of [Nigeria](https://gadm.org/maps/NGA.html).
+
+```{r, eval=FALSE}
+library(geodata)
+nigeria <- gadm(country = "NGA",  level = 1,  path = tempdir(), version = "latest")
+```
+
+If you prefer to download the files manually from the website you need to select 'Nigeria' from the [country dropdown](https://gadm.org/download_country.html) and then choose a file format. [GeoJSON](https://geojson.org/) is an open, non-proprietary format that is used across the Web. There are three administrative divisions available:
+
+0 National
+1 States (36 + Federal Capital Territory)
+2 Local Government Areas (774)
+
+We will download 'level 1' in GeoJSON format by copying the URL and unzipping it. We can then use the `st_read()` function from the **sf** package to load the file into the R session. The sf package converts the GeoJSON file into a simple features object, a data frame with features stored in rows and attributes in columns. The feature geometries of the object are stored in a list-column at the end. These are the coordinates that describe the boundary of each state.
+
+```{r. eval=FALSE}
+download.file("https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_NGA_1.json.zip",
+              "gadm41_NGA_1.json.zip")
+unzip("gadm41_NGA_1.json.zip")
+nigeria <- st_read("gadm41_NGA_1.json")
+```
+
+### Natural Earth
+Level 1 administrative boundaries are available from [Natural Earth](https://www.naturalearthdata.com/) using the `ne_states()` function from the [`rnaturalearth`](https://docs.ropensci.org/rnaturalearth/index.html) package.
+
+```{r, eval=FALSE}
+library(rnaturalearth)
+nigeria <- ne_states(country = "nigeria", returnclass = "sf")
+```
+
+You can also download subnational boundaries directly from the [Natural Earth](https://www.naturalearthdata.com/downloads/10m-cultural-vectors/) website. If you scroll down to 'Admin 1 – States, Provinces' you can download the [ESRI shapefile](https://doc.arcgis.com/en/arcgis-online/reference/shapefiles.htm) of first-order administrative boundaries for a number of countries. To obtain the states of Nigeria we need to filter the results by the ISO code.
+
+```{r. eval=FALSE}
+download.file("https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_1_states_provinces.zip", "ne_10m_admin_1_states_provinces.zip")
+unzip("ne_10m_admin_1_states_provinces.zip")
+nigeria <- st_read("ne_10m_admin_1_states_provinces.shp") |> 
+  filter(adm0_a3 == "NGA")
+```
+
 ## Loading geospatial data
-
-Administrative data typically come in vector format (points, lines, and polygons) as an [ESRI shapefile](https://doc.arcgis.com/en/arcgis-online/reference/shapefiles.htm) (.shp) or a [GeoJSON](https://geojson.org/) (.geojson, .json). The `st_read` function from the `sf` package can read either file format.
-
-Here we are loading a GeoJSON of all the states of Nigeria. The `sf` package converts the GeoJSON file into a simple features object, a data frame with features stored in rows and attributes in columns. The feature geometries of the object are stored in a list-column at the end. These are the coordinates that describe the boundary of each state.
+On loading, the R console prints out the number of features, the geometry type, dimensions, bounding box, and coordinate reference system (CRS). We can confirm that there are 37 features (states) and that the vector boundary layer is projected in the World Geodetic System 1984 (WGS84), with longitude and latitude units of decimal degrees.
 
 ```{r}
 nigeria <- st_read("data/nigeria.geojson")
 ```
-
-On loading, the R console prints out the number of features, the geometry type, dimensions, bounding box, and coordinate reference system (CRS). We can confirm that there are 37 features (states) and that the vector boundary layer is projected in the World Geodetic System 1984 (WGS84), with longitude and latitude units of decimal degrees.
 
 We can visualise the state boundaries using the base R `plot()` function. We just need to supply the **geometry** column.
 
