@@ -7,11 +7,8 @@ articles:
 - title: Articles
   navbar: ~
   contents:
-  - data_cleaning
   - data_mapping
   - table_templates
-  - styling_tables
-  - choropleth_maps
 
 home:
   links:
