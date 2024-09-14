@@ -1,9 +1,9 @@
-#' calcualtes age specific and total fertility rates per year
+#' Calcualtes age specific and total fertility rates per year.
 #'
 #' @param data births data frame
 #' @param pops population data frame
 #'
-#' @return tablulated age specific and total fertility rates per year
+#' @return A tablulated age specific and total fertility rates per year.
 #' @export
 #'
 #' @import stringr
