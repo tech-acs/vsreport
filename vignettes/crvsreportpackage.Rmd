@@ -1,7 +1,7 @@
 ---
 title: "Introduction to crvsreportpackage"
 author: "UNECA"
-date: "June 2024"
+date: "September 2024"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Introduction to crvsreportpackage}
@@ -17,7 +17,10 @@ best practice for CRVS reports.
 
 ## Developer Installation
 
-If you want to develop the package, you may want to consider cloning the repository and following the steps below to have the correct environment to improve the package. First, install the `crvsreportpackage` from GitHub, then ensure all package dependencies are correctly managed and installed using `renv`:
+If you want to develop the package, you may want to consider cloning the
+repository and following the steps below to have the correct environment
+to improve the package. First, install the `crvsreportpackage` from GitHub,
+then ensure all package dependencies are correctly managed and installed using `renv`:
 
 1.__Clone the repository__:
 
@@ -26,14 +29,17 @@ git clone https://github.com/tech-acs/crvsreportpackage.git
 cd crvsreportpackage
 ```
 
-2.__Initialize the `renv` environment__: Upon first entering the package directory, `renv` will activate the specific package environment defined for `crvsreportpackage`. You need to run the following R commands to restore the required packages:
+2.__Initialize the `renv` environment__: Upon first entering the package directory,
+`renv` will activate the specific package environment defined for `crvsreportpackage`.
+You need to run the following R commands to restore the required packages:
 
 ```R
 install.packages("renv")
 renv::restore()
 ```
 
-This will read the `renv.lock` file which contains the dependencies and install the correct versions of all required packages.
+This will read the `renv.lock` file which contains the dependencies and install
+the correct versions of all required packages.
 
 3.__Install the package__: Once the environment is set up, you can install the package using:
 

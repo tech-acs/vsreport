@@ -1,7 +1,7 @@
 Package: crvsreportpackage
 Type: Package
 Title: Package for CRVS Report
-Version: 0.2.3
+Version: 0.2.4
 Authors@R: c(person(given="Tesfaye",
          family="Belay",
          role=c("aut","cre"),
@@ -61,7 +61,6 @@ Imports:
     tidygeocoder,
     tidyr,
     tidyverse,
-    tmap,
     writexl
 URL: https://tech-acs.github.io/crvsreportpackage/
 Remotes: 
