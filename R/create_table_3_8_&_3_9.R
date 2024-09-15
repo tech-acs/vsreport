@@ -63,9 +63,9 @@ create_t3.8_and_t3.9 <- function(data, est_data, date_var, data_year=NA, by_var,
     rename(total_est = Total)
 
   output <- left_join(counts, ests, by = c("birth1c")) |>
-    mutate(f_comp = round_excel(female/female_est, 2),
-           m_comp = round_excel(male/male_est, 2),
-           t_comp = round_excel(Total/total_est, 2)) |>
+    mutate(f_comp = construct_round_excel(female/female_est, 2),
+           m_comp = construct_round_excel(male/male_est, 2),
+           t_comp = construct_round_excel(Total/total_est, 2)) |>
     mutate(f_adj = ceiling(female/f_comp),
            m_adj = ceiling(male/m_comp),
            t_adj = ceiling(Total/t_comp)) |>

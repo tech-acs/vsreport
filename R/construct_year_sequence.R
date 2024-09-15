@@ -1,6 +1,6 @@
-#' Generate year sequence
+#' Construct year sequence
 #'
-#' The generate_year_sequence function generates a sequence of consecutive years,
+#' The construct_year_sequence function generates a sequence of consecutive years,
 #' starting with the most recent year provided as input. The sequence includes
 #' the specified number of years, counting backwards from the latest year given.
 #'
@@ -11,9 +11,9 @@
 #' @export
 #'
 #' @examples
-#' generate_year_sequence(2023, 5)
+#' construct_year_sequence(2023, 5)
 
-generate_year_sequence <- function(latest_year, num_yrs = 5) {
+construct_year_sequence <- function(latest_year, num_yrs = 5) {
   # Check if the inputs are numeric
   if (!is.numeric(latest_year) || !is.numeric(num_yrs)) {
     stop("Both latest_year and num_yrs must be numeric")

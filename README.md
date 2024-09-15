@@ -50,7 +50,7 @@ __crvsreportpackage__:
 library(crvspackage)
 
 # Example Usage
-age_grp_80 <- derive_age_groups(ageinyrs, start_age = 5, max_band = 80,
+age_grp_80 <- construct_age_groups(ageinyrs, start_age = 5, max_band = 80,
                                         step_size = 5, under_1 = TRUE)
 ```
 

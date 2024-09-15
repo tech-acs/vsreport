@@ -23,7 +23,7 @@
 #'
 create_t4.1 <- function(data, est_data, pops, date_var = "dobyr", tablename = "Table_4_1", output_path = NULL){
   curr_year <- data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
-  years <- generate_year_sequence(curr_year)
+  years <- construct_year_sequence(curr_year)
 
   output <- data |>
     filter(is.na(birth1j) & !!sym(date_var) %in% years & birth2a != "not stated") |>

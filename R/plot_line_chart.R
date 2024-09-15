@@ -1,4 +1,4 @@
-#' Line chart
+#' Plot Line chart
 #'
 #' @description
 #' Produces a simple line chart in ggplot2 which can be customised for publication
@@ -26,8 +26,8 @@
 #' @import ggplot2
 #' @import rlang
 #'
-#' @examples vs_line_chart(data, x, y)
-vs_line_chart <- function(data, x, y, group, line_colour = "ByGroup", line_width = 1, xlab = NULL, ylab = NULL, title = NULL, subtitle = NULL, caption = NULL) {
+#' @examples plot_line_chart(data, x, y)
+plot_line_chart <- function(data, x, y, group, line_colour = "ByGroup", line_width = 1, xlab = NULL, ylab = NULL, title = NULL, subtitle = NULL, caption = NULL) {
 
   x_var <- deparse(substitute(x))
   y_var <- deparse(substitute(y))

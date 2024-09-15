@@ -18,7 +18,7 @@ create_t3.4_and_3.6 <- function(data, est_data, by_var, topic = NA, tablename = 
   max_value <- data %>% pull({{by_var}}) %>% max(na.rm = TRUE)
 
   counts <- data |>
-    filter(({{by_var}}) %in% generate_year_sequence(max_value) &
+    filter(({{by_var}}) %in% construct_year_sequence(max_value) &
              if (tolower(topic) == "births") is.na(birth1j) else TRUE) |>
     group_by({{by_var}}, birth2a) |>
     summarise(total = n())
@@ -31,13 +31,13 @@ create_t3.4_and_3.6 <- function(data, est_data, by_var, topic = NA, tablename = 
   output <- left_join(counts, ests, by= c("dobyr" = "year", "birth2a" = "birth2a"))
 
   output <- output %>%
-    mutate(completeness = round_excel((total / total_est) * 100, 2)) %>%
+    mutate(completeness = construct_round_excel((total / total_est) * 100, 2)) %>%
     pivot_wider(names_from = birth2a, values_from = c(total, total_est, completeness)) %>%
     replace_na(list(total_female = 0, total_male = 0, total_est_female = 0, total_est_male = 0, completeness_female = 0, completeness_male = 0)) %>%
     mutate(
       total_total = total_female + total_male,
       total_est_total = total_est_female + total_est_male,
-      completeness_total = round_excel((total_total / total_est_total) * 100, 2)
+      completeness_total = construct_round_excel((total_total / total_est_total) * 100, 2)
     ) %>%
     adorn_totals("row", name = "Grand total")
 

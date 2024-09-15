@@ -19,7 +19,7 @@
 create_t5.1 <- function(data, num_yrs=5, tablename = "Table_5_1"){
 
   max_year <- data %>% pull(dodyr) %>% max(na.rm = TRUE)
-  years <- generate_year_sequence(max_year, num_yrs = num_yrs)
+  years <- construct_year_sequence(max_year, num_yrs = num_yrs)
 
   output <- data |>
     filter(dodyr %in% years & birth2a != "not stated")|>
@@ -35,8 +35,8 @@ output_comp <- dth_est |>
     summarise(ftotal = sum(female), mtotal = sum(male))
 
 output_comp <- cbind(output_counts, output_comp) |>
-    mutate(male_comp = round_excel(male/mtotal*100, 1),
-           female_comp = round_excel(female/ftotal*100, 1)) |>
+    mutate(male_comp = construct_round_excel(male/mtotal*100, 1),
+           female_comp = construct_round_excel(female/ftotal*100, 1)) |>
     select(year, male_comp, female_comp) |>
     pivot_longer(cols = c(male_comp, female_comp), names_to = "Indicator", values_to =  "counts") |>
     pivot_wider(names_from = year, values_from = counts)
@@ -57,7 +57,7 @@ output_counts <- output_counts |>
     select(year, Indicator, total, total_pop ) |>
     group_by(year) |>
     summarise(total = sum(total), total_pop = sum(total_pop)) |>
-    mutate(cdr = round_excel((total/total_pop)*1000,2)) |>
+    mutate(cdr = construct_round_excel((total/total_pop)*1000,2)) |>
     select(year, cdr) |>
     mutate(Indicator = "CDR") |>
     pivot_wider(names_from = year, values_from = cdr)

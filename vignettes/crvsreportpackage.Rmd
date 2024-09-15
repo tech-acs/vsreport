@@ -53,7 +53,7 @@ __crvsreportpackage__:
 library(crvspackage)
 
 # Example Usage
-age_grp_80 <- derive_age_groups(ageinyrs, start_age = 5, max_band = 80,
+age_grp_80 <- construct_age_groups(ageinyrs, start_age = 5, max_band = 80,
                                         step_size = 5, under_1 = TRUE)
 ```
 
@@ -61,10 +61,10 @@ age_grp_80 <- derive_age_groups(ageinyrs, start_age = 5, max_band = 80,
 
 The package has four test datasets, one for each of:
 
-- Birth data: Use the `read_sample_birth_data()` function.
-- Death data: Use the `read_sample_death_data()` function.
-- Marriages data: Use the `read_sample_marriage_data()` function.
-- Divorce data: Use the `read_sample_divorce_data()` function.
+- Birth data: Use the `construct_sample_birth_data()` function.
+- Death data: Use the `construct_sample_death_data()` function.
+- Marriages data: Use the `construct_sample_marriage_data()` function.
+- Divorce data: Use the `construct_sample_divorce_data()` function.
 
 This test data should also serve as a good tool in order to test existing features
 or develop new ones.

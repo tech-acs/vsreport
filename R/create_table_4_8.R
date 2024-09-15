@@ -43,11 +43,11 @@ create_t4.8 <- function(data, est_data, pops, date_var, data_year = NA, by_var =
     summarise(total_pop = sum(!!sym(paste0("population_",data_year))))
 
   output <- left_join(output, est, by = "birth1c") |>
-    mutate(completeness = round_excel(total/est_total*100, 2)) |>
+    mutate(completeness = construct_round_excel(total/est_total*100, 2)) |>
     mutate(adjusted = floor(total/(completeness/100)))
 
   output <- left_join(output, pop, by = "birth1c") |>
-    mutate(cbr = round_excel(adjusted/total_pop*1000, 1)) |>
+    mutate(cbr = construct_round_excel(adjusted/total_pop*1000, 1)) |>
     select(birth1c, total, adjusted, cbr)
 
   if (is.null(output_path)){

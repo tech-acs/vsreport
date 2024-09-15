@@ -1,5 +1,5 @@
 
-#' @title derive_age_groups
+#' @title construct_age_groups
 #' @description  Derives agegroupings according to how the parameters are set.
 #'
 #' @param age_in_yrs_col name of the age in years variable used to derive group.
@@ -13,17 +13,17 @@
 #'
 #' @examples
 #' data <- data %>%
-#' mutate(AGEGROUP = derive_age_groups(AGEINYRS, start_age = 5, max_band = 95,
+#' mutate(AGEGROUP = construct_age_groups(AGEINYRS, start_age = 5, max_band = 95,
 #' step_size = 5, under_1 = TRUE))
 #' data <- data %>%
-#' mutate(AGEGROUP = derive_age_groups(AGEINYRS, start_age = 30, max_band = 95,
+#' mutate(AGEGROUP = construct_age_groups(AGEINYRS, start_age = 30, max_band = 95,
 #' step_size = 5, under_1 = FALSE))
 #'
 #' @import dplyr
 #'
 #' @export
 #'
-derive_age_groups <- function(age_in_yrs_col, start_age, max_band, step_size,
+construct_age_groups <- function(age_in_yrs_col, start_age, max_band, step_size,
                               under_1 = TRUE) {
   if(under_1 == TRUE) {
     intervals <- c(0, 1, seq(start_age, max_band, step_size), Inf)

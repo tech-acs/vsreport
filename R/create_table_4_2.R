@@ -31,7 +31,7 @@ create_t4.2 <- function(data, est_data, date_var = "dobyr", data_year = NA, tabl
     summarise(total = n()) |>
     pivot_wider(names_from = birth2a, values_from = total, values_fill = 0) |>
     adorn_totals(c("row","col")) |>
-    mutate(ratio = round_excel(male/female,1))
+    mutate(ratio = construct_round_excel(male/female,1))
 
   est <- est_data |>
     filter(year == data_year) |>
@@ -39,7 +39,7 @@ create_t4.2 <- function(data, est_data, date_var = "dobyr", data_year = NA, tabl
     summarise(total = sum(total))
 
   output <- left_join(output, est, by = c("birth1c")) |>
-    mutate(completeness = round_excel(Total/total*100, 1)) |>
+    mutate(completeness = construct_round_excel(Total/total*100, 1)) |>
     select("birth1c", "male", "female", "not stated", "Total", "ratio", "completeness")
 
   if (is.null(output_path)){

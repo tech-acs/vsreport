@@ -55,7 +55,7 @@ create_table_4_9_and_4_10 <- function(data, est_data, pops, data_year = NA,
     summarise(total_pop = sum(population_2022))
 
   output <- merge(output, popn, by = "fert_age_grp", all.x = TRUE) |>
-    mutate(asfr = round_excel(adjusted/total_pop*1000, 2))
+    mutate(asfr = construct_round_excel(adjusted/total_pop*1000, 2))
 
   if (is.null(output_path)){
     return(output)

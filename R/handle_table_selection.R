@@ -1,4 +1,4 @@
-#'@title select_tables
+#'@title Handle Table Selection
 #'
 #'@description A function that takes the user defined selection of tables to run from the config and will generate a list of tables to run.
 #'
@@ -14,7 +14,7 @@
 #'
 #'@export
 
-select_tables <- function(section_num, all_tables){
+handle_table_selection <- function(section_num, all_tables){
     # Extract all table_ids that start with the prefix
     matching_table_ids <- sapply(all_tables, function(x) {
     if (startsWith(x$table_id, section_num)) {

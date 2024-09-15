@@ -19,7 +19,7 @@
 #'
 create_t5.11 <- function(data, date_var, num_yrs = 5, tablename = NA){
   latest_year <- data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
-  years <- generate_year_sequence(latest_year = latest_year, num_yrs = num_yrs)
+  years <- construct_year_sequence(latest_year = latest_year, num_yrs = num_yrs)
 
   output <- data |>
     filter(!is.na(birth1j) & !!sym(date_var) %in% years) |>

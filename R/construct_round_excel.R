@@ -1,6 +1,6 @@
 # Authors@R: aspeyb
 #
-#'@title round_excel
+#'@title construct_round_excel
 #'
 #'@description A function to implement the Excel method of rounding.
 #'
@@ -13,11 +13,11 @@
 #'
 #'@return A rounded value or vector of values
 #'
-#'@examples round_excel(c(1.6, 5.9, 2.5), 0)
+#'@examples construct_round_excel(c(1.6, 5.9, 2.5), 0)
 #'
 #'@export
 
-round_excel <- function(x, n = 0){
+construct_round_excel <- function(x, n = 0){
   scale <- 10^n
   rounded <- trunc(x * scale + sign(x) * 0.5) / scale
 

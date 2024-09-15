@@ -15,8 +15,8 @@ test_that("construct_fertility_rates calculates age-specific and total fertility
     population_2020 = c(10000, 15000, 12000)
   )
 
-  # Dummy implementation of generate_year_sequence to ensure compatibility with the tests
-  generate_year_sequence <- function(curr_year) {
+  # Dummy implementation of construct_year_sequence to ensure compatibility with the tests
+  construct_year_sequence <- function(curr_year) {
     return(curr_year - 2:0)
   }
 
