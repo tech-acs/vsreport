@@ -61,7 +61,7 @@ create_table_4_9_and_4_10 <- function(data, est_data, pops, data_year = NA,
     return(output)
   } else {
     if (!dir.exists(output_path)) {
-      dir.create(output_dir, recursive = TRUE)
+      dir.create(output_path, recursive = TRUE)
     }
     write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
     return(output)
