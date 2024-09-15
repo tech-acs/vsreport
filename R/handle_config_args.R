@@ -1,4 +1,4 @@
-#'@title convert_config_args
+#'@title handle_config_args
 #'
 #'@description A function that takes the user defined arguments for the table functions and converts the format to include when calling the function.
 #'
@@ -8,11 +8,11 @@
 #'
 #'@return A list of arguments that can be passed into the functions.
 #'
-#'@examples convert_config_args(args)
+#'@examples handle_config_args(args)
 #'
 #'@export
 
-convert_config_args <- function(args) {
+handle_config_args <- function(args) {
   # Convert data to the actual data frame if it's a string representing a variable name
   if (!is.null(args$data) && is.character(args$data)) {
     args$data <- get(args$data, envir = .GlobalEnv)
