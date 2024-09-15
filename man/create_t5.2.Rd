@@ -35,7 +35,7 @@ Variables needed per record:
 
 - `dodyr`: Year of death.
 
-- `death2o`: Region of death.
+- `death2o`: Region of usual residence.
 
 - `death2c`: Sex of the deceased.
 }
@@ -43,5 +43,4 @@ Variables needed per record:
 death_data <- construct_sample_death_data()
 death_data <- construct_year(death_data, date_col = "death1a", year_col = "dodyr")
 table_5_2 <- create_t5.2(death_data, date_var="dodyr", data_year = 2022)
-View(table_5_2)
 }

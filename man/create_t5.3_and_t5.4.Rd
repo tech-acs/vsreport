@@ -2,41 +2,50 @@
 % Please edit documentation in R/create_table_5_3_&_5_4.R
 \name{create_t5.3_and_t5.4}
 \alias{create_t5.3_and_t5.4}
-\title{Calculates Tables 5.3 & 5.4}
+\title{Creates Tables 5.3 & 5.4}
 \usage{
 create_t5.3_and_t5.4(
   data,
-  date_var,
+  sex_filter = "male",
+  date_var = "dodyr",
   data_year = NA,
-  sex_filter = NA,
   tablename = "Table_5_3",
   output_path = NULL
 )
 }
 \arguments{
-\item{data}{data frame being used}
+\item{data}{Death records data frame.}
 
-\item{date_var}{occurrence data being used e.g. dobyr, dodyr etc}
+\item{sex_filter}{Sex to filter by. Defaults to "male".}
 
-\item{data_year}{year the data is for}
+\item{date_var}{Event year column of the dataframe. Defaults to "dodyr".}
 
-\item{sex_filter}{male or female}
+\item{data_year}{The year to report on. Defaults to the last in the data.}
 
-\item{tablename}{name of the table being saved as a csv file}
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
-data frame of tabulated results
+A data frame of tabulated results
 }
 \description{
 Table 5.3 Deaths by place of occurrence and place of usual residence of decedent (males)
+
 Table 5.4 Deaths by place of occurrence and place of usual residence of decedent (females)
 
-Variables needed:
-- Year of Death: passed through date_var (default is "dodyr")
-- Region of Death: Has to be "death2o"
-- Sex of Deceased: Has to be "death2c"
+Variables needed per record:
+
+- `dodyr`: Year of death.
+
+- `death1c`: Region of death.
+
+- `death2o`: Region of usual residence.
+
+- `death2c`: Sex of the deceased.
 }
 \examples{
-t5.3 <- create_t5.3_and_t5.4(dth_data, dodyr, 2022, sex_filter = "male", tablename = "Table_5_3")
-
+death_data <- construct_sample_death_data()
+death_data <- construct_year(death_data, date_col = "death1a", year_col = "dodyr")
+table_5_3 <- create_t5.3_and_t5.4(death_data, data_year = 2022)
 }
