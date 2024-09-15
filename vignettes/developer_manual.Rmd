@@ -97,6 +97,46 @@ as expected, by running them manually:
 testthat::test_dir("tests/testthat")
 ```
 
+## Codebase Structure
+
+The repository contains a lot more than just some functions. Understanding what
+each folder or section does is important in order to make changes in the future
+or to triage any potential issues that may emerge. The diagram below gives some
+information on the codebase structure:
+
+```
+📦crvsreportpackage 
+┣ 📂.github                           # Contains instructions for GitHub
+┃ ┣ 📂workflows                       # Contains workflows for GitHub Actions
+┃ ┃ ┣ 📜R-CMD-chek.yml                # Automatically runs the tests
+┃ ┃ ┗ 📜pkgdown.yaml                  # Automatically builds the website
+┃ ┗ 📜PULL_REQUEST_TEMPLATE.md        # Adds a checklist for new Pull Requests
+┣ 📂R                                 # Contains the R functions
+┣ 📂docs                              # AUTOMATED documents built for the web
+┣ 📂inst                              # Contains the sample data
+┣ 📂man                               # AUTOMATED information on R functions
+┣ 📂renv                              # AUTOMATED information on dependencies 
+┣ 📂scripts                           # Contains useful scripts for maintenance
+┃ ┣ 📜create_test_data.R              # Will generate synthetic data
+┃ ┗ 📜update_description.R            # Will update the description and dependencies
+┣ 📂tests                             # Contains the tests for the R folder
+┣ 📂vignettes                         # Contains the explanatory articles
+┣ 📜.Rbuildignore                     # Contains exceptions for package build
+┣ 📜.Rprofile                         # Contains instructions for dependencies
+┣ 📜.gitignore                        # Handles exceptions to GitHub upload
+┣ 📜CODE_OF_CONDUCT.md                # Information on how to behave
+┣ 📜CONTRIBUTING.md                   # Guidance on how to contribute to the code
+┣ 📜DESCRIPTION                       # Metadata for the package
+┣ 📜LICENSE                           # AUTOMATED package conditions of use
+┣ 📜LICENSE.md                        # Detailed package conditions of use
+┣ 📜NAMESPACE                         # AUTOMATED details of package functions
+┣ 📜README.md                         # Introduction article on the package
+┣ 📜_pkgdown.yml                      # Structure of the website
+┣ 📜crvsreportpackage.Rproj           # AUTOMATED set-up for R Project
+┗ 📜renv.lock                         # AUTOMATED information on dependencies
+```
+
+
 ## Further Reading
 
 [R packages](https://r-pkgs.org/) by Hadley Wickham and Jenny Bryan is the canonical guide to R package development.
