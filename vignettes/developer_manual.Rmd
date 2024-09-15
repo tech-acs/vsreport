@@ -53,9 +53,13 @@ It will also mean you can now open the project and develop the package further.
 
 ## Maintenance
 
-Once you have made significant changes to the package, it might be worth considering changing the package version.
-This can be done in the DESCRIPTION file, bumping up the `Version` variable.
-In order to rebuild and update the `crvsreportpackage` after making some changes to the functions in it follow these steps:
+Once you have made significant changes to the package, there are several steps
+that you will need to do:
+
+ - [ ] Run the tests
+ - [ ] Make sure documentation (like code structure and other web docs) are updated
+ - [ ] Increase the package version. In the DESCRIPTION file, bump-up the `Version` variable.
+ - [ ] Update the automated materials using the instructions below:
 
 ```r
 # Remove the installed version of the package
@@ -142,9 +146,10 @@ In the package functions can be split into several types.
 Each type is identified by their start, usually with verb that informs what
 the function goal is. These are:
 
-- `contruct_`: These will create a new variable based on existing data.
-- `create_`: These will take the data and create a table.
+- `contruct_`: These will construct a new variable or data for analysis.
+- `create_`: These will create a table by taking some data.
 - `handle_`: These will handle some of the adjacent processes.
+- `plot_`: These will help with the visualisation of the tables or data.
 
 
 ## Further Reading
