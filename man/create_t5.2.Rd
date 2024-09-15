@@ -27,13 +27,16 @@ create_t5.2(
 A data frame of tabulated results
 }
 \description{
-This function generates **Table 5.2**, which shows deaths by place of usual residence
+This function generates Table 5.2, which shows deaths by place of usual residence
 and the sex of the deceased.
 }
 \details{
-**Variables needed:**
-- `date_var`: Year of death (default is `"dodyr"`).
+Variables needed per record:
+
+- `dodyr`: Year of death.
+
 - `death2o`: Region of death.
+
 - `death2c`: Sex of the deceased.
 }
 \examples{
