@@ -44,12 +44,7 @@ create_t4.4_to_4_6 <- function(data, data_year = NA, col_var = fert_age_grp, by_
       adorn_totals(c("col","row"))
 
     output <- output[c(9, 1:8, 10),]
-    if (is.null(output_path)){
-      return(output)
-    } else {
-      write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
-      return(output)
-    }
+    return(handle_table_output(output, output_path, tablename))
   } else {
     output <- data |>
       filter(doryr == data_year & is.na(birth1j) & birth3n == rural_urban) |>
@@ -61,15 +56,8 @@ create_t4.4_to_4_6 <- function(data, data_year = NA, col_var = fert_age_grp, by_
       adorn_totals(c("col","row"))
 
     output <- output[c(9, 1:8, 10),]
-    if (is.null(output_path)){
-      return(output)
-    } else {
-      if (!dir.exists(output_path)) {
-        dir.create(output_path, recursive = TRUE)
-      }
-      write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
-      return(output)
-    }
+
+    return(handle_table_output(output, output_path, tablename))
 }
 }
 

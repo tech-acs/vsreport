@@ -50,13 +50,5 @@ create_t4.8 <- function(data, est_data, pops, date_var, data_year = NA, by_var =
     mutate(cbr = construct_round_excel(adjusted/total_pop*1000, 1)) |>
     select(birth1c, total, adjusted, cbr)
 
-  if (is.null(output_path)){
-    return(output)
-  } else {
-    if (!dir.exists(output_path)) {
-      dir.create(output_path, recursive = TRUE)
-    }
-    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
-    return(output)
-  }
+  return(handle_table_output(output, output_path, tablename))
 }

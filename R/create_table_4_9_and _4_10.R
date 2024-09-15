@@ -57,15 +57,7 @@ create_table_4_9_and_4_10 <- function(data, est_data, pops, data_year = NA,
   output <- merge(output, popn, by = "fert_age_grp", all.x = TRUE) |>
     mutate(asfr = construct_round_excel(adjusted/total_pop*1000, 2))
 
-  if (is.null(output_path)){
-    return(output)
-  } else {
-    if (!dir.exists(output_path)) {
-      dir.create(output_path, recursive = TRUE)
-    }
-    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
-    return(output)
-  }
+  return(handle_table_output(output, output_path, tablename))
 }
 
 

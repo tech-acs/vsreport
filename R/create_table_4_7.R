@@ -43,13 +43,5 @@ create_t4.7 <- function(data, date_var, data_year = NA, tablename = "Table_4_7",
 
   output <- rbind(outputall, outputrgn) |> adorn_totals(c("row","col"))
 
-  if (is.null(output_path)){
-    return(output)
-  } else {
-    if (!dir.exists(output_path)) {
-      dir.create(output_path, recursive = TRUE)
-    }
-    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
-    return(output)
-  }
+  return(handle_table_output(output, output_path, tablename))
 }
