@@ -1,5 +1,5 @@
-# Unit tests for calculate_fertility_rates
-test_that("calculate_fertility_rates calculates age-specific and total fertility rates", {
+# Unit tests for construct_fertility_rates
+test_that("construct_fertility_rates calculates age-specific and total fertility rates", {
   # Mock data for testing
   bth_data <- data.frame(
     dobyr = c(2018, 2018, 2019, 2019, 2019, 2020, 2019),
@@ -20,7 +20,7 @@ test_that("calculate_fertility_rates calculates age-specific and total fertility
     return(curr_year - 2:0)
   }
 
-  result <- calculate_fertility_rates(bth_data, population)
+  result <- construct_fertility_rates(bth_data, population)
 
   # Test the structure of the output
   expect_true("fert_age_grp" %in% colnames(result))

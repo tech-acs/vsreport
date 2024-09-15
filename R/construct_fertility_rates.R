@@ -9,9 +9,9 @@
 #' @import stringr
 #'
 #' @examples
-#' fertility_rates <- calculate_fertility_rates(bth_data, population)
+#' fertility_rates <- construct_fertility_rates(bth_data, population)
 #'
-calculate_fertility_rates <- function(data, pops){
+construct_fertility_rates <- function(data, pops){
 
 curr_year <- max(data$dobyr, na.rm = TRUE)
 

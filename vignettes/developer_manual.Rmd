@@ -136,6 +136,16 @@ information on the codebase structure:
 ┗ 📜renv.lock                         # AUTOMATED information on dependencies
 ```
 
+## Function Types
+
+In the package functions can be split into several types.
+Each type is identified by their start, usually with verb that informs what
+the function goal is. These are:
+
+- `contruct_`: These will create a new variable based on existing data.
+- `create_`: These will take the data and create a table.
+- `handle_`: These will handle some of the adjacent processes.
+
 
 ## Further Reading
 

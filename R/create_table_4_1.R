@@ -84,7 +84,7 @@ create_t4.1 <- function(data, est_data, pops, date_var = "dobyr", tablename = "T
 
   output_ratio <- output_ratio[1,]
 
-  fertility_rates <- calculate_fertility_rates(data, pops) |>
+  fertility_rates <- construct_fertility_rates(data, pops) |>
     rename(Indicator = fert_age_grp) |>
     filter(Indicator == "total")
 
