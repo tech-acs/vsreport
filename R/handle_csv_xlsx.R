@@ -7,17 +7,17 @@
 #' @return An Excel file named "output.xlsx" containing the contents of the CSV files.
 #' @examples
 #' # Convert CSV files in the current directory to an Excel workbook
-#' csv_to_excel(path = ".")
+#' handle_csv_xlsx(path = ".")
 #'
 #' # Convert CSV files in a specified directory to an Excel workbook
-#' csv_to_excel(input_path = "path/to/directory", output_path = "path/with/file/output.xlsx")
+#' handle_csv_xlsx(input_path = "path/to/directory", output_path = "path/with/file/output.xlsx")
 #' @import purrr
 #' @import readr
 #' @import fs
 #' @import writexl
 #'
 #' @export
-convert_csv_xlsx <- function(input_path = ".", output_path = "output.xlsx") {
+handle_csv_xlsx <- function(input_path = ".", output_path = "output.xlsx") {
   file_list <- list.files(path = input_path, pattern = "*.csv", full.names = T)
 
   if (length(file_list) == 0) {

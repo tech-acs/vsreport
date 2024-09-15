@@ -2,7 +2,7 @@
 % Please edit documentation in R/construct_fertility_rates.R
 \name{construct_fertility_rates}
 \alias{construct_fertility_rates}
-\title{calcualtes age specific and total fertility rates per year}
+\title{Calcualtes age specific and total fertility rates per year.}
 \usage{
 construct_fertility_rates(data, pops)
 }
@@ -12,10 +12,10 @@ construct_fertility_rates(data, pops)
 \item{pops}{population data frame}
 }
 \value{
-tablulated age specific and total fertility rates per year
+A tablulated age specific and total fertility rates per year.
 }
 \description{
-calcualtes age specific and total fertility rates per year
+Calcualtes age specific and total fertility rates per year.
 }
 \examples{
 fertility_rates <- construct_fertility_rates(bth_data, population)
