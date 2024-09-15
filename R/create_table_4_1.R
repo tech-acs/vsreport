@@ -90,13 +90,5 @@ create_t4.1 <- function(data, est_data, pops, date_var = "dobyr", tablename = "T
 
   output <- bind_rows(output_counts, output_comp, output_ratio, output_cbr, fertility_rates)
 
-  if (is.null(output_path)){
-    return(output)
-  } else {
-    if (!dir.exists(output_path)) {
-      dir.create(output_path, recursive = TRUE)
-    }
-    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
-    return(output)
-  }
+  return(handle_table_output(output, output_path, tablename))
 }

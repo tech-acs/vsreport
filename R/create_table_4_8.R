@@ -20,12 +20,12 @@
 #'
 #' @examples t4.8 <- create_t4.8(bth_data, bth_est, dobyr, data_year = 2022, by_var = birth1c, tablename = "Table_4_8")
 
-create_t4.8 <- function(data, est_data, pops, date_var, data_year = NA, by_var = NA, tablename = "Table_4_8", output_path = NULL){
+create_t4.8 <- function(data, est_data, pops, date_var,
+                        data_year = NA, by_var = NA,
+                        tablename = "Table_4_8", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
-  if (is.na(data_year)){
-    data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
-  }
+  data_year <- handle_data_year(data_year, data, date_var)
 
   output <- data |>
     filter(!!sym(date_var) == data_year) |>

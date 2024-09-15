@@ -21,9 +21,7 @@ create_t4.3 <- function(data, date_var = "dobyr", data_year = NA,
                         tablename = "Table_4_3", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
-  if (is.na(data_year)){
-    data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
-  }
+  data_year <- handle_data_year(data_year, data, date_var)
 
   output <- data |>
     filter(is.na(birth1j) & !!sym(date_var) == data_year) |>

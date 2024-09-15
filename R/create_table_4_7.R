@@ -16,12 +16,11 @@
 #' @import janitor
 #' @examples t4.7 <- create_table_4.7(bth_data, dobyr, 2022, tablename = "Table_4_7")
 #'
-create_t4.7 <- function(data, date_var, data_year = NA, tablename = "Table_4_7", output_path = NULL){
+create_t4.7 <- function(data, date_var, data_year = NA,
+                        tablename = "Table_4_7", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
-  if (is.na(data_year)){
-    data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
-  }
+  data_year <- handle_data_year(data_year, data, date_var)
 
   output <- data |>
     filter(!!sym(date_var) == data_year & is.na(birth1j)) |>
