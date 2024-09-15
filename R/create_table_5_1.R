@@ -16,7 +16,8 @@
 #'
 #' @examples t5.1 <- create_t5.1(dth_data, tablename = "Table_5_1")
 #'
-create_t5.1 <- function(data, num_yrs=5, tablename = "Table_5_1"){
+create_t5.1 <- function(data, num_yrs=5,
+                        tablename = "Table_5_1", output_path = NULL){
 
   max_year <- data %>% pull(dodyr) %>% max(na.rm = TRUE)
   years <- construct_year_sequence(max_year, num_yrs = num_yrs)
@@ -65,6 +66,5 @@ output_counts <- output_counts |>
 
   output <- rbind(output_counts, output_comp, output_cdr)
 
-  write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
-  return(output)
+  return(handle_table_output(output, output_path, tablename))
 }

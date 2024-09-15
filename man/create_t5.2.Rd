@@ -4,21 +4,37 @@
 \alias{create_t5.2}
 \title{Creates Tables 5.2}
 \usage{
-create_t5.2(data, date_var, data_year = NA, tablename = "Table_5_2")
+create_t5.2(
+  data,
+  date_var = "dodyr",
+  data_year = NA,
+  tablename = "Table_5_2",
+  output_path = NULL
+)
 }
 \arguments{
-\item{data}{death registration data frame}
+\item{data}{death registration data frame.}
 
-\item{date_var}{event year column of the dataframe like dodyr}
+\item{date_var}{event year column of the dataframe like dodyr.}
 
-\item{data_year}{the year to report on}
+\item{data_year}{the year to report on.}
+
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 data frame of tabulated results
 }
 \description{
-Table 5.2 Deaths by place of usual residence and sex of decedent
+Table 5.2 Deaths by place of usual residence and sex of deceased
+Variables needed:
+- Year of Death: passed through date_var (default is "dodyr")
+- Region of Death: Has to be "death2o"
+- Sex of Deceased: Has to be "death2c"
 }
 \examples{
-t5.2 <- create_t5.2(dth_data, date_var=dodyr, data_year = 2022, tablename = "Table_5_2")
+death_data <- construct_sample_death_data()
+death_data <- construct_year(death_data, date_col = "death1a", year_col = "dodyr")
+table_5_2 <- create_t5.2(death_data, date_var="dodyr", data_year = 2022)
 }

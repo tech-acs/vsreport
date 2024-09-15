@@ -1,7 +1,7 @@
 Package: crvsreportpackage
 Type: Package
 Title: Package for CRVS Report
-Version: 0.2.6
+Version: 0.3.0
 Authors@R: c(person(given="Tesfaye",
          family="Belay",
          role=c("aut","cre"),

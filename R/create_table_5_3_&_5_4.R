@@ -1,9 +1,13 @@
 #' Calculates Tables 5.3 & 5.4
 #'
 #' @description
-#' Table 5.3 Deaths by place of occurrence and place of usual residence of decedent, males
-#' @description
-#' Table 5.4 Deaths by place of occurrence and place of usual residence of decedent, females,
+#' Table 5.3 Deaths by place of occurrence and place of usual residence of decedent (males)
+#' Table 5.4 Deaths by place of occurrence and place of usual residence of decedent (females)
+#'
+#' Variables needed:
+#' - Year of Death: passed through date_var (default is "dodyr")
+#' - Region of Death: Has to be "death2o"
+#' - Sex of Deceased: Has to be "death2c"
 #'
 #'
 #' @param data data frame being used
@@ -22,12 +26,11 @@
 #' @examples
 #' t5.3 <- create_t5.3_and_t5.4(dth_data, dodyr, 2022, sex_filter = "male", tablename = "Table_5_3")
 #'
-create_t5.3_and_t5.4 <- function(data, date_var, data_year = NA, sex_filter = NA, tablename = "Table_5_3"){
+create_t5.3_and_t5.4 <- function(data, date_var, data_year = NA, sex_filter = NA,
+                                 tablename = "Table_5_3", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
-  if (is.na(data_year)){
-    data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
-  }
+  data_year <- handle_data_year(data_year, data, date_var)
 
   output <- data |>
     filter(birth2a == sex_filter & !!sym(date_var) == data_year) |>
@@ -36,6 +39,5 @@ create_t5.3_and_t5.4 <- function(data, date_var, data_year = NA, sex_filter = NA
     pivot_wider(names_from = death2o, values_from = total, values_fill = 0) |>
     adorn_totals(c("col", "row"))
 
-  write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
-  return(output)
+  return(handle_table_output(output, output_path, tablename))
 }

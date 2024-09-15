@@ -9,7 +9,8 @@ create_t5.3_and_t5.4(
   date_var,
   data_year = NA,
   sex_filter = NA,
-  tablename = "Table_5_3"
+  tablename = "Table_5_3",
+  output_path = NULL
 )
 }
 \arguments{
@@ -27,9 +28,13 @@ create_t5.3_and_t5.4(
 data frame of tabulated results
 }
 \description{
-Table 5.3 Deaths by place of occurrence and place of usual residence of decedent, males
+Table 5.3 Deaths by place of occurrence and place of usual residence of decedent (males)
+Table 5.4 Deaths by place of occurrence and place of usual residence of decedent (females)
 
-Table 5.4 Deaths by place of occurrence and place of usual residence of decedent, females,
+Variables needed:
+- Year of Death: passed through date_var (default is "dodyr")
+- Region of Death: Has to be "death2o"
+- Sex of Deceased: Has to be "death2c"
 }
 \examples{
 t5.3 <- create_t5.3_and_t5.4(dth_data, dodyr, 2022, sex_filter = "male", tablename = "Table_5_3")
