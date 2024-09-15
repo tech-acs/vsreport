@@ -36,6 +36,9 @@ create_t4.3 <- function(data, date_var = "dobyr", data_year = NA, tablename = "T
   if (is.null(output_path)){
     return(output)
   } else {
+    if (!dir.exists(output_path)) {
+      dir.create(output_dir, recursive = TRUE)
+    }
     write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
     return(output)
   }

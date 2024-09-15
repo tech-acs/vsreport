@@ -64,6 +64,9 @@ create_t4.4_to_4_6 <- function(data, data_year = NA, col_var = fert_age_grp, by_
     if (is.null(output_path)){
       return(output)
     } else {
+      if (!dir.exists(output_path)) {
+        dir.create(output_dir, recursive = TRUE)
+      }
       write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
       return(output)
     }
