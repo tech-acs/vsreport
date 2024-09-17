@@ -11,3 +11,6 @@ inst/doc
 # Don't upload the outputs or individual data folder
 outputs/
 data/
+
+# IDE junk
+.vscode/
