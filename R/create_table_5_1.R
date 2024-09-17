@@ -28,21 +28,21 @@ create_t5.1 <- function(data, num_yrs=5,
     rename(Indicator = birth2a) |>
     summarise(total = n())
 
-output_counts <- output |>
+  output_counts <- output |>
     pivot_wider(names_from = Indicator, values_from = total)
 
-output_comp <- dth_est |>
+  output_comp <- dth_est |>
     group_by(year) |>
     summarise(ftotal = sum(female), mtotal = sum(male))
 
-output_comp <- cbind(output_counts, output_comp) |>
+  output_comp <- cbind(output_counts, output_comp) |>
     mutate(male_comp = construct_round_excel(male/mtotal*100, 1),
            female_comp = construct_round_excel(female/ftotal*100, 1)) |>
     select(year, male_comp, female_comp) |>
     pivot_longer(cols = c(male_comp, female_comp), names_to = "Indicator", values_to =  "counts") |>
     pivot_wider(names_from = year, values_from = counts)
 
-output_counts <- output_counts |>
+  output_counts <- output_counts |>
     pivot_longer(cols = c(male, female), names_to = "Indicator", values_to =  "counts") |>
     pivot_wider(names_from = dodyr, values_from = counts)
 
@@ -62,7 +62,6 @@ output_counts <- output_counts |>
     select(year, cdr) |>
     mutate(Indicator = "CDR") |>
     pivot_wider(names_from = year, values_from = cdr)
-
 
   output <- rbind(output_counts, output_comp, output_cdr)
 
