@@ -46,6 +46,6 @@ Variables needed per record:
 \examples{
 death_data <- construct_sample_death_data()
 death_data <- construct_year(death_data, date_col = "death1a", year_col = "dodyr")
-table_5_11 <- create_t5.11(death_data, neonatal_filter = NULL, date_var= "dodyr")
+table_5_11 <- create_t5.11(death_data, foetal_filter = NULL, date_var= "dodyr")
 
 }

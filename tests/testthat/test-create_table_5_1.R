@@ -1,7 +1,8 @@
 test_that("create_t5.1 function works correctly", {
+  require(readr)
 
   # Load & construct expected output from external file
-  suppressMessages({expected_output <- read_csv("../../inst/extdata/expected_5_1_output.csv")})
+  suppressMessages({expected_output <- readr::read_csv("../../inst/extdata/expected_5_1_output.csv")})
   d_cols <- 2:ncol(expected_output)
   # Note rounding required to ensure match to rounding by create_table_5_1:
   expected_output[3,d_cols] <- construct_round_excel(expected_output[3,d_cols],1)
