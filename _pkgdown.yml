@@ -7,7 +7,7 @@ articles:
 - title: Articles
   navbar: ~
   contents:
-  - data_cleaning
+  - developer_manual
   - data_mapping
   - table_templates
 

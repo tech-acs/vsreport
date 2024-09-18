@@ -22,7 +22,7 @@ create_t3.2_t3.3 <- function(data, occ_var, topic = NA, tablename = "table_3_2")
   if(tolower(topic) == "births"){
     output <- data |>
       filter(is.na(birth1j) & !is.na(doryr) &
-               {{occ_var}} %in% generate_year_sequence(max_value)) |>
+               {{occ_var}} %in% construct_year_sequence(max_value)) |>
       group_by(doryr, {{occ_var}}) |>
       summarise(Total = n())
 
@@ -33,13 +33,13 @@ create_t3.2_t3.3 <- function(data, occ_var, topic = NA, tablename = "table_3_2")
     # Merge total live births back into the original dataframe
     output <- output %>%
       left_join(output2, by = c("doryr" = "doryr")) %>%
-      mutate(Percentage := round_excel((Total/ total) * 100, 2)) %>%
+      mutate(Percentage := construct_round_excel((Total/ total) * 100, 2)) %>%
       select(-c(total, Total)) |>
       pivot_wider(names_from = doryr, values_from = Percentage, values_fill = 0) %>%
       adorn_totals("row", name = "Grand total")
   }else if(topic == "deaths"){
     output <- data |>
-      filter(!is.na(doryr) & {{occ_var}} %in% generate_year_sequence(max_value)) |>
+      filter(!is.na(doryr) & {{occ_var}} %in% construct_year_sequence(max_value)) |>
       group_by(doryr, {{occ_var}}) |>
       summarise(Total = n())
 
@@ -50,7 +50,7 @@ create_t3.2_t3.3 <- function(data, occ_var, topic = NA, tablename = "table_3_2")
     # Merge total deaths back into the original dataframe
     output <- output %>%
       left_join(output2, by = c("doryr" = "doryr")) %>%
-      mutate(Percentage := round_excel((Total/ total) * 100, 2)) %>%
+      mutate(Percentage := construct_round_excel((Total/ total) * 100, 2)) %>%
       select(-c(total, Total)) |>
       pivot_wider(names_from = doryr, values_from = Percentage, values_fill = 0) %>%
       adorn_totals("row", name = "Grand total")

@@ -70,7 +70,7 @@ create_t6.5_t6.10 <- function(data, data_year = NA, sex_value = "male", age_grou
   total_deaths <- sum(output$total)
   output <- output |>
     adorn_totals("row")  |>
-    mutate(proportion = round_excel(total/sum(total_deaths)*100,2))
+    mutate(proportion = construct_round_excel(total/sum(total_deaths)*100,2))
   return(output)
 
 }

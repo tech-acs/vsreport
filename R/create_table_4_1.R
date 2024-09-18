@@ -23,7 +23,7 @@
 #'
 create_t4.1 <- function(data, est_data, pops, date_var = "dobyr", tablename = "Table_4_1", output_path = NULL){
   curr_year <- data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
-  years <- generate_year_sequence(curr_year)
+  years <- construct_year_sequence(curr_year)
 
   output <- data |>
     filter(is.na(birth1j) & !!sym(date_var) %in% years & birth2a != "not stated") |>
@@ -39,7 +39,7 @@ create_t4.1 <- function(data, est_data, pops, date_var = "dobyr", tablename = "T
     group_by(year) |>
     summarise(ftotal = sum(female), mtotal = sum(male), .groups = "drop")
 
-  output_counts <- output_counts %>%
+  output_counts <- output_counts |>
     rename("year" = all_of(date_var))
 
   combined_counts <- left_join(output_counts, output_comp, by = c("year" = "year"))
@@ -48,10 +48,12 @@ create_t4.1 <- function(data, est_data, pops, date_var = "dobyr", tablename = "T
     mutate(male_comp = round(male / mtotal * 100, 1),
            female_comp = round(female / ftotal * 100, 1)) |>
     select(year, male_comp, female_comp) |>
+    arrange(year) |>
     pivot_longer(cols = c(male_comp, female_comp), names_to = "Indicator", values_to = "counts") |>
     pivot_wider(names_from = year, values_from = counts)
 
   output_counts <- output_counts |>
+    arrange(year) |>
     pivot_longer(cols = c(male, female), names_to = "Indicator", values_to = "counts") |>
     pivot_wider(names_from = !!sym("year"), values_from = counts, values_fill = list(counts = 0))
 
@@ -75,6 +77,7 @@ create_t4.1 <- function(data, est_data, pops, date_var = "dobyr", tablename = "T
 
   output_ratio <- output |>
     pivot_wider(names_from = Indicator, values_from = total, values_fill = list(total = 0)) |>
+    arrange(year) |>
     mutate(total = male + female,
            Ratio = round((male / female), 2)) |>
     select(year, Ratio) |>
@@ -84,19 +87,11 @@ create_t4.1 <- function(data, est_data, pops, date_var = "dobyr", tablename = "T
 
   output_ratio <- output_ratio[1,]
 
-  fertility_rates <- calculate_fertility_rates(data, pops) |>
+  fertility_rates <- construct_fertility_rates(data, pops) |>
     rename(Indicator = fert_age_grp) |>
     filter(Indicator == "total")
 
   output <- bind_rows(output_counts, output_comp, output_ratio, output_cbr, fertility_rates)
 
-  # reorder output in correct year-column order
-  output <- as_tibble(cbind(output[,1], output[,as.character(years)]))
-
-  if (is.null(output_path)){
-    return(output)
-  } else {
-    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
-    return(output)
-  }
+  return(handle_table_output(output, output_path, tablename))
 }

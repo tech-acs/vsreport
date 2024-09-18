@@ -14,25 +14,25 @@ create_t4.2(
 )
 }
 \arguments{
-\item{data}{data frame being used}
+\item{data}{Birth records data frame}
 
-\item{est_data}{data frame of estimated data being used}
+\item{est_data}{Estimated births data frame}
 
-\item{date_var}{name of date variable}
+\item{date_var}{Name of date variable (years)}
 
-\item{data_year}{year the data is for}
+\item{data_year}{Year of which to select the data}
 
-\item{tablename}{name of the table being saved as a csv file}
+\item{tablename}{Name of the table to be saved as a csv file}
 
-\item{output_path}{The path to export the generated table}
+\item{output_path}{The path to export the generated csv table}
 }
 \value{
-data frame of tabulated counts
+A table of counts of births for each place of occurance split by sex.
 }
 \description{
-Table 4.2 Live births by place of occurrence and birth2a of newborn
+Table 4.2 Live births by place of occurrence (birth1c) and sex (birth2a) of newborn
 }
 \examples{
-t4.2 <- create_t4.2(data = bth_data, est_data = bth_est, date_var = dobyr,
-                             data_year = 2022, tablename = "Table_4_2")
+t4.2 <- create_t4.2(birth_data, est_data, date_var = "dobyr",
+data_year = 2023, tablename = "Table_4_2", output_path = "outputs/births/")
 }

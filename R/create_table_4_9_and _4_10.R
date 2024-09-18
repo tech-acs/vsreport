@@ -27,11 +27,12 @@
 #'                                  rural_urban = "rural", tablename = "Table_4_10")
 
 create_table_4_9_and_4_10 <- function(data, est_data, pops, data_year = NA,
-                                      rural_urban = "urban", tablename = "Table_4_9", output_path = NULL){
+                                      rural_urban = "urban",
+                                      tablename = "Table_4_9",
+                                      output_path = NULL){
+
   # if data_year is not provided, take the latest year in the data
-  if (is.na(data_year)){
-    data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
-  }
+  data_year <- handle_data_year(data_year, data, date_var)
 
   output <- data |>
     filter(birth3n == rural_urban, is.na(birth1j) & dobyr == data_year) |>
@@ -55,14 +56,9 @@ create_table_4_9_and_4_10 <- function(data, est_data, pops, data_year = NA,
     summarise(total_pop = sum(population_2022))
 
   output <- merge(output, popn, by = "fert_age_grp", all.x = TRUE) |>
-    mutate(asfr = round_excel(adjusted/total_pop*1000, 2))
+    mutate(asfr = construct_round_excel(adjusted/total_pop*1000, 2))
 
-  if (is.null(output_path)){
-    return(output)
-  } else {
-    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
-    return(output)
-  }
+  return(handle_table_output(output, output_path, tablename))
 }
 
 

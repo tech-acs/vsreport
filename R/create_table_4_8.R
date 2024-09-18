@@ -20,12 +20,12 @@
 #'
 #' @examples t4.8 <- create_t4.8(bth_data, bth_est, dobyr, data_year = 2022, by_var = birth1c, tablename = "Table_4_8")
 
-create_t4.8 <- function(data, est_data, pops, date_var, data_year = NA, by_var = NA, tablename = "Table_4_8", output_path = NULL){
+create_t4.8 <- function(data, est_data, pops, date_var,
+                        data_year = NA, by_var = NA,
+                        tablename = "Table_4_8", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
-  if (is.na(data_year)){
-    data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
-  }
+  data_year <- handle_data_year(data_year, data, date_var)
 
   output <- data |>
     filter(!!sym(date_var) == data_year) |>
@@ -43,17 +43,12 @@ create_t4.8 <- function(data, est_data, pops, date_var, data_year = NA, by_var =
     summarise(total_pop = sum(!!sym(paste0("population_",data_year))))
 
   output <- left_join(output, est, by = "birth1c") |>
-    mutate(completeness = round_excel(total/est_total*100, 2)) |>
+    mutate(completeness = construct_round_excel(total/est_total*100, 2)) |>
     mutate(adjusted = floor(total/(completeness/100)))
 
   output <- left_join(output, pop, by = "birth1c") |>
-    mutate(cbr = round_excel(adjusted/total_pop*1000, 1)) |>
+    mutate(cbr = construct_round_excel(adjusted/total_pop*1000, 1)) |>
     select(birth1c, total, adjusted, cbr)
 
-  if (is.null(output_path)){
-    return(output)
-  } else {
-    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
-    return(output)
-  }
+  return(handle_table_output(output, output_path, tablename))
 }

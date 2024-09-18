@@ -10,7 +10,7 @@
 <url><loc>https://tech-acs.github.io/crvsreportpackage/articles/introduction.html</loc></url>
 <url><loc>https://tech-acs.github.io/crvsreportpackage/authors.html</loc></url>
 <url><loc>https://tech-acs.github.io/crvsreportpackage/index.html</loc></url>
-<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/calculate_fertility_rates.html</loc></url>
+<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/construct_fertility_rates.html</loc></url>
 <url><loc>https://tech-acs.github.io/crvsreportpackage/reference/create_t3.1.html</loc></url>
 <url><loc>https://tech-acs.github.io/crvsreportpackage/reference/create_t3.10.html</loc></url>
 <url><loc>https://tech-acs.github.io/crvsreportpackage/reference/create_t3.11_and_3.12.html</loc></url>
@@ -40,15 +40,15 @@
 <url><loc>https://tech-acs.github.io/crvsreportpackage/reference/create_t8.2.html</loc></url>
 <url><loc>https://tech-acs.github.io/crvsreportpackage/reference/create_table_4_9_and_4_10.html</loc></url>
 <url><loc>https://tech-acs.github.io/crvsreportpackage/reference/create_table_7.4_and_7.5.html</loc></url>
-<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/derive_age_groups.html</loc></url>
-<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/flag_cause.html</loc></url>
+<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/construct_age_groups.html</loc></url>
+<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/construct_cause_flag.html</loc></url>
 <url><loc>https://tech-acs.github.io/crvsreportpackage/reference/hello.html</loc></url>
 <url><loc>https://tech-acs.github.io/crvsreportpackage/reference/index.html</loc></url>
-<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/read_sample_birth_data.html</loc></url>
-<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/read_sample_death_data.html</loc></url>
-<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/read_sample_divorce_data.html</loc></url>
-<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/read_sample_marriage_data.html</loc></url>
-<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/round_excel.html</loc></url>
-<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/select_tables.html</loc></url>
+<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/construct_sample_birth_data.html</loc></url>
+<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/construct_sample_death_data.html</loc></url>
+<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/construct_sample_divorce_data.html</loc></url>
+<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/construct_sample_marriage_data.html</loc></url>
+<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/construct_round_excel.html</loc></url>
+<url><loc>https://tech-acs.github.io/crvsreportpackage/reference/handle_table_selection.html</loc></url>
 </urlset>
 

@@ -18,7 +18,7 @@ create_t8.1 <- function(tablename = NA){
   latest_year <- data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
 
   outputb <- bth_data |>
-    filter(is.na(birth1j) & dobyr %in% generate_year_sequence(latest_year)) |>
+    filter(is.na(birth1j) & dobyr %in% construct_year_sequence(latest_year)) |>
     group_by(dobyr, birth2a) |>
     summarise(total = n()) |>
     pivot_wider(names_from = birth2a, values_from = total) |>
@@ -26,7 +26,7 @@ create_t8.1 <- function(tablename = NA){
   colnames(outputb) <- c("Year_of_Occurrence", "Live_Births_Female", "Live_Births_Male", "NS", "Live_Biths_Total")
 
   outputd <- dth_data |>
-    filter(dodyr %in% generate_year_sequence(latest_year)) |>
+    filter(dodyr %in% construct_year_sequence(latest_year)) |>
     group_by(dodyr, birth2a) |>
     summarise(total = n()) |>
     pivot_wider(names_from = birth2a, values_from = total) |>
@@ -34,7 +34,7 @@ create_t8.1 <- function(tablename = NA){
   colnames(outputd) <- c("Year_of_OccurrenceD", "Deaths_Female", "Deaths_Male", "NS",  "Deaths_Total")
 
   outputi <- dth_data |>
-    filter(ageinyrs < 5 & dodyr %in% generate_year_sequence(latest_year)) |>
+    filter(ageinyrs < 5 & dodyr %in% construct_year_sequence(latest_year)) |>
     group_by(dodyr, birth2a) |>
     summarise(total = n()) |>
     pivot_wider(names_from = birth2a, values_from = total) |>

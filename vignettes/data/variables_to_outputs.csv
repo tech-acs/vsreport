@@ -1,319 +1,324 @@
-variable_id,variable_name,event,characteristic,source,un_id,output_id,output_name,output_status
-birth1a,Date of occurrence,Birth,Event,Direct,NA,T3.1,Number of vital events by registration timeliness,NA
-birth1a,Date of occurrence,Birth,Event,Direct,NA,T3.2,Proportion (%) of births by year of registration and year of occurrence,Optional
-birth1a,Date of occurrence,Birth,Event,Direct,NA,T3.4,Birth registration completeness by year of occurrence and sex of newborn,Optional
-birth1a,Date of occurrence,Birth,Event,Direct,NA,T3.5,Birth registration completeness by place of usual residence of mother and sex of newborn,NA
-birth1a,Date of occurrence,Birth,Event,Direct,NA,T3.8,Adjustment of births by place of usual residence of mother and sex of newborn,NA
-birth1a,Date of occurrence,Birth,Event,Direct,NA,T3.11,Redistribution of births with incomplete data on ‘age of mother’,NA
-birth1a,Date of occurrence,Birth,Event,Direct,LB-1,T4.2,Live births by place of occurrence and sex of newborn,Priority
-birth1a,Date of occurrence,Birth,Event,Direct,LB-2,T4.3,Live births by place of occurrence and place of usual residence of mother,Priority
-birth1a,Date of occurrence,Birth,Event,Direct,NA,T4.4,Live births by age of mother and type of birth,Priority
-birth1a,Date of occurrence,Birth,Event,Direct,LB-5,T4.5,"Live births by age and marital status of mother, urban areas",Priority
-birth1a,Date of occurrence,Birth,Event,Direct,LB-5,T4.6,"Live births by age and marital status of mother, rural areas",Priority
-birth1a,Date of occurrence,Birth,Event,Direct,LB-13,T4.7,"Live births by place of occurrence, site of delivery and attendant at birth",Priority
-birth1a,Date of occurrence,Birth,Event,Direct,ST-2,T4.8,Crude birth rate by usual residence of mother,Priority
-birth1a,Date of occurrence,Birth,Event,Direct,NA,T4.9,"Age-specific fertility rates by usual residence of mother, urban areas",Priority
-birth1a,Date of occurrence,Birth,Event,Direct,NA,T4.10,"Age-specific fertility rates by usual residence of mother, rural areas",Priority
-birth1a,Date of occurrence,Birth,Event,Direct,NA,T4.11,Total fertility rate by usual residence of mother,Priority
-birth1a,Date of occurrence,Birth,Event,Direct,ST-9,T8.1,"Live births, deaths, and infant and child deaths by year of occurrence",NA
-birth1a,Date of occurrence,Birth,Event,Direct,ST-1,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths)",NA
-birth1a,Date of occurrence,Birth,Event,Direct,ST-9,T8.3,Fertility and mortality indicators by year of occurrence,NA
-birth1a,Date of occurrence,Birth,Event,Direct,ST-2,T8.4,Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths),NA
-birth1a,Date of occurrence,Birth,Event,Direct,NA,F3.1,Proportion (%) of live births and deaths by registration timeliness,Optional
-birth1a,Date of occurrence,Birth,Event,Direct,NA,F4.1,Live births by year,Priority
-birth1a,Date of occurrence,Birth,Event,Direct,NA,F4.2,Live births by age of mother,Priority
-birth1a,Date of occurrence,Birth,Event,Direct,NA,F4.3,Crude birth rate by year of occurrence,Priority
-birth1a,Date of occurrence,Birth,Event,Direct,NA,F4.4,Age-specific fertility rates (ASFRs) by year of occurrence of birth,Priority
-birth1a,Date of occurrence,Birth,Event,Direct,NA,F4.5,Total fertility rate by year of occurrence of birth,Priority
-birth1b,Date of registration,Birth,Event,Direct,NA,T3.1,Number of vital events by registration timeliness,NA
-birth1b,Date of registration,Birth,Event,Direct,NA,T3.2,Proportion (%) of births by year of registration and year of occurrence,Optional
-birth1b,Date of registration,Birth,Event,Direct,NA,T3.4,Birth registration completeness by year of occurrence and sex of newborn,Optional
-birth1b,Date of registration,Birth,Event,Direct,NA,T3.5,Birth registration completeness by place of usual residence of mother and sex of newborn,NA
-birth1b,Date of registration,Birth,Event,Direct,NA,T3.8,Adjustment of births by place of usual residence of mother and sex of newborn,NA
-birth1b,Date of registration,Birth,Event,Direct,NA,T3.11,Redistribution of births with incomplete data on ‘age of mother’,NA
-birth1b,Date of registration,Birth,Event,Direct,LB-1,T4.2,Live births by place of occurrence and sex of newborn,Priority
-birth1b,Date of registration,Birth,Event,Direct,LB-2,T4.3,Live births by place of occurrence and place of usual residence of mother,Priority
-birth1b,Date of registration,Birth,Event,Direct,NA,T4.4,Live births by age of mother and type of birth,Priority
-birth1b,Date of registration,Birth,Event,Direct,LB-5,T4.5,"Live births by age and marital status of mother, urban areas",Priority
-birth1b,Date of registration,Birth,Event,Direct,LB-5,T4.6,"Live births by age and marital status of mother, rural areas",Priority
-birth1b,Date of registration,Birth,Event,Direct,LB-13,T4.7,"Live births by place of occurrence, site of delivery and attendant at birth",Priority
-birth1b,Date of registration,Birth,Event,Direct,ST-2,T4.8,Crude birth rate by usual residence of mother,Priority
-birth1b,Date of registration,Birth,Event,Direct,NA,T4.9,"Age-specific fertility rates by usual residence of mother, urban areas",Priority
-birth1b,Date of registration,Birth,Event,Direct,NA,T4.10,"Age-specific fertility rates by usual residence of mother, rural areas",Priority
-birth1b,Date of registration,Birth,Event,Direct,NA,T4.11,Total fertility rate by usual residence of mother,Priority
-birth1b,Date of registration,Birth,Event,Direct,NA,F3.1,Proportion (%) of live births and deaths by registration timeliness,Optional
-birth1c,Place of occurrence,Birth,Event,Direct,LB-1,T4.2,Live births by place of occurrence and sex of newborn,Priority
-birth1c,Place of occurrence,Birth,Event,Direct,LB-2,T4.3,Live births by place of occurrence and place of usual residence of mother,Priority
-birth1c,Place of occurrence,Birth,Event,Direct,LB-13,T4.7,"Live births by place of occurrence, site of delivery and attendant at birth",Priority
-birth2a,Sex,Birth,Newborn,Direct,NA,T3.4,Birth registration completeness by year of occurrence and sex of newborn,Optional
-birth2a,Sex,Birth,Newborn,Direct,NA,T3.5,Birth registration completeness by place of usual residence of mother and sex of newborn,NA
-birth2a,Sex,Birth,Newborn,Direct,NA,T3.8,Adjustment of births by place of usual residence of mother and sex of newborn,NA
-birth2a,Sex,Birth,Newborn,Direct,LB-1,T4.2,Live births by place of occurrence and sex of newborn,Priority
-birth2a,Sex,Birth,Newborn,Direct,ST-9,T8.1,"Live births, deaths, and infant and child deaths by year of occurrence",NA
-birth2a,Sex,Birth,Newborn,Direct,ST-1,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths)",NA
-birth3l,Place of usual residence,Birth,Mother,Direct,NA,T3.5,Birth registration completeness by place of usual residence of mother and sex of newborn,NA
-birth3l,Place of usual residence,Birth,Mother,Direct,NA,T3.8,Adjustment of births by place of usual residence of mother and sex of newborn,NA
-birth3l,Place of usual residence,Birth,Mother,Direct,LB-2,T4.3,Live births by place of occurrence and place of usual residence of mother,Priority
-birth3l,Place of usual residence,Birth,Mother,Direct,ST-2,T4.8,Crude birth rate by usual residence of mother,Priority
-birth3l,Place of usual residence,Birth,Mother,Direct,ST-1,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths)",NA
-birth3l,Place of usual residence,Birth,Mother,Direct,ST-2,T8.4,Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths),NA
-birth3l,Place of usual residence,Birth,Mother,Direct,NA,F4.2,Live births by age of mother,Priority
-birth1g,"Type of birth (i.e., single, twin, triplet, quadruplet or higher multiple delivery)",Birth,Event,Direct,NA,T4.4,Live births by age of mother and type of birth,Priority
-birth3b,Age,Birth,Mother,Derived,NA,T3.11,Redistribution of births with incomplete data on ‘age of mother’,NA
-birth3b,Age,Birth,Mother,Derived,NA,T4.4,Live births by age of mother and type of birth,Priority
-birth3b,Age,Birth,Mother,Derived,LB-5,T4.5,"Live births by age and marital status of mother, urban areas",Priority
-birth3b,Age,Birth,Mother,Derived,LB-5,T4.6,"Live births by age and marital status of mother, rural areas",Priority
-birth3b,Age,Birth,Mother,Derived,NA,T4.9,"Age-specific fertility rates by usual residence of mother, urban areas",Priority
-birth3b,Age,Birth,Mother,Derived,NA,T4.10,"Age-specific fertility rates by usual residence of mother, rural areas",Priority
-birth3b,Age,Birth,Mother,Derived,NA,T4.11,Total fertility rate by usual residence of mother,Priority
-birth3b,Age,Birth,Mother,Derived,ST-9,T8.3,Fertility and mortality indicators by year of occurrence,NA
-birth3b,Age,Birth,Mother,Derived,ST-2,T8.4,Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths),NA
-birth3b,Age,Birth,Mother,Derived,NA,F4.2,Live births by age of mother,Priority
-birth3b,Age,Birth,Mother,Derived,NA,F4.4,Age-specific fertility rates (ASFRs) by year of occurrence of birth,Priority
-birth3b,Age,Birth,Mother,Derived,NA,F4.5,Total fertility rate by year of occurrence of birth,Priority
-birth3c,Marital status,Birth,Mother,Direct,LB-5,T4.5,"Live births by age and marital status of mother, urban areas",Priority
-birth3c,Marital status,Birth,Mother,Direct,LB-5,T4.6,"Live births by age and marital status of mother, rural areas",Priority
-birth3n,Urban/rural residence,Birth,Mother,Derived,LB-5,T4.5,"Live births by age and marital status of mother, urban areas",Priority
-birth3n,Urban/rural residence,Birth,Mother,Derived,LB-5,T4.6,"Live births by age and marital status of mother, rural areas",Priority
-birth3n,Urban/rural residence,Birth,Mother,Derived,NA,T4.9,"Age-specific fertility rates by usual residence of mother, urban areas",Priority
-birth3n,Urban/rural residence,Birth,Mother,Derived,NA,T4.10,"Age-specific fertility rates by usual residence of mother, rural areas",Priority
-birth3n,Urban/rural residence,Birth,Mother,Derived,NA,T4.11,Total fertility rate by usual residence of mother,Priority
-birth3n,Urban/rural residence,Birth,Mother,Derived,NA,F4.3,Crude birth rate by year of occurrence,Priority
-birth1h,Attendant at birth,Birth,Event,Direct,LB-13,T4.7,"Live births by place of occurrence, site of delivery and attendant at birth",Priority
-birth1i,"Type of place of occurrence (hospital, home, etc.)",Birth,Event,Additional,LB-13,T4.7,"Live births by place of occurrence, site of delivery and attendant at birth",Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,T3.1,Number of vital events by registration timeliness,NA
-death1a,Date of occurrence,Death,Event,Direct,NA,T3.3,Proportion (%) of deaths by year of registration and year of occurrence,NA
-death1a,Date of occurrence,Death,Event,Direct,NA,T3.6,Death registration completeness by year of occurrence and sex of decedent,NA
-death1a,Date of occurrence,Death,Event,Direct,NA,T3.7,Death registration completeness by place of usual residence and sex of decedent,NA
-death1a,Date of occurrence,Death,Event,Direct,NA,T3.9,Adjustment of deaths by place of usual residence and sex of decedent,NA
-death1a,Date of occurrence,Death,Event,Direct,NA,T3.10,Adjustment of deaths by age group and sex of decedent,Optional
-death1a,Date of occurrence,Death,Event,Direct,NA,T3.12,Redistribution of deaths with incomplete data on ‘age of decedent’,NA
-death1a,Date of occurrence,Death,Event,Direct,DE-1,T5.2,Deaths by place of usual residence and sex of decedent,Priority
-death1a,Date of occurrence,Death,Event,Direct,DE-2,T5.3,"Deaths by place of occurrence and place of usual residence of decedent, males",Priority
-death1a,Date of occurrence,Death,Event,Direct,DE-2,T5.4,"Deaths by place of occurrence and place of usual residence of decedent, females",Priority
-death1a,Date of occurrence,Death,Event,Direct,DE-4,T5.5,Deaths by place of occurrence and site of occurrence,Priority
-death1a,Date of occurrence,Death,Event,Direct,DE-5,T5.6,"Deaths by age and sex of decedent, urban areas",Priority
-death1a,Date of occurrence,Death,Event,Direct,DE-5,T5.7,"Deaths by age and sex of decedent, rural areas",Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,T5.8,Crude death rate by place of usual residence of decedent,Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,T5.9,"Infant and child mortality (deaths per 1,000 live births) by year of occurrence",Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,T5.10,Maternal mortality by year of occurrence,Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,T5.11,Foetal deaths by year of occurrence and sex of foetus,NA
-death1a,Date of occurrence,Death,Event,Direct,NA,T5.12,Foetal deaths by gestational age and birth weight of foetus,NA
-death1a,Date of occurrence,Death,Event,Direct,NA,T6.1,Leading causes of death by broad age group and sex,NA
-death1a,Date of occurrence,Death,Event,Direct,NA,T6.2,"Top 10 causes of death (all ages, both sexes)",Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,T6.3,"10 leading causes of death, males",Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,T6.4,"10 leading causes of death, females",Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,T6.5,"10 leading causes of death, infants and children (0–4 years, both sexes combined)",Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,T6.6,"10 leading causes of death, children (5–14 years, both sexes combined)",Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,T6.7,"10 leading causes of death, adolescents and adults (15–69 years, males)",Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,T6.8,"10 leading causes of death, adolescents and adults (15–69 years, females)",Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,T6.9,"10 leading causes of death, older adults (15–69 years, males)",Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,T6.10,"10 leading causes of death, older adults (15–69 years, females)",Priority
-death1a,Date of occurrence,Death,Event,Direct,ST-9,T8.1,"Live births, deaths, and infant and child deaths by year of occurrence",NA
-death1a,Date of occurrence,Death,Event,Direct,ST-1,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths)",NA
-death1a,Date of occurrence,Death,Event,Direct,ST-9,T8.3,Fertility and mortality indicators by year of occurrence,NA
-death1a,Date of occurrence,Death,Event,Direct,ST-2,T8.4,Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths),NA
-death1a,Date of occurrence,Death,Event,Direct,NA,F3.1,Proportion (%) of live births and deaths by registration timeliness,Optional
-death1a,Date of occurrence,Death,Event,Direct,NA,F5.1,Deaths by year of occurrence,Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,F5.2,Deaths by sex and age of decedent,Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,F5.3,Crude death rate by sex and year of occurrence of death,Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,F5.4,Age-specific mortality rate by sex,Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,F5.5,Life expectancy at birth by sex and year of occurrence,NA
-death1a,Date of occurrence,Death,Event,Direct,NA,F6.1,"Deaths by broad group, including ill-defined codes",Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,F6.2,"Deaths by broad disease group and age, males",Priority
-death1a,Date of occurrence,Death,Event,Direct,NA,F6.3,"Deaths by broad disease group and age, females",Priority
-death1b,Date of registration,Death,Event,Direct,NA,T3.1,Number of vital events by registration timeliness,NA
-death1b,Date of registration,Death,Event,Direct,NA,T3.3,Proportion (%) of deaths by year of registration and year of occurrence,NA
-death1b,Date of registration,Death,Event,Direct,NA,T3.6,Death registration completeness by year of occurrence and sex of decedent,NA
-death1b,Date of registration,Death,Event,Direct,NA,T3.7,Death registration completeness by place of usual residence and sex of decedent,NA
-death1b,Date of registration,Death,Event,Direct,NA,T3.9,Adjustment of deaths by place of usual residence and sex of decedent,NA
-death1b,Date of registration,Death,Event,Direct,NA,T3.10,Adjustment of deaths by age group and sex of decedent,Optional
-death1b,Date of registration,Death,Event,Direct,NA,T3.12,Redistribution of deaths with incomplete data on ‘age of decedent’,NA
-death1b,Date of registration,Death,Event,Direct,DE-1,T5.2,Deaths by place of usual residence and sex of decedent,Priority
-death1b,Date of registration,Death,Event,Direct,DE-2,T5.3,"Deaths by place of occurrence and place of usual residence of decedent, males",Priority
-death1b,Date of registration,Death,Event,Direct,DE-2,T5.4,"Deaths by place of occurrence and place of usual residence of decedent, females",Priority
-death1b,Date of registration,Death,Event,Direct,DE-4,T5.5,Deaths by place of occurrence and site of occurrence,Priority
-death1b,Date of registration,Death,Event,Direct,DE-5,T5.6,"Deaths by age and sex of decedent, urban areas",Priority
-death1b,Date of registration,Death,Event,Direct,DE-5,T5.7,"Deaths by age and sex of decedent, rural areas",Priority
-death1b,Date of registration,Death,Event,Direct,NA,T5.8,Crude death rate by place of usual residence of decedent,Priority
-death1b,Date of registration,Death,Event,Direct,NA,T5.9,"Infant and child mortality (deaths per 1,000 live births) by year of occurrence",Priority
-death1b,Date of registration,Death,Event,Direct,NA,T5.10,Maternal mortality by year of occurrence,Priority
-death1b,Date of registration,Death,Event,Direct,NA,T5.11,Foetal deaths by year of occurrence and sex of foetus,NA
-death1b,Date of registration,Death,Event,Direct,NA,T5.12,Foetal deaths by gestational age and birth weight of foetus,NA
-death1b,Date of registration,Death,Event,Direct,NA,T6.1,Leading causes of death by broad age group and sex,NA
-death1b,Date of registration,Death,Event,Direct,NA,T6.2,"Top 10 causes of death (all ages, both sexes)",Priority
-death1b,Date of registration,Death,Event,Direct,NA,T6.3,"10 leading causes of death, males",Priority
-death1b,Date of registration,Death,Event,Direct,NA,T6.4,"10 leading causes of death, females",Priority
-death1b,Date of registration,Death,Event,Direct,NA,T6.5,"10 leading causes of death, infants and children (0–4 years, both sexes combined)",Priority
-death1b,Date of registration,Death,Event,Direct,NA,T6.6,"10 leading causes of death, children (5–14 years, both sexes combined)",Priority
-death1b,Date of registration,Death,Event,Direct,NA,T6.7,"10 leading causes of death, adolescents and adults (15–69 years, males)",Priority
-death1b,Date of registration,Death,Event,Direct,NA,T6.8,"10 leading causes of death, adolescents and adults (15–69 years, females)",Priority
-death1b,Date of registration,Death,Event,Direct,NA,T6.9,"10 leading causes of death, older adults (15–69 years, males)",Priority
-death1b,Date of registration,Death,Event,Direct,NA,T6.10,"10 leading causes of death, older adults (15–69 years, females)",Priority
-death1b,Date of registration,Death,Event,Direct,ST-9,T8.1,"Live births, deaths, and infant and child deaths by year of occurrence",NA
-death1b,Date of registration,Death,Event,Direct,ST-1,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths)",NA
-death1b,Date of registration,Death,Event,Direct,ST-9,T8.3,Fertility and mortality indicators by year of occurrence,NA
-death1b,Date of registration,Death,Event,Direct,ST-2,T8.4,Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths),NA
-death1b,Date of registration,Death,Event,Direct,NA,F3.1,Proportion (%) of live births and deaths by registration timeliness,Optional
-death1b,Date of registration,Death,Event,Direct,NA,F5.1,Deaths by year of occurrence,Priority
-death1b,Date of registration,Death,Event,Direct,NA,F5.2,Deaths by sex and age of decedent,Priority
-death1b,Date of registration,Death,Event,Direct,NA,F5.3,Crude death rate by sex and year of occurrence of death,Priority
-death1b,Date of registration,Death,Event,Direct,NA,F5.4,Age-specific mortality rate by sex,Priority
-death1b,Date of registration,Death,Event,Direct,NA,F5.5,Life expectancy at birth by sex and year of occurrence,NA
-death1b,Date of registration,Death,Event,Direct,NA,F6.1,"Deaths by broad group, including ill-defined codes",Priority
-death1b,Date of registration,Death,Event,Direct,NA,F6.2,"Deaths by broad disease group and age, males",Priority
-death1b,Date of registration,Death,Event,Direct,NA,F6.3,"Deaths by broad disease group and age, females",Priority
-death2c,Sex,Death,Decedent,Direct,NA,T3.6,Death registration completeness by year of occurrence and sex of decedent,NA
-death2c,Sex,Death,Decedent,Direct,NA,T3.7,Death registration completeness by place of usual residence and sex of decedent,NA
-death2c,Sex,Death,Decedent,Direct,NA,T3.9,Adjustment of deaths by place of usual residence and sex of decedent,NA
-death2c,Sex,Death,Decedent,Direct,NA,T3.10,Adjustment of deaths by age group and sex of decedent,Optional
-death2c,Sex,Death,Decedent,Direct,NA,T3.12,Redistribution of deaths with incomplete data on ‘age of decedent’,NA
-death2c,Sex,Death,Decedent,Direct,DE-1,T5.2,Deaths by place of usual residence and sex of decedent,Priority
-death2c,Sex,Death,Decedent,Direct,DE-2,T5.3,"Deaths by place of occurrence and place of usual residence of decedent, males",Priority
-death2c,Sex,Death,Decedent,Direct,DE-2,T5.4,"Deaths by place of occurrence and place of usual residence of decedent, females",Priority
-death2c,Sex,Death,Decedent,Direct,DE-5,T5.6,"Deaths by age and sex of decedent, urban areas",Priority
-death2c,Sex,Death,Decedent,Direct,DE-5,T5.7,"Deaths by age and sex of decedent, rural areas",Priority
-death2c,Sex,Death,Decedent,Direct,NA,T5.11,Foetal deaths by year of occurrence and sex of foetus,NA
-death2c,Sex,Death,Decedent,Direct,NA,T5.12,Foetal deaths by gestational age and birth weight of foetus,NA
-death2c,Sex,Death,Decedent,Direct,NA,T6.1,Leading causes of death by broad age group and sex,NA
-death2c,Sex,Death,Decedent,Direct,NA,T6.3,"10 leading causes of death, males",Priority
-death2c,Sex,Death,Decedent,Direct,NA,T6.4,"10 leading causes of death, females",Priority
-death2c,Sex,Death,Decedent,Direct,NA,T6.5,"10 leading causes of death, infants and children (0–4 years, both sexes combined)",Priority
-death2c,Sex,Death,Decedent,Direct,NA,T6.6,"10 leading causes of death, children (5–14 years, both sexes combined)",Priority
-death2c,Sex,Death,Decedent,Direct,NA,T6.7,"10 leading causes of death, adolescents and adults (15–69 years, males)",Priority
-death2c,Sex,Death,Decedent,Direct,NA,T6.8,"10 leading causes of death, adolescents and adults (15–69 years, females)",Priority
-death2c,Sex,Death,Decedent,Direct,NA,T6.9,"10 leading causes of death, older adults (15–69 years, males)",Priority
-death2c,Sex,Death,Decedent,Direct,NA,T6.10,"10 leading causes of death, older adults (15–69 years, females)",Priority
-death2c,Sex,Death,Decedent,Direct,ST-9,T8.1,"Live births, deaths, and infant and child deaths by year of occurrence",NA
-death2c,Sex,Death,Decedent,Direct,ST-1,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths)",NA
-death2c,Sex,Death,Decedent,Direct,NA,F5.2,Deaths by sex and age of decedent,Priority
-death2c,Sex,Death,Decedent,Direct,NA,F5.3,Crude death rate by sex and year of occurrence of death,Priority
-death2c,Sex,Death,Decedent,Direct,NA,F5.4,Age-specific mortality rate by sex,Priority
-death2c,Sex,Death,Decedent,Direct,NA,F5.5,Life expectancy at birth by sex and year of occurrence,NA
-death2c,Sex,Death,Decedent,Direct,NA,F6.2,"Deaths by broad disease group and age, males",Priority
-death2c,Sex,Death,Decedent,Direct,NA,F6.3,"Deaths by broad disease group and age, females",Priority
-death1c,Place of occurrence,Death,Event,Direct,DE-2,T5.3,"Deaths by place of occurrence and place of usual residence of decedent, males",Priority
-death1c,Place of occurrence,Death,Event,Direct,DE-2,T5.4,"Deaths by place of occurrence and place of usual residence of decedent, females",Priority
-death1c,Place of occurrence,Death,Event,Direct,DE-4,T5.5,Deaths by place of occurrence and site of occurrence,Priority
-death1n,"Type of place of occurrence (hospital, home, etc.)",Death,Event,Additional,DE-4,T5.5,Deaths by place of occurrence and site of occurrence,Priority
-death2b,Age,Death,Decedent,Derived,NA,T3.10,Adjustment of deaths by age group and sex of decedent,Optional
-death2b,Age,Death,Decedent,Derived,NA,T3.12,Redistribution of deaths with incomplete data on ‘age of decedent’,NA
-death2b,Age,Death,Decedent,Derived,DE-5,T5.6,"Deaths by age and sex of decedent, urban areas",Priority
-death2b,Age,Death,Decedent,Derived,DE-5,T5.7,"Deaths by age and sex of decedent, rural areas",Priority
-death2b,Age,Death,Decedent,Derived,NA,T5.9,"Infant and child mortality (deaths per 1,000 live births) by year of occurrence",Priority
-death2b,Age,Death,Decedent,Derived,NA,T5.11,Foetal deaths by year of occurrence and sex of foetus,NA
-death2b,Age,Death,Decedent,Derived,NA,T5.12,Foetal deaths by gestational age and birth weight of foetus,NA
-death2b,Age,Death,Decedent,Derived,NA,T6.1,Leading causes of death by broad age group and sex,NA
-death2b,Age,Death,Decedent,Derived,NA,T6.5,"10 leading causes of death, infants and children (0–4 years, both sexes combined)",Priority
-death2b,Age,Death,Decedent,Derived,NA,T6.6,"10 leading causes of death, children (5–14 years, both sexes combined)",Priority
-death2b,Age,Death,Decedent,Derived,NA,T6.7,"10 leading causes of death, adolescents and adults (15–69 years, males)",Priority
-death2b,Age,Death,Decedent,Derived,NA,T6.8,"10 leading causes of death, adolescents and adults (15–69 years, females)",Priority
-death2b,Age,Death,Decedent,Derived,NA,T6.9,"10 leading causes of death, older adults (15–69 years, males)",Priority
-death2b,Age,Death,Decedent,Derived,NA,T6.10,"10 leading causes of death, older adults (15–69 years, females)",Priority
-death2b,Age,Death,Decedent,Derived,ST-9,T8.1,"Live births, deaths, and infant and child deaths by year of occurrence",NA
-death2b,Age,Death,Decedent,Derived,ST-1,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths)",NA
-death2b,Age,Death,Decedent,Derived,ST-9,T8.3,Fertility and mortality indicators by year of occurrence,NA
-death2b,Age,Death,Decedent,Derived,ST-2,T8.4,Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths),NA
-death2b,Age,Death,Decedent,Derived,NA,F5.2,Deaths by sex and age of decedent,Priority
-death2b,Age,Death,Decedent,Derived,NA,F5.4,Age-specific mortality rate by sex,Priority
-death2b,Age,Death,Decedent,Derived,NA,F5.5,Life expectancy at birth by sex and year of occurrence,NA
-death2b,Age,Death,Decedent,Derived,NA,F6.2,"Deaths by broad disease group and age, males",Priority
-death2b,Age,Death,Decedent,Derived,NA,F6.3,"Deaths by broad disease group and age, females",Priority
-death2o,Place of usual residence,Death,Decedent,Direct,NA,T3.7,Death registration completeness by place of usual residence and sex of decedent,NA
-death2o,Place of usual residence,Death,Decedent,Direct,NA,T3.9,Adjustment of deaths by place of usual residence and sex of decedent,NA
-death2o,Place of usual residence,Death,Decedent,Direct,DE-1,T5.2,Deaths by place of usual residence and sex of decedent,Priority
-death2o,Place of usual residence,Death,Decedent,Direct,DE-2,T5.3,"Deaths by place of occurrence and place of usual residence of decedent, males",Priority
-death2o,Place of usual residence,Death,Decedent,Direct,DE-2,T5.4,"Deaths by place of occurrence and place of usual residence of decedent, females",Priority
-death2o,Place of usual residence,Death,Decedent,Direct,NA,T5.8,Crude death rate by place of usual residence of decedent,Priority
-death2o,Place of usual residence,Death,Decedent,Direct,ST-1,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths)",NA
-death2o,Place of usual residence,Death,Decedent,Direct,ST-2,T8.4,Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths),NA
-death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,NA,T3.7,Death registration completeness by place of usual residence and sex of decedent,NA
-death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,NA,T3.9,Adjustment of deaths by place of usual residence and sex of decedent,NA
-death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,DE-1,T5.2,Deaths by place of usual residence and sex of decedent,Priority
-death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,DE-2,T5.3,"Deaths by place of occurrence and place of usual residence of decedent, males",Priority
-death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,DE-2,T5.4,"Deaths by place of occurrence and place of usual residence of decedent, females",Priority
-death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,NA,T5.8,Crude death rate by place of usual residence of decedent,Priority
-death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,ST-1,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths)",NA
-death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,ST-2,T8.4,Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths),NA
-death2r,Urban/rural residence,Death,Decedent,Derived,DE-1,T5.2,Deaths by place of usual residence and sex of decedent,Priority
-death2r,Urban/rural residence,Death,Decedent,Derived,DE-5,T5.6,"Deaths by age and sex of decedent, urban areas",Priority
-death2r,Urban/rural residence,Death,Decedent,Derived,DE-5,T5.7,"Deaths by age and sex of decedent, rural areas",Priority
-death1j,"Death occurring during pregnancy, childbirth and puerperium (for females between 15 and 49 years of age)",Death,Event,Additional,NA,T5.10,Maternal mortality by year of occurrence,Priority
-death1j,"Death occurring during pregnancy, childbirth and puerperium (for females between 15 and 49 years of age)",Death,Event,Additional,ST-9,T8.3,Fertility and mortality indicators by year of occurrence,NA
-death1j,"Death occurring during pregnancy, childbirth and puerperium (for females between 15 and 49 years of age)",Death,Event,Additional,ST-2,T8.4,Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths),NA
-death1g,Cause of death,Death,Event,Direct,NA,T6.1,Leading causes of death by broad age group and sex,NA
-death1g,Cause of death,Death,Event,Direct,NA,T6.2,"Top 10 causes of death (all ages, both sexes)",Priority
-death1g,Cause of death,Death,Event,Direct,NA,T6.3,"10 leading causes of death, males",Priority
-death1g,Cause of death,Death,Event,Direct,NA,T6.4,"10 leading causes of death, females",Priority
-death1g,Cause of death,Death,Event,Direct,NA,T6.5,"10 leading causes of death, infants and children (0–4 years, both sexes combined)",Priority
-death1g,Cause of death,Death,Event,Direct,NA,T6.6,"10 leading causes of death, children (5–14 years, both sexes combined)",Priority
-death1g,Cause of death,Death,Event,Direct,NA,T6.7,"10 leading causes of death, adolescents and adults (15–69 years, males)",Priority
-death1g,Cause of death,Death,Event,Direct,NA,T6.8,"10 leading causes of death, adolescents and adults (15–69 years, females)",Priority
-death1g,Cause of death,Death,Event,Direct,NA,T6.9,"10 leading causes of death, older adults (15–69 years, males)",Priority
-death1g,Cause of death,Death,Event,Direct,NA,T6.10,"10 leading causes of death, older adults (15–69 years, females)",Priority
-death1g,Cause of death,Death,Event,Direct,NA,F6.1,"Deaths by broad group, including ill-defined codes",Priority
-death1g,Cause of death,Death,Event,Direct,NA,F6.2,"Deaths by broad disease group and age, males",Priority
-death1g,Cause of death,Death,Event,Direct,NA,F6.3,"Deaths by broad disease group and age, females",Priority
-marriage1a,Date of occurrence,Marriage,Event,Direct,MA-2,T7.2,"Marriages by place of usual residence of groom and age of bride and of groom, urban areas",Priority
-marriage1a,Date of occurrence,Marriage,Event,Direct,MA-2,T7.3,"Marriages by place of usual residence of groom and age of bride and of groom, rural areas",Priority
-marriage1a,Date of occurrence,Marriage,Event,Direct,MA-3,T7.4,Marriages by age of groom and previous marital status,Priority
-marriage1a,Date of occurrence,Marriage,Event,Direct,MA-3,T7.5,Marriages by age of bride and previous marital status,Priority
-marriage1a,Date of occurrence,Marriage,Event,Direct,ST-9,T8.5,Marriage and divorce indicators by year of occurrence,NA
-marriage1a,Date of occurrence,Marriage,Event,Direct,NA,F7.1,Marriages by year of occurrence,Priority
-marriage1a,Date of occurrence,Marriage,Event,Direct,NA,F7.2,Average age at first marriage by sex and year of occurrence,Priority
-marriage1b,Date of registration,Marriage,Event,Direct,MA-2,T7.2,"Marriages by place of usual residence of groom and age of bride and of groom, urban areas",Priority
-marriage1b,Date of registration,Marriage,Event,Direct,MA-2,T7.3,"Marriages by place of usual residence of groom and age of bride and of groom, rural areas",Priority
-marriage1b,Date of registration,Marriage,Event,Direct,MA-3,T7.4,Marriages by age of groom and previous marital status,Priority
-marriage1b,Date of registration,Marriage,Event,Direct,MA-3,T7.5,Marriages by age of bride and previous marital status,Priority
-marriage1b,Date of registration,Marriage,Event,Direct,ST-9,T8.5,Marriage and divorce indicators by year of occurrence,NA
-marriage1b,Date of registration,Marriage,Event,Direct,NA,F7.1,Marriages by year of occurrence,Priority
-marriage1b,Date of registration,Marriage,Event,Direct,NA,F7.2,Average age at first marriage by sex and year of occurrence,Priority
-marriage2b,Age,Marriage,Bride,Derived,MA-2,T7.2,"Marriages by place of usual residence of groom and age of bride and of groom, urban areas",Priority
-marriage2b,Age,Marriage,Bride,Derived,MA-2,T7.3,"Marriages by place of usual residence of groom and age of bride and of groom, rural areas",Priority
-marriage2b,Age,Marriage,Bride,Derived,MA-3,T7.5,Marriages by age of bride and previous marital status,Priority
-marriage2b,Age,Marriage,Bride,Derived,ST-9,T8.5,Marriage and divorce indicators by year of occurrence,NA
-marriage2b,Age,Marriage,Bride,Derived,NA,F7.2,Average age at first marriage by sex and year of occurrence,Priority
-marriage3b,Age,Marriage,Groom,Derived,MA-2,T7.2,"Marriages by place of usual residence of groom and age of bride and of groom, urban areas",Priority
-marriage3b,Age,Marriage,Groom,Derived,MA-2,T7.3,"Marriages by place of usual residence of groom and age of bride and of groom, rural areas",Priority
-marriage3b,Age,Marriage,Groom,Derived,MA-3,T7.4,Marriages by age of groom and previous marital status,Priority
-marriage3b,Age,Marriage,Groom,Derived,ST-9,T8.5,Marriage and divorce indicators by year of occurrence,NA
-marriage3b,Age,Marriage,Groom,Derived,NA,F7.2,Average age at first marriage by sex and year of occurrence,Priority
-marriage3m,Place of usual residence,Marriage,Groom,Direct,MA-2,T7.2,"Marriages by place of usual residence of groom and age of bride and of groom, urban areas",Priority
-marriage3m,Place of usual residence,Marriage,Groom,Direct,MA-2,T7.3,"Marriages by place of usual residence of groom and age of bride and of groom, rural areas",Priority
-marriage2c,Marital status (previous),Marriage,Bride,Additional,MA-3,T7.5,Marriages by age of bride and previous marital status,Priority
-marriage3c,Marital status (previous),Marriage,Groom,Additional,MA-3,T7.4,Marriages by age of groom and previous marital status,Priority
-divorce2b,Age,Divorce,Wife,Derived,DI-2,T7.6,Divorces by age of husband and wife,Priority
-divorce2b,Age,Divorce,Wife,Derived,DI-3,T7.8,Divorces by duration of marriage and age of wife,Priority
-divorce2b,Age,Divorce,Wife,Derived,ST-9,T8.5,Marriage and divorce indicators by year of occurrence,NA
-divorce2b,Age,Divorce,Wife,Derived,NA,F7.4,Average age at divorce by sex and year of occurrence,Priority
-divorce2b,Age,Divorce,Wife,Derived,NA,F7.5,Age-specific divorce rate by sex and year of occurrence,Priority
-divorce3b,Age,Divorce,Husband,Derived,DI-2,T7.6,Divorces by age of husband and wife,Priority
-divorce3b,Age,Divorce,Husband,Derived,DI-3,T7.7,Divorces by duration of marriage and age of husband,Priority
-divorce3b,Age,Divorce,Husband,Derived,ST-9,T8.5,Marriage and divorce indicators by year of occurrence,NA
-divorce3b,Age,Divorce,Husband,Derived,NA,F7.4,Average age at divorce by sex and year of occurrence,Priority
-divorce3b,Age,Divorce,Husband,Derived,NA,F7.5,Age-specific divorce rate by sex and year of occurrence,Priority
-divorce1a,Date of occurrence,Divorce,Event,Direct,DI-2,T7.6,Divorces by age of husband and wife,Priority
-divorce1a,Date of occurrence,Divorce,Event,Direct,DI-3,T7.7,Divorces by duration of marriage and age of husband,Priority
-divorce1a,Date of occurrence,Divorce,Event,Direct,DI-3,T7.8,Divorces by duration of marriage and age of wife,Priority
-divorce1a,Date of occurrence,Divorce,Event,Direct,DI-4,T7.9,Divorces by duration of marriage and number of dependent children,Priority
-divorce1a,Date of occurrence,Divorce,Event,Direct,ST-9,T8.5,Marriage and divorce indicators by year of occurrence,NA
-divorce1a,Date of occurrence,Divorce,Event,Direct,NA,F7.3,Divorces by year of occurrence,Priority
-divorce1a,Date of occurrence,Divorce,Event,Direct,NA,F7.4,Average age at divorce by sex and year of occurrence,Priority
-divorce1a,Date of occurrence,Divorce,Event,Direct,NA,F7.5,Age-specific divorce rate by sex and year of occurrence,Priority
-divorce1a,Date of occurrence,Divorce,Event,Direct,NA,F7.6,Divorces by duration of marriage and year of occurrence,Priority
-divorce1b,Date of registration,Divorce,Event,Direct,DI-2,T7.6,Divorces by age of husband and wife,Priority
-divorce1b,Date of registration,Divorce,Event,Direct,DI-3,T7.7,Divorces by duration of marriage and age of husband,Priority
-divorce1b,Date of registration,Divorce,Event,Direct,DI-3,T7.8,Divorces by duration of marriage and age of wife,Priority
-divorce1b,Date of registration,Divorce,Event,Direct,DI-4,T7.9,Divorces by duration of marriage and number of dependent children,Priority
-divorce1b,Date of registration,Divorce,Event,Direct,ST-9,T8.5,Marriage and divorce indicators by year of occurrence,NA
-divorce1b,Date of registration,Divorce,Event,Direct,NA,F7.3,Divorces by year of occurrence,Priority
-divorce1b,Date of registration,Divorce,Event,Direct,NA,F7.4,Average age at divorce by sex and year of occurrence,Priority
-divorce1b,Date of registration,Divorce,Event,Direct,NA,F7.5,Age-specific divorce rate by sex and year of occurrence,Priority
-divorce1b,Date of registration,Divorce,Event,Direct,NA,F7.6,Divorces by duration of marriage and year of occurrence,Priority
-divorce2g,Duration of marriage,Divorce,Wife,Derived,DI-3,T7.8,Divorces by duration of marriage and age of wife,Priority
-divorce2g,Duration of marriage,Divorce,Wife,Derived,DI-4,T7.9,Divorces by duration of marriage and number of dependent children,Priority
-divorce2g,Duration of marriage,Divorce,Wife,Derived,NA,F7.6,Divorces by duration of marriage and year of occurrence,Priority
-divorce3g,Duration of marriage,Divorce,Husband,Derived,DI-3,T7.7,Divorces by duration of marriage and age of husband,Priority
-divorce3g,Duration of marriage,Divorce,Husband,Derived,DI-4,T7.9,Divorces by duration of marriage and number of dependent children,Priority
-divorce3g,Duration of marriage,Divorce,Husband,Derived,NA,F7.6,Divorces by duration of marriage and year of occurrence,Priority
-divorce2d,Number of dependent children of divorced persons,Divorce,Wife,Additional,DI-4,T7.9,Divorces by duration of marriage and number of dependent children,Priority
+variable_id,variable_name,event,characteristic,source,type,un_id,output_id,output_id_old,output_name,output_status
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,table_3_01,T3.1,"Number of vital events by registration timeliness, year",NA
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,table_3_02,T3.2,Proportion (%) of births by year of registration and year of occurrence,Optional
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,table_3_04,T3.4,Birth registration completeness by year of occurrence and sex of newborn,Optional
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,table_3_05,T3.5,"Birth registration completeness by place of usual residence of mother and sex of newborn, year",NA
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,table_3_08,T3.8,"Adjustment of births by place of usual residence of mother and sex of newborn, year",NA
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,table_3_11,T3.11,"Redistribution of births with incomplete data on ‘age of mother’, year",NA
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,table_4_01,T4.1,Summary statistics on fertility by year of occurrence,Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,LB-1,table_4_02,T4.2,"Live births by place of occurrence and sex of newborn, year",Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,LB-2,table_4_03,T4.3,"Live births by place of occurrence and place of usual residence of mother, year",Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,table_4_04,T4.4,"Live births by age of mother and type of birth, year",Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,LB-5,table_4_05,T4.5,"Live births by age and marital status of mother, urban areas, year",Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,LB-5,table_4_06,T4.6,"Live births by age and marital status of mother, rural areas, year",Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,LB-13,table_4_07,T4.7,"Live births by place of occurrence, site of delivery and attendant at birth, year",Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,ST-2,table_4_08,T4.8,"Crude birth rate (CBR) by usual residence of mother, year",Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,table_4_09,T4.9,"Age-specific fertility rates by usual residence of mother, urban areas, year",Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,table_4_10,T4.10,"Age-specific fertility rates by usual residence of mother, rural areas, year",Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,table_4_11,T4.11,"Total fertility rate (TFR) by usual residence of mother, year",Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,ST-9,table_8_01,T8.1,"Live births, deaths, and infant and child deaths by year of occurrence, year",NA
+birth1a,Date of occurrence,Birth,Event,Direct,Date,ST-1,table_8_02,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths), year",NA
+birth1a,Date of occurrence,Birth,Event,Direct,Date,ST-9,table_8_03,T8.3,Fertility and mortality indicators by year of occurrence,NA
+birth1a,Date of occurrence,Birth,Event,Direct,Date,ST-2,table_8_04,T8.4,"Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths), year",NA
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,figure_3_01,F3.1,Proportion (%) of live births and deaths by registration timeliness,Optional
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,figure_4_01,F4.1,Live births by year of occurrence,Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,figure_4_02,F4.2,"Live births by age of mother, year",Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,figure_4_03,F4.3,Crude birth rate by year of occurrence,Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,figure_4_04,F4.4,Age-specific fertility rates (ASFRs) by year of occurrence of birth,Priority
+birth1a,Date of occurrence,Birth,Event,Direct,Date,NA,figure_4_05,F4.5,Total fertility rate by year of occurrence of birth,Priority
+birth1b,Date of registration,Birth,Event,Direct,Date,NA,table_3_01,T3.1,"Number of vital events by registration timeliness, year",NA
+birth1b,Date of registration,Birth,Event,Direct,Date,NA,table_3_02,T3.2,Proportion (%) of births by year of registration and year of occurrence,Optional
+birth1b,Date of registration,Birth,Event,Direct,Date,NA,table_3_04,T3.4,Birth registration completeness by year of occurrence and sex of newborn,Optional
+birth1b,Date of registration,Birth,Event,Direct,Date,NA,table_3_05,T3.5,"Birth registration completeness by place of usual residence of mother and sex of newborn, year",NA
+birth1b,Date of registration,Birth,Event,Direct,Date,NA,table_3_08,T3.8,"Adjustment of births by place of usual residence of mother and sex of newborn, year",NA
+birth1b,Date of registration,Birth,Event,Direct,Date,NA,table_3_11,T3.11,"Redistribution of births with incomplete data on ‘age of mother’, year",NA
+birth1b,Date of registration,Birth,Event,Direct,Date,LB-1,table_4_02,T4.2,"Live births by place of occurrence and sex of newborn, year",Priority
+birth1b,Date of registration,Birth,Event,Direct,Date,LB-2,table_4_03,T4.3,"Live births by place of occurrence and place of usual residence of mother, year",Priority
+birth1b,Date of registration,Birth,Event,Direct,Date,NA,table_4_04,T4.4,"Live births by age of mother and type of birth, year",Priority
+birth1b,Date of registration,Birth,Event,Direct,Date,LB-5,table_4_05,T4.5,"Live births by age and marital status of mother, urban areas, year",Priority
+birth1b,Date of registration,Birth,Event,Direct,Date,LB-5,table_4_06,T4.6,"Live births by age and marital status of mother, rural areas, year",Priority
+birth1b,Date of registration,Birth,Event,Direct,Date,LB-13,table_4_07,T4.7,"Live births by place of occurrence, site of delivery and attendant at birth, year",Priority
+birth1b,Date of registration,Birth,Event,Direct,Date,ST-2,table_4_08,T4.8,"Crude birth rate (CBR) by usual residence of mother, year",Priority
+birth1b,Date of registration,Birth,Event,Direct,Date,NA,table_4_09,T4.9,"Age-specific fertility rates by usual residence of mother, urban areas, year",Priority
+birth1b,Date of registration,Birth,Event,Direct,Date,NA,table_4_10,T4.10,"Age-specific fertility rates by usual residence of mother, rural areas, year",Priority
+birth1b,Date of registration,Birth,Event,Direct,Date,NA,table_4_11,T4.11,"Total fertility rate (TFR) by usual residence of mother, year",Priority
+birth1b,Date of registration,Birth,Event,Direct,Date,NA,figure_3_01,F3.1,Proportion (%) of live births and deaths by registration timeliness,Optional
+birth1c,Place of occurrence,Birth,Event,Direct,Character,LB-1,table_4_02,T4.2,"Live births by place of occurrence and sex of newborn, year",Priority
+birth1c,Place of occurrence,Birth,Event,Direct,Character,LB-2,table_4_03,T4.3,"Live births by place of occurrence and place of usual residence of mother, year",Priority
+birth1c,Place of occurrence,Birth,Event,Direct,Character,LB-13,table_4_07,T4.7,"Live births by place of occurrence, site of delivery and attendant at birth, year",Priority
+birth2a,Sex,Birth,Newborn,Direct,Character,NA,table_3_04,T3.4,Birth registration completeness by year of occurrence and sex of newborn,Optional
+birth2a,Sex,Birth,Newborn,Direct,Character,NA,table_3_05,T3.5,"Birth registration completeness by place of usual residence of mother and sex of newborn, year",NA
+birth2a,Sex,Birth,Newborn,Direct,Character,NA,table_3_08,T3.8,"Adjustment of births by place of usual residence of mother and sex of newborn, year",NA
+birth2a,Sex,Birth,Newborn,Direct,Character,LB-1,table_4_02,T4.2,"Live births by place of occurrence and sex of newborn, year",Priority
+birth2a,Sex,Birth,Newborn,Direct,Character,ST-9,table_8_01,T8.1,"Live births, deaths, and infant and child deaths by year of occurrence, year",NA
+birth2a,Sex,Birth,Newborn,Direct,Character,ST-1,table_8_02,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths), year",NA
+birth3l,Place of usual residence,Birth,Mother,Direct,Character,NA,table_3_05,T3.5,"Birth registration completeness by place of usual residence of mother and sex of newborn, year",NA
+birth3l,Place of usual residence,Birth,Mother,Direct,Character,NA,table_3_08,T3.8,"Adjustment of births by place of usual residence of mother and sex of newborn, year",NA
+birth3l,Place of usual residence,Birth,Mother,Direct,Character,LB-2,table_4_03,T4.3,"Live births by place of occurrence and place of usual residence of mother, year",Priority
+birth3l,Place of usual residence,Birth,Mother,Direct,Character,ST-2,table_4_08,T4.8,"Crude birth rate (CBR) by usual residence of mother, year",Priority
+birth3l,Place of usual residence,Birth,Mother,Direct,Character,ST-1,table_8_02,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths), year",NA
+birth3l,Place of usual residence,Birth,Mother,Direct,Character,ST-2,table_8_04,T8.4,"Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths), year",NA
+birth3l,Place of usual residence,Birth,Mother,Direct,Character,NA,figure_4_02,F4.2,"Live births by age of mother, year",Priority
+birth1g,"Type of birth (i.e., single, twin, triplet, quadruplet or higher multiple delivery)",Birth,Event,Direct,Character,NA,table_4_04,T4.4,"Live births by age of mother and type of birth, year",Priority
+birth3b,Age,Birth,Mother,Derived,Integer,NA,table_3_11,T3.11,"Redistribution of births with incomplete data on ‘age of mother’, year",NA
+birth3b,Age,Birth,Mother,Derived,Integer,NA,table_4_04,T4.4,"Live births by age of mother and type of birth, year",Priority
+birth3b,Age,Birth,Mother,Derived,Integer,LB-5,table_4_05,T4.5,"Live births by age and marital status of mother, urban areas, year",Priority
+birth3b,Age,Birth,Mother,Derived,Integer,LB-5,table_4_06,T4.6,"Live births by age and marital status of mother, rural areas, year",Priority
+birth3b,Age,Birth,Mother,Derived,Integer,NA,table_4_09,T4.9,"Age-specific fertility rates by usual residence of mother, urban areas, year",Priority
+birth3b,Age,Birth,Mother,Derived,Integer,NA,table_4_10,T4.10,"Age-specific fertility rates by usual residence of mother, rural areas, year",Priority
+birth3b,Age,Birth,Mother,Derived,Integer,NA,table_4_11,T4.11,"Total fertility rate (TFR) by usual residence of mother, year",Priority
+birth3b,Age,Birth,Mother,Derived,Integer,ST-9,table_8_03,T8.3,Fertility and mortality indicators by year of occurrence,NA
+birth3b,Age,Birth,Mother,Derived,Integer,ST-2,table_8_04,T8.4,"Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths), year",NA
+birth3b,Age,Birth,Mother,Derived,Integer,NA,figure_4_02,F4.2,"Live births by age of mother, year",Priority
+birth3b,Age,Birth,Mother,Derived,Integer,NA,figure_4_04,F4.4,Age-specific fertility rates (ASFRs) by year of occurrence of birth,Priority
+birth3b,Age,Birth,Mother,Derived,Integer,NA,figure_4_05,F4.5,Total fertility rate by year of occurrence of birth,Priority
+birth3c,Marital status,Birth,Mother,Direct,Character,LB-5,table_4_05,T4.5,"Live births by age and marital status of mother, urban areas, year",Priority
+birth3c,Marital status,Birth,Mother,Direct,Character,LB-5,table_4_06,T4.6,"Live births by age and marital status of mother, rural areas, year",Priority
+birth3n,Urban/rural residence,Birth,Mother,Derived,Character,LB-5,table_4_05,T4.5,"Live births by age and marital status of mother, urban areas, year",Priority
+birth3n,Urban/rural residence,Birth,Mother,Derived,Character,LB-5,table_4_06,T4.6,"Live births by age and marital status of mother, rural areas, year",Priority
+birth3n,Urban/rural residence,Birth,Mother,Derived,Character,NA,table_4_09,T4.9,"Age-specific fertility rates by usual residence of mother, urban areas, year",Priority
+birth3n,Urban/rural residence,Birth,Mother,Derived,Character,NA,table_4_10,T4.10,"Age-specific fertility rates by usual residence of mother, rural areas, year",Priority
+birth3n,Urban/rural residence,Birth,Mother,Derived,Character,NA,table_4_11,T4.11,"Total fertility rate (TFR) by usual residence of mother, year",Priority
+birth3n,Urban/rural residence,Birth,Mother,Derived,Character,NA,figure_4_03,F4.3,Crude birth rate by year of occurrence,Priority
+birth1h,Attendant at birth,Birth,Event,Direct,Character,LB-13,table_4_07,T4.7,"Live births by place of occurrence, site of delivery and attendant at birth, year",Priority
+birth1i,"Type of place of occurrence (hospital, home, etc.)",Birth,Event,Additional,Character,LB-13,table_4_07,T4.7,"Live births by place of occurrence, site of delivery and attendant at birth, year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_3_01,T3.1,"Number of vital events by registration timeliness, year",NA
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_3_03,T3.3,Proportion (%) of deaths by year of registration and year of occurrence,NA
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_3_06,T3.6,Death registration completeness by year of occurrence and sex of decedent,NA
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_3_07,T3.7,"Death registration completeness by place of usual residence and sex of decedent, year",NA
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_3_09,T3.9,"Adjustment of deaths by place of usual residence and sex of decedent, year",NA
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_3_10,T3.10,"Adjustment of deaths by age group and sex of decedent, year",Optional
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_3_12,T3.12,"Redistribution of deaths with incomplete data on ‘age of decedent’, year",NA
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_5_01,T5.1,"Summary statistics on mortality by year of occurrence, year",NA
+death1a,Date of occurrence,Death,Event,Direct,Date,DE-1,table_5_02,T5.2,"Deaths by place of usual residence and sex of decedent, year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,DE-2,table_5_03,T5.3,"Deaths by place of occurrence and place of usual residence of decedent, males, year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,DE-2,table_5_04,T5.4,"Deaths by place of occurrence and place of usual residence of decedent, females, year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,DE-4,table_5_05,T5.5,"Deaths by place of occurrence and site of occurrence, year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,DE-5,table_5_06,T5.6,"Deaths by age and sex of decedent, urban areas, year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,DE-5,table_5_07,T5.7,"Deaths by age and sex of decedent, rural areas, year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_5_08,T5.8,"Crude death rate (CDR) by place of usual residence of decedent, year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_5_09,T5.9,"Infant and child mortality (deaths per 1,000 live births) by year of occurrence",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_5_10,T5.10,Maternal mortality by year of occurrence,Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_5_11,T5.11,Foetal deaths by year of occurrence and sex of foetus,NA
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_5_12,T5.12,"Foetal deaths by gestational age and birth weight of foetus, year",NA
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_6_01,T6.1,"Leading causes of death by broad age group and sex, year",NA
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_6_02,T6.2,"Top 10 causes of death (all ages, both sexes), year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_6_03,T6.3,"10 leading causes of death, males, year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_6_04,T6.4,"10 leading causes of death, females, year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_6_05,T6.5,"10 leading causes of death, infants and children (0–4 years, both sexes combined), year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_6_06,T6.6,"10 leading causes of death, children (5–14 years, both sexes combined), year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_6_07,T6.7,"10 leading causes of death, adolescents and adults (15–69 years, males), year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_6_08,T6.8,"10 leading causes of death, adolescents and adults (15–69 years, females), year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_6_09,T6.9,"10 leading causes of death, older adults (15–69 years, males), year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,table_6_10,T6.10,"10 leading causes of death, older adults (15–69 years, females), year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,ST-9,table_8_01,T8.1,"Live births, deaths, and infant and child deaths by year of occurrence, year",NA
+death1a,Date of occurrence,Death,Event,Direct,Date,ST-1,table_8_02,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths), year",NA
+death1a,Date of occurrence,Death,Event,Direct,Date,ST-9,table_8_03,T8.3,Fertility and mortality indicators by year of occurrence,NA
+death1a,Date of occurrence,Death,Event,Direct,Date,ST-2,table_8_04,T8.4,"Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths), year",NA
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,figure_3_01,F3.1,Proportion (%) of live births and deaths by registration timeliness,Optional
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,figure_5_01,F5.1,Deaths by year of occurrence,Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,figure_5_02,F5.2,"Deaths by sex and age of decedent, year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,figure_5_03,F5.3,Crude death rate by sex and year of occurrence of death,Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,figure_5_04,F5.4,"Age-specific mortality rate by sex, year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,figure_5_05,F5.5,Life expectancy at birth by sex and year of occurrence,NA
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,figure_6_01,F6.1,"Deaths by broad group, including ill-defined codes, year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,figure_6_02,F6.2,"Deaths by broad disease group and age, males, year",Priority
+death1a,Date of occurrence,Death,Event,Direct,Date,NA,figure_6_03,F6.3,"Deaths by broad disease group and age, females, year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_3_01,T3.1,"Number of vital events by registration timeliness, year",NA
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_3_03,T3.3,Proportion (%) of deaths by year of registration and year of occurrence,NA
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_3_06,T3.6,Death registration completeness by year of occurrence and sex of decedent,NA
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_3_07,T3.7,"Death registration completeness by place of usual residence and sex of decedent, year",NA
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_3_09,T3.9,"Adjustment of deaths by place of usual residence and sex of decedent, year",NA
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_3_10,T3.10,"Adjustment of deaths by age group and sex of decedent, year",Optional
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_3_12,T3.12,"Redistribution of deaths with incomplete data on ‘age of decedent’, year",NA
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_5_01,T5.1,"Summary statistics on mortality by year of occurrence, year",NA
+death1b,Date of registration,Death,Event,Direct,Date,DE-1,table_5_02,T5.2,"Deaths by place of usual residence and sex of decedent, year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,DE-2,table_5_03,T5.3,"Deaths by place of occurrence and place of usual residence of decedent, males, year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,DE-2,table_5_04,T5.4,"Deaths by place of occurrence and place of usual residence of decedent, females, year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,DE-4,table_5_05,T5.5,"Deaths by place of occurrence and site of occurrence, year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,DE-5,table_5_06,T5.6,"Deaths by age and sex of decedent, urban areas, year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,DE-5,table_5_07,T5.7,"Deaths by age and sex of decedent, rural areas, year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_5_08,T5.8,"Crude death rate (CDR) by place of usual residence of decedent, year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_5_09,T5.9,"Infant and child mortality (deaths per 1,000 live births) by year of occurrence",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_5_10,T5.10,Maternal mortality by year of occurrence,Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_5_11,T5.11,Foetal deaths by year of occurrence and sex of foetus,NA
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_5_12,T5.12,"Foetal deaths by gestational age and birth weight of foetus, year",NA
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_6_01,T6.1,"Leading causes of death by broad age group and sex, year",NA
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_6_02,T6.2,"Top 10 causes of death (all ages, both sexes), year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_6_03,T6.3,"10 leading causes of death, males, year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_6_04,T6.4,"10 leading causes of death, females, year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_6_05,T6.5,"10 leading causes of death, infants and children (0–4 years, both sexes combined), year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_6_06,T6.6,"10 leading causes of death, children (5–14 years, both sexes combined), year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_6_07,T6.7,"10 leading causes of death, adolescents and adults (15–69 years, males), year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_6_08,T6.8,"10 leading causes of death, adolescents and adults (15–69 years, females), year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_6_09,T6.9,"10 leading causes of death, older adults (15–69 years, males), year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,table_6_10,T6.10,"10 leading causes of death, older adults (15–69 years, females), year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,ST-9,table_8_01,T8.1,"Live births, deaths, and infant and child deaths by year of occurrence, year",NA
+death1b,Date of registration,Death,Event,Direct,Date,ST-1,table_8_02,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths), year",NA
+death1b,Date of registration,Death,Event,Direct,Date,ST-9,table_8_03,T8.3,Fertility and mortality indicators by year of occurrence,NA
+death1b,Date of registration,Death,Event,Direct,Date,ST-2,table_8_04,T8.4,"Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths), year",NA
+death1b,Date of registration,Death,Event,Direct,Date,NA,figure_3_01,F3.1,Proportion (%) of live births and deaths by registration timeliness,Optional
+death1b,Date of registration,Death,Event,Direct,Date,NA,figure_5_01,F5.1,Deaths by year of occurrence,Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,figure_5_02,F5.2,"Deaths by sex and age of decedent, year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,figure_5_03,F5.3,Crude death rate by sex and year of occurrence of death,Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,figure_5_04,F5.4,"Age-specific mortality rate by sex, year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,figure_5_05,F5.5,Life expectancy at birth by sex and year of occurrence,NA
+death1b,Date of registration,Death,Event,Direct,Date,NA,figure_6_01,F6.1,"Deaths by broad group, including ill-defined codes, year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,figure_6_02,F6.2,"Deaths by broad disease group and age, males, year",Priority
+death1b,Date of registration,Death,Event,Direct,Date,NA,figure_6_03,F6.3,"Deaths by broad disease group and age, females, year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_3_06,T3.6,Death registration completeness by year of occurrence and sex of decedent,NA
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_3_07,T3.7,"Death registration completeness by place of usual residence and sex of decedent, year",NA
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_3_09,T3.9,"Adjustment of deaths by place of usual residence and sex of decedent, year",NA
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_3_10,T3.10,"Adjustment of deaths by age group and sex of decedent, year",Optional
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_3_12,T3.12,"Redistribution of deaths with incomplete data on ‘age of decedent’, year",NA
+death2c,Sex,Death,Decedent,Direct,Character,DE-1,table_5_02,T5.2,"Deaths by place of usual residence and sex of decedent, year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,DE-2,table_5_03,T5.3,"Deaths by place of occurrence and place of usual residence of decedent, males, year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,DE-2,table_5_04,T5.4,"Deaths by place of occurrence and place of usual residence of decedent, females, year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,DE-5,table_5_06,T5.6,"Deaths by age and sex of decedent, urban areas, year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,DE-5,table_5_07,T5.7,"Deaths by age and sex of decedent, rural areas, year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_5_11,T5.11,Foetal deaths by year of occurrence and sex of foetus,NA
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_5_12,T5.12,"Foetal deaths by gestational age and birth weight of foetus, year",NA
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_6_01,T6.1,"Leading causes of death by broad age group and sex, year",NA
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_6_03,T6.3,"10 leading causes of death, males, year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_6_04,T6.4,"10 leading causes of death, females, year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_6_05,T6.5,"10 leading causes of death, infants and children (0–4 years, both sexes combined), year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_6_06,T6.6,"10 leading causes of death, children (5–14 years, both sexes combined), year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_6_07,T6.7,"10 leading causes of death, adolescents and adults (15–69 years, males), year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_6_08,T6.8,"10 leading causes of death, adolescents and adults (15–69 years, females), year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_6_09,T6.9,"10 leading causes of death, older adults (15–69 years, males), year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,NA,table_6_10,T6.10,"10 leading causes of death, older adults (15–69 years, females), year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,ST-9,table_8_01,T8.1,"Live births, deaths, and infant and child deaths by year of occurrence, year",NA
+death2c,Sex,Death,Decedent,Direct,Character,ST-1,table_8_02,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths), year",NA
+death2c,Sex,Death,Decedent,Direct,Character,NA,figure_5_02,F5.2,"Deaths by sex and age of decedent, year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,NA,figure_5_03,F5.3,Crude death rate by sex and year of occurrence of death,Priority
+death2c,Sex,Death,Decedent,Direct,Character,NA,figure_5_04,F5.4,"Age-specific mortality rate by sex, year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,NA,figure_5_05,F5.5,Life expectancy at birth by sex and year of occurrence,NA
+death2c,Sex,Death,Decedent,Direct,Character,NA,figure_6_02,F6.2,"Deaths by broad disease group and age, males, year",Priority
+death2c,Sex,Death,Decedent,Direct,Character,NA,figure_6_03,F6.3,"Deaths by broad disease group and age, females, year",Priority
+death1c,Place of occurrence,Death,Event,Direct,Character,DE-2,table_5_03,T5.3,"Deaths by place of occurrence and place of usual residence of decedent, males, year",Priority
+death1c,Place of occurrence,Death,Event,Direct,Character,DE-2,table_5_04,T5.4,"Deaths by place of occurrence and place of usual residence of decedent, females, year",Priority
+death1c,Place of occurrence,Death,Event,Direct,Character,DE-4,table_5_05,T5.5,"Deaths by place of occurrence and site of occurrence, year",Priority
+death1n,"Type of place of occurrence (hospital, home, etc.)",Death,Event,Additional,Character,DE-4,table_5_05,T5.5,"Deaths by place of occurrence and site of occurrence, year",Priority
+death2b,Age,Death,Decedent,Derived,Integer,NA,table_3_10,T3.10,"Adjustment of deaths by age group and sex of decedent, year",Optional
+death2b,Age,Death,Decedent,Derived,Integer,NA,table_3_12,T3.12,"Redistribution of deaths with incomplete data on ‘age of decedent’, year",NA
+death2b,Age,Death,Decedent,Derived,Integer,DE-5,table_5_06,T5.6,"Deaths by age and sex of decedent, urban areas, year",Priority
+death2b,Age,Death,Decedent,Derived,Integer,DE-5,table_5_07,T5.7,"Deaths by age and sex of decedent, rural areas, year",Priority
+death2b,Age,Death,Decedent,Derived,Integer,NA,table_5_09,T5.9,"Infant and child mortality (deaths per 1,000 live births) by year of occurrence",Priority
+death2b,Age,Death,Decedent,Derived,Integer,NA,table_5_11,T5.11,Foetal deaths by year of occurrence and sex of foetus,NA
+death2b,Age,Death,Decedent,Derived,Integer,NA,table_5_12,T5.12,"Foetal deaths by gestational age and birth weight of foetus, year",NA
+death2b,Age,Death,Decedent,Derived,Integer,NA,table_6_01,T6.1,"Leading causes of death by broad age group and sex, year",NA
+death2b,Age,Death,Decedent,Derived,Integer,NA,table_6_05,T6.5,"10 leading causes of death, infants and children (0–4 years, both sexes combined), year",Priority
+death2b,Age,Death,Decedent,Derived,Integer,NA,table_6_06,T6.6,"10 leading causes of death, children (5–14 years, both sexes combined), year",Priority
+death2b,Age,Death,Decedent,Derived,Integer,NA,table_6_07,T6.7,"10 leading causes of death, adolescents and adults (15–69 years, males), year",Priority
+death2b,Age,Death,Decedent,Derived,Integer,NA,table_6_08,T6.8,"10 leading causes of death, adolescents and adults (15–69 years, females), year",Priority
+death2b,Age,Death,Decedent,Derived,Integer,NA,table_6_09,T6.9,"10 leading causes of death, older adults (15–69 years, males), year",Priority
+death2b,Age,Death,Decedent,Derived,Integer,NA,table_6_10,T6.10,"10 leading causes of death, older adults (15–69 years, females), year",Priority
+death2b,Age,Death,Decedent,Derived,Integer,ST-9,table_8_01,T8.1,"Live births, deaths, and infant and child deaths by year of occurrence, year",NA
+death2b,Age,Death,Decedent,Derived,Integer,ST-1,table_8_02,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths), year",NA
+death2b,Age,Death,Decedent,Derived,Integer,ST-9,table_8_03,T8.3,Fertility and mortality indicators by year of occurrence,NA
+death2b,Age,Death,Decedent,Derived,Integer,ST-2,table_8_04,T8.4,"Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths), year",NA
+death2b,Age,Death,Decedent,Derived,Integer,NA,figure_5_02,F5.2,"Deaths by sex and age of decedent, year",Priority
+death2b,Age,Death,Decedent,Derived,Integer,NA,figure_5_04,F5.4,"Age-specific mortality rate by sex, year",Priority
+death2b,Age,Death,Decedent,Derived,Integer,NA,figure_5_05,F5.5,Life expectancy at birth by sex and year of occurrence,NA
+death2b,Age,Death,Decedent,Derived,Integer,NA,figure_6_02,F6.2,"Deaths by broad disease group and age, males, year",Priority
+death2b,Age,Death,Decedent,Derived,Integer,NA,figure_6_03,F6.3,"Deaths by broad disease group and age, females, year",Priority
+death2o,Place of usual residence,Death,Decedent,Direct,Character,NA,table_3_07,T3.7,"Death registration completeness by place of usual residence and sex of decedent, year",NA
+death2o,Place of usual residence,Death,Decedent,Direct,Character,NA,table_3_09,T3.9,"Adjustment of deaths by place of usual residence and sex of decedent, year",NA
+death2o,Place of usual residence,Death,Decedent,Direct,Character,DE-1,table_5_02,T5.2,"Deaths by place of usual residence and sex of decedent, year",Priority
+death2o,Place of usual residence,Death,Decedent,Direct,Character,DE-2,table_5_03,T5.3,"Deaths by place of occurrence and place of usual residence of decedent, males, year",Priority
+death2o,Place of usual residence,Death,Decedent,Direct,Character,DE-2,table_5_04,T5.4,"Deaths by place of occurrence and place of usual residence of decedent, females, year",Priority
+death2o,Place of usual residence,Death,Decedent,Direct,Character,NA,table_5_08,T5.8,"Crude death rate (CDR) by place of usual residence of decedent, year",Priority
+death2o,Place of usual residence,Death,Decedent,Direct,Character,ST-1,table_8_02,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths), year",NA
+death2o,Place of usual residence,Death,Decedent,Direct,Character,ST-2,table_8_04,T8.4,"Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths), year",NA
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,NA,table_3_07,T3.7,"Death registration completeness by place of usual residence and sex of decedent, year",NA
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,NA,table_3_09,T3.9,"Adjustment of deaths by place of usual residence and sex of decedent, year",NA
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,DE-1,table_5_02,T5.2,"Deaths by place of usual residence and sex of decedent, year",Priority
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,DE-2,table_5_03,T5.3,"Deaths by place of occurrence and place of usual residence of decedent, males, year",Priority
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,DE-2,table_5_04,T5.4,"Deaths by place of occurrence and place of usual residence of decedent, females, year",Priority
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,NA,table_5_08,T5.8,"Crude death rate (CDR) by place of usual residence of decedent, year",Priority
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,ST-1,table_8_02,T8.2,"Live births, deaths, and infant and child deaths by place of usual residence of mother (births) or decedent (deaths), year",NA
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,ST-2,table_8_04,T8.4,"Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths), year",NA
+death2r,Urban/rural residence,Death,Decedent,Derived,Character,DE-1,table_5_02,T5.2,"Deaths by place of usual residence and sex of decedent, year",Priority
+death2r,Urban/rural residence,Death,Decedent,Derived,Character,DE-5,table_5_06,T5.6,"Deaths by age and sex of decedent, urban areas, year",Priority
+death2r,Urban/rural residence,Death,Decedent,Derived,Character,DE-5,table_5_07,T5.7,"Deaths by age and sex of decedent, rural areas, year",Priority
+death1j,"Death occurring during pregnancy, childbirth and puerperium (for females between 15 and 49 years of age)",Death,Event,Additional,Character,NA,table_5_10,T5.10,Maternal mortality by year of occurrence,Priority
+death1j,"Death occurring during pregnancy, childbirth and puerperium (for females between 15 and 49 years of age)",Death,Event,Additional,Character,ST-9,table_8_03,T8.3,Fertility and mortality indicators by year of occurrence,NA
+death1j,"Death occurring during pregnancy, childbirth and puerperium (for females between 15 and 49 years of age)",Death,Event,Additional,Character,ST-2,table_8_04,T8.4,"Fertility and mortality indicators by place of usual residence of mother (births and infant deaths) or decedent (other deaths), year",NA
+death1g,Cause of death,Death,Event,Direct,Character,NA,table_6_01,T6.1,"Leading causes of death by broad age group and sex, year",NA
+death1g,Cause of death,Death,Event,Direct,Character,NA,table_6_02,T6.2,"Top 10 causes of death (all ages, both sexes), year",Priority
+death1g,Cause of death,Death,Event,Direct,Character,NA,table_6_03,T6.3,"10 leading causes of death, males, year",Priority
+death1g,Cause of death,Death,Event,Direct,Character,NA,table_6_04,T6.4,"10 leading causes of death, females, year",Priority
+death1g,Cause of death,Death,Event,Direct,Character,NA,table_6_05,T6.5,"10 leading causes of death, infants and children (0–4 years, both sexes combined), year",Priority
+death1g,Cause of death,Death,Event,Direct,Character,NA,table_6_06,T6.6,"10 leading causes of death, children (5–14 years, both sexes combined), year",Priority
+death1g,Cause of death,Death,Event,Direct,Character,NA,table_6_07,T6.7,"10 leading causes of death, adolescents and adults (15–69 years, males), year",Priority
+death1g,Cause of death,Death,Event,Direct,Character,NA,table_6_08,T6.8,"10 leading causes of death, adolescents and adults (15–69 years, females), year",Priority
+death1g,Cause of death,Death,Event,Direct,Character,NA,table_6_09,T6.9,"10 leading causes of death, older adults (15–69 years, males), year",Priority
+death1g,Cause of death,Death,Event,Direct,Character,NA,table_6_10,T6.10,"10 leading causes of death, older adults (15–69 years, females), year",Priority
+death1g,Cause of death,Death,Event,Direct,Character,NA,figure_6_01,F6.1,"Deaths by broad group, including ill-defined codes, year",Priority
+death1g,Cause of death,Death,Event,Direct,Character,NA,figure_6_02,F6.2,"Deaths by broad disease group and age, males, year",Priority
+death1g,Cause of death,Death,Event,Direct,Character,NA,figure_6_03,F6.3,"Deaths by broad disease group and age, females, year",Priority
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,NA,table_7_01,T7.1,Summary statistics on marriages and divorces by year of occurrence,NA
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,MA-2,table_7_02,T7.2,"Marriages by place of usual residence of groom and age of bride and of groom, urban areas, year",Priority
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,MA-2,table_7_03,T7.3,"Marriages by place of usual residence of groom and age of bride and of groom, rural areas, year",Priority
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,MA-3,table_7_04,T7.4,"Marriages by age of groom and previous marital status, year",Priority
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,MA-3,table_7_05,T7.5,"Marriages by age of bride and previous marital status, year",Priority
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,ST-9,table_8_05,T8.5,Marriage and divorce indicators by year of occurrence,NA
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,NA,figure_7_01,F7.1,Marriages by year of occurrence,Priority
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,NA,figure_7_02,F7.2,Average age at first marriage by sex and year of occurrence,Priority
+marriage1b,Date of registration,Marriage,Event,Direct,Date,NA,table_7_01,T7.1,Summary statistics on marriages and divorces by year of occurrence,NA
+marriage1b,Date of registration,Marriage,Event,Direct,Date,MA-2,table_7_02,T7.2,"Marriages by place of usual residence of groom and age of bride and of groom, urban areas, year",Priority
+marriage1b,Date of registration,Marriage,Event,Direct,Date,MA-2,table_7_03,T7.3,"Marriages by place of usual residence of groom and age of bride and of groom, rural areas, year",Priority
+marriage1b,Date of registration,Marriage,Event,Direct,Date,MA-3,table_7_04,T7.4,"Marriages by age of groom and previous marital status, year",Priority
+marriage1b,Date of registration,Marriage,Event,Direct,Date,MA-3,table_7_05,T7.5,"Marriages by age of bride and previous marital status, year",Priority
+marriage1b,Date of registration,Marriage,Event,Direct,Date,ST-9,table_8_05,T8.5,Marriage and divorce indicators by year of occurrence,NA
+marriage1b,Date of registration,Marriage,Event,Direct,Date,NA,figure_7_01,F7.1,Marriages by year of occurrence,Priority
+marriage1b,Date of registration,Marriage,Event,Direct,Date,NA,figure_7_02,F7.2,Average age at first marriage by sex and year of occurrence,Priority
+marriage2b,Age,Marriage,Bride,Derived,Integer,MA-2,table_7_02,T7.2,"Marriages by place of usual residence of groom and age of bride and of groom, urban areas, year",Priority
+marriage2b,Age,Marriage,Bride,Derived,Integer,MA-2,table_7_03,T7.3,"Marriages by place of usual residence of groom and age of bride and of groom, rural areas, year",Priority
+marriage2b,Age,Marriage,Bride,Derived,Integer,MA-3,table_7_05,T7.5,"Marriages by age of bride and previous marital status, year",Priority
+marriage2b,Age,Marriage,Bride,Derived,Integer,ST-9,table_8_05,T8.5,Marriage and divorce indicators by year of occurrence,NA
+marriage2b,Age,Marriage,Bride,Derived,Integer,NA,figure_7_02,F7.2,Average age at first marriage by sex and year of occurrence,Priority
+marriage3b,Age,Marriage,Groom,Derived,Integer,MA-2,table_7_02,T7.2,"Marriages by place of usual residence of groom and age of bride and of groom, urban areas, year",Priority
+marriage3b,Age,Marriage,Groom,Derived,Integer,MA-2,table_7_03,T7.3,"Marriages by place of usual residence of groom and age of bride and of groom, rural areas, year",Priority
+marriage3b,Age,Marriage,Groom,Derived,Integer,MA-3,table_7_04,T7.4,"Marriages by age of groom and previous marital status, year",Priority
+marriage3b,Age,Marriage,Groom,Derived,Integer,ST-9,table_8_05,T8.5,Marriage and divorce indicators by year of occurrence,NA
+marriage3b,Age,Marriage,Groom,Derived,Integer,NA,figure_7_02,F7.2,Average age at first marriage by sex and year of occurrence,Priority
+marriage3m,Place of usual residence,Marriage,Groom,Direct,Character,MA-2,table_7_02,T7.2,"Marriages by place of usual residence of groom and age of bride and of groom, urban areas, year",Priority
+marriage3m,Place of usual residence,Marriage,Groom,Direct,Character,MA-2,table_7_03,T7.3,"Marriages by place of usual residence of groom and age of bride and of groom, rural areas, year",Priority
+marriage2c,Marital status (previous),Marriage,Bride,Additional,Character,MA-3,table_7_05,T7.5,"Marriages by age of bride and previous marital status, year",Priority
+marriage3c,Marital status (previous),Marriage,Groom,Additional,Character,MA-3,table_7_04,T7.4,"Marriages by age of groom and previous marital status, year",Priority
+divorce2b,Age,Divorce,Wife,Derived,Integer,DI-2,table_7_06,T7.6,"Divorces by age of husband and wife, year",Priority
+divorce2b,Age,Divorce,Wife,Derived,Integer,DI-3,table_7_08,T7.8,"Divorces by duration of marriage and age of wife, year",Priority
+divorce2b,Age,Divorce,Wife,Derived,Integer,ST-9,table_8_05,T8.5,Marriage and divorce indicators by year of occurrence,NA
+divorce2b,Age,Divorce,Wife,Derived,Integer,NA,figure_7_04,F7.4,Average age at divorce by sex and year of occurrence,Priority
+divorce2b,Age,Divorce,Wife,Derived,Integer,NA,figure_7_05,F7.5,Age-specific divorce rate by sex and year of occurrence,Priority
+divorce3b,Age,Divorce,Husband,Derived,Integer,DI-2,table_7_06,T7.6,"Divorces by age of husband and wife, year",Priority
+divorce3b,Age,Divorce,Husband,Derived,Integer,DI-3,table_7_07,T7.7,"Divorces by duration of marriage and age of husband, year",Priority
+divorce3b,Age,Divorce,Husband,Derived,Integer,ST-9,table_8_05,T8.5,Marriage and divorce indicators by year of occurrence,NA
+divorce3b,Age,Divorce,Husband,Derived,Integer,NA,figure_7_04,F7.4,Average age at divorce by sex and year of occurrence,Priority
+divorce3b,Age,Divorce,Husband,Derived,Integer,NA,figure_7_05,F7.5,Age-specific divorce rate by sex and year of occurrence,Priority
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,DI-2,table_7_06,T7.6,"Divorces by age of husband and wife, year",Priority
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,DI-3,table_7_07,T7.7,"Divorces by duration of marriage and age of husband, year",Priority
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,DI-3,table_7_08,T7.8,"Divorces by duration of marriage and age of wife, year",Priority
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,DI-4,table_7_09,T7.9,"Divorces by duration of marriage and number of dependent children, year",Priority
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,ST-9,table_8_05,T8.5,Marriage and divorce indicators by year of occurrence,NA
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,NA,figure_7_03,F7.3,Divorces by year of occurrence,Priority
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,NA,figure_7_04,F7.4,Average age at divorce by sex and year of occurrence,Priority
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,NA,figure_7_05,F7.5,Age-specific divorce rate by sex and year of occurrence,Priority
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,NA,figure_7_06,F7.6,Divorces by duration of marriage and year of occurrence,Priority
+divorce1b,Date of registration,Divorce,Event,Direct,Date,DI-2,table_7_06,T7.6,"Divorces by age of husband and wife, year",Priority
+divorce1b,Date of registration,Divorce,Event,Direct,Date,DI-3,table_7_07,T7.7,"Divorces by duration of marriage and age of husband, year",Priority
+divorce1b,Date of registration,Divorce,Event,Direct,Date,DI-3,table_7_08,T7.8,"Divorces by duration of marriage and age of wife, year",Priority
+divorce1b,Date of registration,Divorce,Event,Direct,Date,DI-4,table_7_09,T7.9,"Divorces by duration of marriage and number of dependent children, year",Priority
+divorce1b,Date of registration,Divorce,Event,Direct,Date,ST-9,table_8_05,T8.5,Marriage and divorce indicators by year of occurrence,NA
+divorce1b,Date of registration,Divorce,Event,Direct,Date,NA,figure_7_03,F7.3,Divorces by year of occurrence,Priority
+divorce1b,Date of registration,Divorce,Event,Direct,Date,NA,figure_7_04,F7.4,Average age at divorce by sex and year of occurrence,Priority
+divorce1b,Date of registration,Divorce,Event,Direct,Date,NA,figure_7_05,F7.5,Age-specific divorce rate by sex and year of occurrence,Priority
+divorce1b,Date of registration,Divorce,Event,Direct,Date,NA,figure_7_06,F7.6,Divorces by duration of marriage and year of occurrence,Priority
+divorce2g,Duration of marriage,Divorce,Wife,Derived,Integer,DI-3,table_7_08,T7.8,"Divorces by duration of marriage and age of wife, year",Priority
+divorce2g,Duration of marriage,Divorce,Wife,Derived,Integer,DI-4,table_7_09,T7.9,"Divorces by duration of marriage and number of dependent children, year",Priority
+divorce2g,Duration of marriage,Divorce,Wife,Derived,Integer,NA,figure_7_06,F7.6,Divorces by duration of marriage and year of occurrence,Priority
+divorce3g,Duration of marriage,Divorce,Husband,Derived,Integer,DI-3,table_7_07,T7.7,"Divorces by duration of marriage and age of husband, year",Priority
+divorce3g,Duration of marriage,Divorce,Husband,Derived,Integer,DI-4,table_7_09,T7.9,"Divorces by duration of marriage and number of dependent children, year",Priority
+divorce3g,Duration of marriage,Divorce,Husband,Derived,Integer,NA,figure_7_06,F7.6,Divorces by duration of marriage and year of occurrence,Priority
+divorce2d,Number of dependent children of divorced persons,Divorce,Wife,Additional,Integer,DI-4,table_7_09,T7.9,"Divorces by duration of marriage and number of dependent children, year",Priority

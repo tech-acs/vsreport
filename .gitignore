@@ -1,6 +1,16 @@
+# Don't upload documents from the R Environment
 .DS_Store
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+
+# Don't upload documents on the instalation
 inst/doc
+
+# Don't upload the outputs or individual data folder
+outputs/
+data/
+
+# IDE junk
+.vscode/

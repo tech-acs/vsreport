@@ -4,7 +4,7 @@
 \alias{create_t5.1}
 \title{Calculates Table 5.1 Deaths summary table}
 \usage{
-create_t5.1(data, num_yrs = 5, tablename = "Table_5_1")
+create_t5.1(data, num_yrs = 5, tablename = "Table_5_1", output_path = NULL)
 }
 \arguments{
 \item{data}{deaths data frame}

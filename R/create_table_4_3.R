@@ -17,12 +17,11 @@
 #'
 #' @examples t4.3 <- create_t4.3(bth_data, dobyr, 2022)
 
-create_t4.3 <- function(data, date_var = "dobyr", data_year = NA, tablename = "Table_4_3", output_path = NULL){
+create_t4.3 <- function(data, date_var = "dobyr", data_year = NA,
+                        tablename = "Table_4_3", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
-  if (is.na(data_year)){
-    data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
-  }
+  data_year <- handle_data_year(data_year, data, date_var)
 
   output <- data |>
     filter(is.na(birth1j) & !!sym(date_var) == data_year) |>
@@ -33,12 +32,7 @@ create_t4.3 <- function(data, date_var = "dobyr", data_year = NA, tablename = "T
     pivot_wider(names_from = match, values_from = total, values_fill = 0) |>
     adorn_totals(c("col", "row"))
 
-  if (is.null(output_path)){
-    return(output)
-  } else {
-    write.csv(output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
-    return(output)
-  }
+  return(handle_table_output(output, output_path, tablename))
 }
 
 

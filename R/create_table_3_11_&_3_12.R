@@ -47,7 +47,7 @@ all_out = sum(output$total)
 
 output <- output |>
   mutate(total_count = all_out) |>
-  mutate(proportion = round_excel((total/total_count), 2)) |>
+  mutate(proportion = construct_round_excel((total/total_count), 2)) |>
   select(-total_count)
 
 na_index <- (output[[quo_name(enquo(by_var))]]== "unknown")

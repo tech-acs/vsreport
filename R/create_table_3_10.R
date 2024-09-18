@@ -50,7 +50,7 @@ create_t3.10 <- function(data, dth_est, date_var, data_year=NA, tablename = NA){
   d_est_prop <- rbind(d_est_prop_all, d_est_prop)
 
   output <- left_join(output, d_est_prop, by= c("age_grp", "birth2a")) |>
-    mutate(completeness = round_excel((reg_deaths/est_count),2)) |>
+    mutate(completeness = construct_round_excel((reg_deaths/est_count),2)) |>
     mutate(adjusted = floor((reg_deaths/ completeness)),
            completeness = completeness * 100) |>
     select(-c(est_count)) |>

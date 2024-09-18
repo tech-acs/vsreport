@@ -4,24 +4,42 @@
 \alias{create_t5.12}
 \title{Create Table 5.12}
 \usage{
-create_t5.12(data, date_var, data_year = 2022, tablename = NA)
+create_t5.12(
+  data,
+  date_var = "dodyr",
+  data_year = NA,
+  tablename = "Table_5_12",
+  output_path = NULL
+)
 }
 \arguments{
-\item{data}{data frame being used}
+\item{data}{Death records data frame.}
 
-\item{date_var}{occurrence data being used e.g. dobyr, dodyr etc}
+\item{date_var}{Event year column of the dataframe. Defaults to "dodyr".}
 
-\item{data_year}{}
+\item{data_year}{The year to report on. Defaults to the last in the data.}
 
-\item{tablename}{name for csv output use _ instead of . for names}
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 data frame with tablutated results
 }
 \description{
-Create Table 5.12
+Table 5.12 Foetal deaths by gestational age and birth weight of foetus
+
+Variables needed per record:
+
+- `dodyr`: Year of death.
+
+- `death1j`: Foetal death Identifier.
+
+- `gest_time`: Gestation time. Ideally this will be grouped.
+
+- `bthwgt_grp`: Birth weight. Ideally this will be grouped.
 }
 \examples{
-t5.12 <- create_t5.12(bth_data, date_var = dobyr, data_year = 2022, tablename = "Table_5_12")
+table_5_12 <- create_t5.12(death_data)
 
 }

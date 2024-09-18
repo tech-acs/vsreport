@@ -2,26 +2,50 @@
 % Please edit documentation in R/create_table_5_11.R
 \name{create_t5.11}
 \alias{create_t5.11}
-\title{creates Table 5.11}
+\title{Creates Table 5.11}
 \usage{
-create_t5.11(data, date_var, num_yrs = 5, tablename = NA)
+create_t5.11(
+  data,
+  foetal_filter = "Yes",
+  num_yrs = 5,
+  date_var = "dodyr",
+  data_year = NA,
+  tablename = "Table_5_11",
+  output_path = NULL
+)
 }
 \arguments{
-\item{data}{data frame being used}
+\item{data}{Death records data frame.}
 
-\item{date_var}{occurrence data variable being used}
+\item{foetal_filter}{Flag to filter deaths. Defaults to "Yes". Can be NULL.}
 
-\item{num_yrs}{number of years the of data}
+\item{date_var}{Event year column of the dataframe. Defaults to "dodyr".}
 
-\item{tablename}{name for csv output use _ instead of . for names}
+\item{data_year}{The year to report on. Defaults to the last in the data.}
+
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
+
+\item{num_years}{Number of years to include in the table. Defaults to 5.}
 }
 \value{
 data frame with tabulated result
 }
 \description{
-Table 5.11 Foetal deaths by year of occurrence and sex of foetus
+Table 5.11 Deaths by year of occurrence and sex (Defaults to Foetal Deaths).
+
+Variables needed per record:
+
+- `dodyr`: Year of death.
+
+- `death1j`: Foetal death Identifier. Optional.
+
+- `death2c`: Sex of the deceased.
 }
 \examples{
-t5.11 <- create_t5.11(bth_data, date_var = dobyr, tablename = "Table_5_11")
+death_data <- construct_sample_death_data()
+death_data <- construct_year(death_data, date_col = "death1a", year_col = "dodyr")
+table_5_11 <- create_t5.11(death_data, neonatal_filter = NULL, date_var= "dodyr")
 
 }
