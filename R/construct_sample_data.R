@@ -38,6 +38,21 @@ construct_sample_death_data <- function() {
   return(data)
 }
 
+#' Read Sample Estimated Death Data (i.e. "expected" deaths by region, age, sex)
+#'
+#' Reads the sample data file created_death_estim.csv from the package's extdata directory.
+#'
+#' @return A data frame containing the sample death data.
+#' @export
+construct_sample_estim_death_data <- function() {
+  file_path <- system.file("extdata", "created_death_estim.csv", package = "crvsreportpackage")
+  if (file_path == "") {
+    stop("Sample data file created_death_estim.csv not found in the package extdata directory.")
+  }
+  data <- read.csv(file_path)
+  return(data)
+}
+
 #' Read Sample Divorce Data
 #'
 #' Reads the sample data file created_divorce_data.csv from the package's extdata directory.
@@ -67,3 +82,19 @@ construct_sample_marriage_data <- function() {
   data <- read.csv(file_path)
   return(data)
 }
+
+#' Read Sample Population Estimates Data
+#'
+#' Reads the sample data file created_population_estim.csv from the package's extdata directory.
+#'
+#' @return A data frame containing the sample marriage data.
+#' @export
+construct_sample_pop_estim <- function() {
+  file_path <- system.file("extdata", "created_population_estim.csv", package = "crvsreportpackage")
+  if (file_path == "") {
+    stop("Sample data file created_population_estim.csv not found in the package extdata directory.")
+  }
+  data <- read.csv(file_path)
+  return(data)
+}
+

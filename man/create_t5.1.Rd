@@ -4,10 +4,21 @@
 \alias{create_t5.1}
 \title{Calculates Table 5.1 Deaths summary table}
 \usage{
-create_t5.1(data, num_yrs = 5, tablename = "Table_5_1", output_path = NULL)
+create_t5.1(
+  data,
+  est_data,
+  pops,
+  num_yrs = 5,
+  tablename = "Table_5_1",
+  output_path = NULL
+)
 }
 \arguments{
 \item{data}{deaths data frame}
+
+\item{est_data}{estimate data frame}
+
+\item{pops}{population data frame}
 
 \item{num_yrs}{number of years to report on}
 
@@ -20,6 +31,10 @@ data frame with tabulated results
 Table 5.1 Summary statistics on mortality by year of occurrence
 }
 \examples{
-t5.1 <- create_t5.1(dth_data, tablename = "Table_5_1")
+death_data <- construct_sample_death_data()
+estim_death_data <- construct_sample_estim_death_data()
+sample_pop_estim <- construct_sample_pop_estim()
+death_data <- construct_year(death_data, date_col = "death1a", year_col = "dodyr")
+table_5_1 <- create_t5.1(data = death_data, est_data = estim_death_data, pops = sample_pop_estim, tablename = "Table_5_1")
 
 }
