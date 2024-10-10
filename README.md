@@ -1,4 +1,4 @@
-# Introduction to `crvsreportpackage`
+# Introduction to `cvsreport`
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
@@ -14,7 +14,7 @@ that should be highlighted on the main page of the repository on the top right.
 
 ## Simple installation and Basic Usage
 
-In order to use the `crvsreportpackage` as part of your pipeline with your data,
+In order to use the `vsreport` as part of your pipeline with your data,
 you will need to follow these straight forward commands:
 
 ### 1) Install and Load the `devtools` Package
@@ -27,24 +27,24 @@ install.packages("devtools")
 library(devtools)
 ```
 
-### 2) Install the `crvsreportpackage` Package from GitHub
+### 2) Install the `vsreport` Package from GitHub
 
 Use the `install_github()` function from the `devtools` package to install.
 You need to provide the repository address in the format username/repository.
 
 ```r
-devtools::install_github("tech-acs/crvsreportpackage")
+devtools::install_github("tech-acs/vsreport")
 ```
 
 During this installation, you will be asked to install some required packages
-so that the `crvsreportpackage` works correctly, this might take a few minutes.
+so that the `vsreport` works correctly, this might take a few minutes.
 You might get some errors if your `R` installation is old or there are some
 necessary package updates, usually the messages on the Console are descriptive.
 
-### 3) Use the `crvsreportpackage` Package in your Script
+### 3) Use the `vsreport` Package in your Script
 
 Once you have installed the package, here is a basic example of how to use
-__crvsreportpackage__:
+__vsreport__:
 
 ```r
 library(crvspackage)
