@@ -1,4 +1,4 @@
-Package: crvsreportpackage
+Package: vsreport
 Type: Package
 Title: Package for CRVS Report
 Version: 0.3.1
@@ -62,6 +62,6 @@ Imports:
     tidyr,
     tidyverse,
     writexl
-URL: https://tech-acs.github.io/crvsreportpackage/
+URL: https://tech-acs.github.io/vsreport/
 Remotes: 
     rstudio/gt

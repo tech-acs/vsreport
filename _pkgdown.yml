@@ -1,4 +1,4 @@
-url: https://tech-acs.github.io/crvsreportpackage/
+url: https://tech-acs.github.io/vsreport/
 template:
   bootstrap: 5
   light-switch: true
@@ -15,6 +15,6 @@ articles:
 home:
   links:
   - text: Browse source code
-    href: https://github.com/tech-acs/crvsreportpackage
+    href: https://github.com/tech-acs/vsreport
   - text: Report a bug
-    href: https://github.com/tech-acs/crvsreportpackage/issues
+    href: https://github.com/tech-acs/vsreport/issues

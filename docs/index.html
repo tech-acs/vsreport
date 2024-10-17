@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Package for CRVS Report • crvsreportpackage</title>
+<title>Package for CRVS Report • vsreport</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
@@ -20,7 +20,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="index.html">crvsreportpackage</a>
+    <a class="navbar-brand me-2" href="index.html">vsreport</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.6</small>
 
@@ -36,7 +36,7 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="articles/data_mapping.html">Mapping variables to CRVS tables and figures</a></li>
-    <li><a class="dropdown-item" href="articles/introduction.html">Introduction to crvsreportpackage</a></li>
+    <li><a class="dropdown-item" href="articles/introduction.html">Introduction to vsreport</a></li>
   </ul>
 </li>
       </ul>
@@ -52,7 +52,7 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="crvsreportpackage">crvsreportpackage<a class="anchor" aria-label="anchor" href="#crvsreportpackage"></a>
+<div class="page-header"><h1 id="vsreport">vsreport<a class="anchor" aria-label="anchor" href="#vsreport"></a>
 </h1></div>
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
@@ -62,7 +62,7 @@
 <div class="section level2">
 <h2 id="simple-installation-and-basic-usage">Simple installation and Basic Usage<a class="anchor" aria-label="anchor" href="#simple-installation-and-basic-usage"></a>
 </h2>
-<p>In order to use the <code>crvsreportpackage</code> with your data, you will need to follow these straight forward commands. First, install the package from the GitHub repo:</p>
+<p>In order to use the <code>vsreport</code> with your data, you will need to follow these straight forward commands. First, install the package from the GitHub repo:</p>
 <div class="section level3">
 <h3 id="install-and-load-the-devtools-package">Install and Load the devtools Package<a class="anchor" aria-label="anchor" href="#install-and-load-the-devtools-package"></a>
 </h3>
@@ -72,16 +72,16 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="install-the-crvsreportpackage-package-from-github">Install the <code>crvsreportpackage</code> Package from GitHub<a class="anchor" aria-label="anchor" href="#install-the-crvsreportpackage-package-from-github"></a>
+<h3 id="install-the-vsreport-package-from-github">Install the <code>vsreport</code> Package from GitHub<a class="anchor" aria-label="anchor" href="#install-the-vsreport-package-from-github"></a>
 </h3>
 <p>Use the install_github() function from the devtools package to install the package. You need to provide the repository address in the format username/repository.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tech-acs/crvsreportpackage"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tech-acs/vsreport"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="use-the-crvsreportpackage-in-your-script">Use the <code>crvsreportpackage</code> in your Script<a class="anchor" aria-label="anchor" href="#use-the-crvsreportpackage-in-your-script"></a>
+<h3 id="use-the-vsreport-in-your-script">Use the <code>vsreport</code> in your Script<a class="anchor" aria-label="anchor" href="#use-the-vsreport-in-your-script"></a>
 </h3>
-<p>Once you have installed the package, here is a basic example of how to use <strong>crvsreportpackage</strong>:</p>
+<p>Once you have installed the package, here is a basic example of how to use <strong>vsreport</strong>:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">crvspackage</span><span class="op">)</span></span>
 <span></span>
@@ -94,11 +94,11 @@
 <div class="section level2">
 <h2 id="developer-installation">Developer Installation<a class="anchor" aria-label="anchor" href="#developer-installation"></a>
 </h2>
-<p>If you want to develop the package, you may want to consider cloning the repository and following the steps below to have the correct environment to improve the package. First, install the <code>crvsreportpackage</code> from GitHub, then ensure all package dependencies are correctly managed and installed using <code>renv</code>:</p>
+<p>If you want to develop the package, you may want to consider cloning the repository and following the steps below to have the correct environment to improve the package. First, install the <code>vsreport</code> from GitHub, then ensure all package dependencies are correctly managed and installed using <code>renv</code>:</p>
 <p>1.__Clone the repository__:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/tech-acs/crvsreportpackage.git</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="bu">cd</span> crvsreportpackage</span></code></pre></div>
-<p>2.__Initialize the <code>renv</code> environment__: Upon first entering the package directory, <code>renv</code> will activate the specific package environment defined for <code>crvsreportpackage</code>. You need to run the following R commands to restore the required packages:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/tech-acs/vsreport.git</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="bu">cd</span> vsreport</span></code></pre></div>
+<p>2.__Initialize the <code>renv</code> environment__: Upon first entering the package directory, <code>renv</code> will activate the specific package environment defined for <code>vsreport</code>. You need to run the following R commands to restore the required packages:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"renv"</span><span class="op">)</span></span>
 <span><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv/reference/restore.html" class="external-link">restore</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -106,15 +106,15 @@
 <p>3.__Install the package__: Once the environment is set up, you can install the package using:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/install.html" class="external-link">install</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p>By following these steps, you will ensure that you have all the necessary dependencies and the correct versions installed, allowing <code>crvsreportpackage</code> to function as intended. It will also mean you can now open the project and develop the package further.</p>
+<p>By following these steps, you will ensure that you have all the necessary dependencies and the correct versions installed, allowing <code>vsreport</code> to function as intended. It will also mean you can now open the project and develop the package further.</p>
 </div>
 <div class="section level2">
 <h2 id="maintenance">Maintenance<a class="anchor" aria-label="anchor" href="#maintenance"></a>
 </h2>
-<p>Once you have made significant changes to the package, it might be worth considering changing the package version. This can be done in the DESCRIPTION file, bumping up the <code>Version</code> variable. In order to rebuild and update the <code>crvsreportpackage</code> after making some changes to the functions in it follow these steps:</p>
+<p>Once you have made significant changes to the package, it might be worth considering changing the package version. This can be done in the DESCRIPTION file, bumping up the <code>Version</code> variable. In order to rebuild and update the <code>vsreport</code> after making some changes to the functions in it follow these steps:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Remove the installed version of the package</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/remove.packages.html" class="external-link">remove.packages</a></span><span class="op">(</span><span class="st">"crvsreportpackage"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/remove.packages.html" class="external-link">remove.packages</a></span><span class="op">(</span><span class="st">"vsreport"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Clear your R environment</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ls.html" class="external-link">ls</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
@@ -191,7 +191,7 @@
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing crvsreportpackage</a></li>
+<li><a href="authors.html#citation">Citing vsreport</a></li>
 </ul>
 </div>
 

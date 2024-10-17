@@ -1,5 +1,5 @@
 library(testthat)
-library(crvsreportpackage)
+library(vsreport)
 
 test_that("Sample Birth data can be read correctly", {
   data <- construct_sample_birth_data()
