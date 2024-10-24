@@ -1,0 +1,13 @@
+pandoc: 3.1.11
+pkgdown: 2.1.1
+pkgdown_sha: ~
+articles:
+  data_mapping: data_mapping.html
+  developer_manual: developer_manual.html
+  table_templates: table_templates.html
+  using_git: using_git.html
+  vsreport: vsreport.html
+last_built: 2024-10-24T12:06Z
+urls:
+  reference: https://tech-acs.github.io/vsreport/reference
+  article: https://tech-acs.github.io/vsreport/articles
