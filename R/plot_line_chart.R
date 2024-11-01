@@ -24,7 +24,7 @@
 #' @export
 #'
 #' @import ggplot2
-#' @import rlang
+#' @importFrom rlang .data enquo
 #'
 #' @examples plot_line_chart(data, x, y)
 plot_line_chart <- function(data, x, y, group, line_colour = "ByGroup", line_width = 1, xlab = NULL, ylab = NULL, title = NULL, subtitle = NULL, caption = NULL) {

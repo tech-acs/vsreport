@@ -47,7 +47,7 @@ Once you have installed the package, here is a basic example of how to use
 __vsreport__:
 
 ```r
-library(crvspackage)
+library(vsreport)
 
 # Example Usage
 age_grp_80 <- construct_age_groups(ageinyrs, start_age = 5, max_band = 80,

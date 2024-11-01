@@ -18,18 +18,18 @@ It also contains information on how to Maintain and Test the package.
 
 If you want to develop the package, you may want to consider cloning the
 repository and following the steps below to have the correct environment
-to improve the package. First, install the `crvsreportpackage` from GitHub,
+to improve the package. First, install the `vsreport` from GitHub,
 then ensure all package dependencies are correctly managed and installed using `renv`:
 
 ### 1) Clone the repository:
 
 ```sh
-git clone https://github.com/tech-acs/crvsreportpackage.git
-cd crvsreportpackage
+git clone https://github.com/tech-acs/vsreport.git
+cd vsreport
 ```
 
 ### 2) Initialize the `renv` environment: Upon first entering the package directory,
-`renv` will activate the specific package environment defined for `crvsreportpackage`.
+`renv` will activate the specific package environment defined for `vsreport`.
 You need to run the following R commands to restore the required packages:
 
 ```R
@@ -47,7 +47,7 @@ devtools::install()
 ```
 
 By following these steps, you will ensure that you have all the necessary
-dependencies and the correct versions installed, allowing `crvsreportpackage`
+dependencies and the correct versions installed, allowing `vsreport`
 to function as intended.
 It will also mean you can now open the project and develop the package further.
 
@@ -63,7 +63,7 @@ that you will need to do:
 
 ```r
 # Remove the installed version of the package
-remove.packages("crvsreportpackage")
+remove.packages("vsreport")
 
 # Clear your R environment
 rm(list = ls())
@@ -109,7 +109,7 @@ or to triage any potential issues that may emerge. The diagram below gives some
 information on the codebase structure:
 
 ```
-📦crvsreportpackage 
+📦vsreport 
 ┣ 📂.github                           # Contains instructions for GitHub
 ┃ ┣ 📂workflows                       # Contains workflows for GitHub Actions
 ┃ ┃ ┣ 📜R-CMD-chek.yml                # Automatically runs the tests
@@ -136,7 +136,7 @@ information on the codebase structure:
 ┣ 📜NAMESPACE                         # AUTOMATED details of package functions
 ┣ 📜README.md                         # Introduction article on the package
 ┣ 📜_pkgdown.yml                      # Structure of the website
-┣ 📜crvsreportpackage.Rproj           # AUTOMATED set-up for R Project
+┣ 📜vsreport.Rproj           # AUTOMATED set-up for R Project
 ┗ 📜renv.lock                         # AUTOMATED information on dependencies
 ```
 

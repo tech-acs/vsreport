@@ -15,7 +15,7 @@
 #' @examples test_data_birth <- construct_sample_birth_data()
 #'
 construct_sample_birth_data <- function() {
-  file_path <- system.file("extdata", "created_birth_data.csv", package = "crvsreportpackage")
+  file_path <- system.file("extdata", "created_birth_data.csv", package = "vsreport")
   if (file_path == "") {
     stop("Sample data file created_birth_data.csv not found in the package extdata directory.")
   }
@@ -30,7 +30,7 @@ construct_sample_birth_data <- function() {
 #' @return A data frame containing the sample death data.
 #' @export
 construct_sample_death_data <- function() {
-  file_path <- system.file("extdata", "created_death_data.csv", package = "crvsreportpackage")
+  file_path <- system.file("extdata", "created_death_data.csv", package = "vsreport")
   if (file_path == "") {
     stop("Sample data file created_death_data.csv not found in the package extdata directory.")
   }
@@ -45,7 +45,7 @@ construct_sample_death_data <- function() {
 #' @return A data frame containing the sample death data.
 #' @export
 construct_sample_estim_death_data <- function() {
-  file_path <- system.file("extdata", "created_death_estim.csv", package = "crvsreportpackage")
+  file_path <- system.file("extdata", "created_death_estim.csv", package = "vsreport")
   if (file_path == "") {
     stop("Sample data file created_death_estim.csv not found in the package extdata directory.")
   }
@@ -60,7 +60,7 @@ construct_sample_estim_death_data <- function() {
 #' @return A data frame containing the sample divorce data.
 #' @export
 construct_sample_divorce_data <- function() {
-  file_path <- system.file("extdata", "created_divorce_data.csv", package = "crvsreportpackage")
+  file_path <- system.file("extdata", "created_divorce_data.csv", package = "vsreport")
   if (file_path == "") {
     stop("Sample data file created_divorce_data.csv not found in the package extdata directory.")
   }
@@ -75,7 +75,7 @@ construct_sample_divorce_data <- function() {
 #' @return A data frame containing the sample marriage data.
 #' @export
 construct_sample_marriage_data <- function() {
-  file_path <- system.file("extdata", "created_marriage_data.csv", package = "crvsreportpackage")
+  file_path <- system.file("extdata", "created_marriage_data.csv", package = "vsreport")
   if (file_path == "") {
     stop("Sample data file created_marriage_data.csv not found in the package extdata directory.")
   }
@@ -90,7 +90,7 @@ construct_sample_marriage_data <- function() {
 #' @return A data frame containing the sample marriage data.
 #' @export
 construct_sample_pop_estim <- function() {
-  file_path <- system.file("extdata", "created_population_estim.csv", package = "crvsreportpackage")
+  file_path <- system.file("extdata", "created_population_estim.csv", package = "vsreport")
   if (file_path == "") {
     stop("Sample data file created_population_estim.csv not found in the package extdata directory.")
   }

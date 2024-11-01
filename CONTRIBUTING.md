@@ -1,6 +1,6 @@
-# Contributing to `crvsreportpackage`
+# Contributing to `vsreport`
 
-Thank you for your interest in contributing to `crvsreportpackage`!
+Thank you for your interest in contributing to `vsreport`!
 We welcome contributions from everyone. Here are some guidelines to help you get
 started.
 

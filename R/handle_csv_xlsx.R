@@ -11,10 +11,10 @@
 #'
 #' # Convert CSV files in a specified directory to an Excel workbook
 #' handle_csv_xlsx(input_path = "path/to/directory", output_path = "path/with/file/output.xlsx")
-#' @import purrr
 #' @import readr
 #' @import fs
 #' @import writexl
+#' @importFrom purrr map set_names
 #'
 #' @export
 handle_csv_xlsx <- function(input_path = ".", output_path = "output.xlsx") {

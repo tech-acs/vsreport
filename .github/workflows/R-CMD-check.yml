@@ -40,8 +40,8 @@ jobs:
 
       - name: Print package contents
         run: |
-          library(crvsreportpackage)
-          ls("package:crvsreportpackage")
+          library(vsreport)
+          ls("package:vsreport")
         shell: Rscript {0}
 
       - name: List installed packages
@@ -52,7 +52,7 @@ jobs:
       - name: Run tests
         run: |
           install.packages('testthat')
-          library(crvsreportpackage)
+          library(vsreport)
           testthat::test_dir('tests/testthat')
         shell: Rscript {0}
 
