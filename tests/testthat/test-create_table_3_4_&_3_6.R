@@ -20,7 +20,8 @@ bth_est <- data.frame(
 
 # Define the test
 test_that("create_t3.4_and_3.6 function works correctly for births", {
-  result <- create_t3.4_and_3.6(bth_data, bth_est, by_var = dobyr, topic = "births", tablename = "test_table_3_4")
+  result <- create_t3.4_and_3.6(bth_data, bth_est, topic = "births",
+                                date_var = "dodyr")
 
   # Check the structure and content of the result
   expect_true(is.data.frame(result))
@@ -31,10 +32,15 @@ test_that("create_t3.4_and_3.6 function works correctly for births", {
 })
 
 test_that("create_t3.4_and_3.6 creates CSV output file", {
-  create_t3.4_and_3.6(bth_data, bth_est, by_var = dobyr, topic = "births", tablename = "test_table_3_4")
+  working_dir <- getwd()
+  setwd("../../")
 
-  expect_true(file.exists("./outputs/test_table_3_4.csv"))
+  create_t3.4_and_3.6(bth_data, bth_est, topic = "births",
+                      tablename = "Table_6_1", output_path = "outputs/")
+
+  expect_true(file.exists("outputs/test_table_3_4.csv"))
 
   # Clean up the file after testing
-  file.remove("./outputs/test_table_3_4.csv")
+  file.remove("outputs/test_table_3_4.csv")
+  setwd(working_dir)
 })
