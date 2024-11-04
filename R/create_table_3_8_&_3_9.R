@@ -31,7 +31,7 @@
 #'                             topic = "deaths", tablename = "Table_3_9")
 #'
 create_t3.8_and_t3.9 <- function(data, est_data, date_var, by_var,
-                                 topic = NA, tablename = NA,
+                                 topic = NA,
                                  data_year = NA,
                                  tablename = "Table_3_9", output_path = NULL){
 

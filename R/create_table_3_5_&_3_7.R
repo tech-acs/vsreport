@@ -21,7 +21,7 @@
 #' @examples t3.5 <- create_t3.5_and_3.7(bth_data, bth_est, dobyr, 2022, topic = "births", tablename = "Table_3_5")
 #'
 create_t3.5_and_3.7 <- function(data, est_data, date_var,
-                                topic = NA, tablename = NA, data_year = NA,
+                                topic = NA, data_year = NA,
                                 tablename = "Table_3_5", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
