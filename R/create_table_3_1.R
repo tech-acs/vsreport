@@ -19,24 +19,24 @@
 #'
 #' @examples t3.1 <- create_t3.1(bth_data = bth_data, dth_data = dth_data, bth_yr_var = dobyr, dth_yr_var = dodyr, tablename = "Table_3_1")
 #'
-create_t3.1 <- function(bth_data, dth_data, bth_yr_var, dth_yr_var,
-                        data_year = NA,
+create_t3.1 <- function(bth_data, dth_data, bth_yr_var = "dobyr",
+                        dth_yr_var = "dodyr", data_year = NA,
                         tablename = "Table_3_1", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
-  data_year <- handle_data_year(data_year, data, date_var)
+  data_year <- handle_data_year(data_year, bth_data, bth_yr_var)
   years <- construct_year_sequence(data_year)
 
   outputb <- bth_data |>
-    filter(is.na(birth1j) & !!sym(date_var) %in% years) |>
-    group_by({{bth_yr_var}}, timeliness) |>
+    filter(is.na(birth1j) & !!sym(bth_yr_var) %in% years) |>
+    group_by(!!sym(bth_yr_var), timeliness) |>
     summarise(total = n()) |>
     mutate(type = "1 Live births") |>
     rename(year = {{bth_yr_var}})
 
   outputd <- dth_data |>
-    filter(!!sym(date_var) %in% years) |>
-    group_by({{dth_yr_var}}, timeliness) |>
+    filter(!!sym(dth_yr_var) %in% years) |>
+    group_by(!!sym(dth_yr_var), timeliness) |>
     summarise(total = n()) |>
     mutate(type = "2 Deaths") |>
     rename(year = {{dth_yr_var}})
