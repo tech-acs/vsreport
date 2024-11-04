@@ -4,18 +4,30 @@
 \alias{create_t3.4_and_3.6}
 \title{Creates Table 3.4 and 3.6}
 \usage{
-create_t3.4_and_3.6(data, est_data, by_var, topic = NA, tablename = NA)
+create_t3.4_and_3.6(
+  data,
+  est_data,
+  topic = NA,
+  date_var = "dobyr",
+  data_year = NA,
+  tablename = "Table_3_4",
+  output_path = NULL
+)
 }
 \arguments{
 \item{data}{data frame being used}
 
 \item{est_data}{data frame of estimated data being used}
 
-\item{by_var}{the occurrence year being used e.g. dobyr or dodyr}
-
 \item{topic}{whether the table is births or deaths data}
 
-\item{tablename}{name of the table being saved as a csv file}
+\item{data_year}{The year to report on. Defaults to the last in the data.}
+
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
+
+\item{by_var}{the occurrence year being used e.g. dobyr or dodyr}
 }
 \value{
 data frames for tabulated versions of Table 3.4 and 3.6

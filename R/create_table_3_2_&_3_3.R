@@ -33,12 +33,12 @@ create_t3.2_t3.3 <- function(data, date_var = "dobyr", topic = "births",
       group_by(doryr, !!sym(date_var)) |>
       summarise(Total = n())
 
-    output2 <- output %>%
+    output2 <- output_vol %>%
       group_by(doryr) %>%
       summarise(total = sum(Total))
 
     # Merge total live births back into the original dataframe
-    output <- output %>%
+    output <- output_vol %>%
       left_join(output2, by = c("doryr" = "doryr")) %>%
       mutate(Percentage := construct_round_excel((Total/ total) * 100, 2)) %>%
       select(-c(total, Total)) |>
@@ -46,8 +46,8 @@ create_t3.2_t3.3 <- function(data, date_var = "dobyr", topic = "births",
       adorn_totals("row", name = "Grand total")
   }else if(topic == "deaths"){
     output <- data |>
-      filter(!is.na(doryr) & {{occ_var}} %in% construct_year_sequence(max_value)) |>
-      group_by(doryr, {{occ_var}}) |>
+      filter(!is.na(doryr) & !!sym(date_var) %in% years) |>
+      group_by(doryr, !!sym(date_var))  |>
       summarise(Total = n())
 
     output2 <- output %>%

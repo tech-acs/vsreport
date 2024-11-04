@@ -6,22 +6,22 @@ library(janitor)
 # Sample data for births
 bth_data <- data.frame(
   birth1j = c(NA, NA, NA, NA, NA),
-  dobyr = c(2018, 2018, 2019, 2019, 2020),
+  dobyr = c(2018, 2018, 2019, 2019, 2021),
   birth2a = c("male", "female", "male", "female", "male")
 )
 
 # Sample data for estimated births
 bth_est <- data.frame(
-  year = c(2022, 2022, 2022, 2022),
-  age_grp = c("0-4", "5-9", "10-14", "15-19"),
-  female = c(100, 200, 300, 400),
-  male = c(150, 250, 350, 450)
+  dobyr = c(2018,2018,2018,2018, 2019,2019,2019,2019, 2020,2020,2020,2020, 2021, 2021, 2021, 2021),
+  age_grp = c("0-4", "5-9", "10-14", "15-19","0-4", "5-9", "10-14", "15-19","0-4", "5-9", "10-14", "15-19","0-4", "5-9", "10-14", "15-19"),
+  female = c(100, 200, 300, 400,100, 200, 300, 400,100, 200, 300, 400,100, 200, 300, 400),
+  male = c(150, 250, 350, 450,150, 250, 350, 450,150, 250, 350, 450,150, 250, 350, 450)
 )
 
 # Define the test
 test_that("create_t3.4_and_3.6 function works correctly for births", {
   result <- create_t3.4_and_3.6(bth_data, bth_est, topic = "births",
-                                date_var = "dodyr")
+                                date_var = "dobyr")
 
   # Check the structure and content of the result
   expect_true(is.data.frame(result))
@@ -38,9 +38,9 @@ test_that("create_t3.4_and_3.6 creates CSV output file", {
   create_t3.4_and_3.6(bth_data, bth_est, topic = "births",
                       tablename = "Table_6_1", output_path = "outputs/")
 
-  expect_true(file.exists("outputs/test_table_3_4.csv"))
+  expect_true(file.exists("outputs/Table_6_1.csv"))
 
   # Clean up the file after testing
-  file.remove("outputs/test_table_3_4.csv")
+  file.remove("outputs/Table_6_1.csv")
   setwd(working_dir)
 })

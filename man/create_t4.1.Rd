@@ -9,6 +9,7 @@ create_t4.1(
   est_data,
   pops,
   date_var = "dobyr",
+  data_year = NA,
   tablename = "Table_4_1",
   output_path = NULL
 )
@@ -22,9 +23,11 @@ create_t4.1(
 
 \item{date_var}{variable for year}
 
-\item{tablename}{name for csv output use _ instead of . for names}
+\item{data_year}{The year to report on. Defaults to the last in the data.}
 
-\item{output_path}{The path to export the generated table}
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 data frame with tabulated results

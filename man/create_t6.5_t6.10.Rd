@@ -4,14 +4,27 @@
 \alias{create_t6.5_t6.10}
 \title{Creates Tables 6.5 to 6.10}
 \usage{
-create_t6.5_t6.10(data, data_year = NA, sex_value = "male", age_group = "<5")
+create_t6.5_t6.10(
+  data,
+  data_year = NA,
+  sex_value = "male",
+  age_group = "<5",
+  tablename = "Table_6_5",
+  output_path = NULL
+)
 }
 \arguments{
 \item{data}{data frame being used}
 
+\item{data_year}{The year to report on. Defaults to the last in the data.}
+
 \item{sex_value}{whether male or female}
 
 \item{age_group}{which age group is being used e.g. "<5"}
+
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 data frame with tabulated results

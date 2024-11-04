@@ -17,11 +17,11 @@ create_t4.3(
 
 \item{date_var}{occurrence data being used e.g. dobyr, dodyr etc}
 
-\item{data_year}{year the data is for}
+\item{data_year}{The year to report on. Defaults to the last in the data.}
 
-\item{tablename}{name for csv output use _ instead of . for names}
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
 
-\item{output_path}{The path to export the generated table}
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 data frame with tablutated results

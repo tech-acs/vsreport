@@ -6,22 +6,25 @@
 \usage{
 create_t7.6_to_7.9(
   data,
-  data_year = NA,
   group_var = "age_w",
   by_var = "age_h",
-  tablename = NA
+  data_year = NA,
+  tablename = "Table_7_6",
+  output_path = NULL
 )
 }
 \arguments{
 \item{data}{data frame being used}
 
-\item{data_year}{year the data is for}
-
 \item{group_var}{the tables columns}
 
 \item{by_var}{tables rows}
 
-\item{tablename}{name for csv output use _ instead of . for names}
+\item{data_year}{The year to report on. Defaults to the last in the data.}
+
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 data frame with tabulated results

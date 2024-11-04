@@ -16,26 +16,26 @@
 #' @import janitor
 #'
 #' @examples t3.4 <- create_t3.4_to_3.7(bth_data, bth_est, dobyr, topic = "births", tablename = "Table_3_4")
-create_t3.4_and_3.6 <- function(data, est_data, topic = NA
-                                date_var = "dodyr", data_year = NA,
-                                tablename = "Table_3_4", output_path = NULL
+create_t3.4_and_3.6 <- function(data, est_data, topic = NA,
+                                date_var = "dobyr", data_year = NA,
+                                tablename = "Table_3_4", output_path = NULL){
 
   # If data_year is not provided, take the latest year in the data
   data_year <- handle_data_year(data_year, data, date_var)
   years <- construct_year_sequence(data_year)
 
   counts <- data |>
-    filter(!!sym(date_var) %in% years) &
+    filter(!!sym(date_var) %in% years &
              if (tolower(topic) == "births") is.na(birth1j) else TRUE) |>
-    group_by({{date_var}}, birth2a) |>
+    group_by(!!sym(date_var), birth2a) |>
     summarise(total = n())
 
   ests <- est_data |>
     pivot_longer(cols = c("male", "female"), names_to = "birth2a", values_to = "count") |>
-    group_by(year, birth2a) |>
+    group_by(dobyr, birth2a) |>
     summarise(total_est = sum(count))
 
-  output <- left_join(counts, ests, by= c("dobyr" = "year", "birth2a" = "birth2a"))
+  output <- left_join(counts, ests, by= c("dobyr" = "dobyr", "birth2a" = "birth2a"))
 
   output <- output %>%
     mutate(completeness = construct_round_excel((total / total_est) * 100, 2)) %>%

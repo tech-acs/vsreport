@@ -7,9 +7,11 @@
 create_t3.1(
   bth_data,
   dth_data,
-  bth_yr_var,
-  dth_yr_var,
-  tablename = "Table_3_1"
+  bth_yr_var = "dobyr",
+  dth_yr_var = "dodyr",
+  data_year = NA,
+  tablename = "Table_3_1",
+  output_path = NULL
 )
 }
 \arguments{
@@ -21,7 +23,11 @@ create_t3.1(
 
 \item{dth_yr_var}{name of year variable (Deaths)}
 
-\item{tablename}{name of the table being saved as a csv file}
+\item{data_year}{The last year to report on. Defaults to the last in the data.}
+
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 Data frame with tabulated results (if an output_path is given, it will export a .csv)

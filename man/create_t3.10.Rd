@@ -4,7 +4,14 @@
 \alias{create_t3.10}
 \title{Create Table 3.10}
 \usage{
-create_t3.10(data, dth_est, date_var, data_year = NA, tablename = NA)
+create_t3.10(
+  data,
+  dth_est,
+  date_var,
+  data_year = NA,
+  tablename = "Table_3_10",
+  output_path = NULL
+)
 }
 \arguments{
 \item{data}{dataframe being used}
@@ -13,9 +20,11 @@ create_t3.10(data, dth_est, date_var, data_year = NA, tablename = NA)
 
 \item{date_var}{occurrence data being used e.g. dobyr, dodyr etc}
 
-\item{data_year}{year the data is for}
+\item{data_year}{The year to report on. Defaults to the last in the data.}
 
-\item{tablename}{name of the table being saved as a csv file}
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 data frame of tabulated results
