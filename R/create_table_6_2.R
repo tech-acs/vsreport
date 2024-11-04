@@ -54,11 +54,6 @@ create_t6.2 <- function(death_data, cause, date_var = 'dodyr', tablename = "Tabl
   final_output <- ranked_table %>%
     mutate(across(-rank, shift_up))
 
-  if (is.null(output_path)){
-    return(final_output)
-  } else {
-    write.csv(final_output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
-    return(final_output)
-  }
+  return(handle_table_output(final_output, output_path, tablename))
 }
 

@@ -8,6 +8,8 @@
 #' @param data data frame being used
 #' @param data_year year the data is for
 #' @param sex_value whether male or female
+#' @param tablename name of the table being saved as a csv file
+#' @param output_path The path to export the generated table
 #'
 #' @return dara frame with tabulated results
 #' @export
@@ -19,51 +21,49 @@
 #' @examples
 #' t6.3 <- create_t6.3_t6.4(dth_data, sex_value = "male")
 #'
-create_t6.3_t6.4 <- function(data, data_year = NA, sex_value = "male"){
+create_t6.3_t6.4 <- function(data, data_year = NA, sex_value = "male", tablename = "Table_6_3", output_path = NULL){
 
-  # if data_year is not provided, take the latest year in the data
-  if (is.na(data_year)){
-    data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
-  }
+  # If data_year is not provided, take the latest year in the data
+  data_year <- handle_data_year(data_year, data, date_var)
 
-output <- data |>
-  filter(doryr == data_year & birth2a == sex_value) |>
-  group_by(substr(death1g,1,3)) |>
-  summarise(total = n()) |>
-  rename(causecd = `substr(death1g, 1, 3)`)
+  output <- data |>
+    filter(doryr == data_year & birth2a == sex_value) |>
+    group_by(substr(death1g,1,3)) |>
+    summarise(total = n()) |>
+    rename(causecd = `substr(death1g, 1, 3)`)
 
-output <- left_join(output, cause, by = c("causecd" = "code")) |>
-  group_by(group, description) |>
-  summarise(total = sum(total)) |>
-  arrange(desc(total))
-
-  r99_dths <- output |>
-    filter(group %in% c("R00:R99"))
-  na_dths <- output |>
-    filter(substr(group,1,1) %in% c( NA))
-
-  output <- output |>
-    filter(!substr(group,1,1) %in% c("R", NA))
-
-  output2 <- output |>
-    tail(nrow(output)-10)
-
-  output2 <- rbind(output2, na_dths) |>
-    mutate(group = "-",
-           description = "All other causes")|>
+  output <- left_join(output, cause, by = c("causecd" = "code")) |>
     group_by(group, description) |>
-    summarise(total = sum(total))
-rm(na_dths)
+    summarise(total = sum(total)) |>
+    arrange(desc(total))
 
-output <- head(output, 10)
+    r99_dths <- output |>
+      filter(group %in% c("R00:R99"))
+    na_dths <- output |>
+      filter(substr(group,1,1) %in% c( NA))
 
-output <- rbind(output, r99_dths, output2)
-total_deaths <- sum(output$total)
-output <- output |>
-  adorn_totals("row")  |>
-  mutate(proportion = construct_round_excel(total/sum(total_deaths)*100,2))
+    output <- output |>
+      filter(!substr(group,1,1) %in% c("R", NA))
 
-return(output)
+    output2 <- output |>
+      tail(nrow(output)-10)
+
+    output2 <- rbind(output2, na_dths) |>
+      mutate(group = "-",
+             description = "All other causes")|>
+      group_by(group, description) |>
+      summarise(total = sum(total))
+  rm(na_dths)
+
+  output <- head(output, 10)
+
+  output <- rbind(output, r99_dths, output2)
+  total_deaths <- sum(output$total)
+  output <- output |>
+    adorn_totals("row")  |>
+    mutate(proportion = construct_round_excel(total/sum(total_deaths)*100,2))
+
+  return(handle_table_output(output, output_path, tablename))
 
 }
 

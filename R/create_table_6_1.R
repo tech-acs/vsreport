@@ -21,9 +21,7 @@
 #'
 create_t6.1 <- function(data, cause, date_var = "dodyr", data_year = NA, tablename = "Table_6_1", output_path = NULL){
   # If data_year is not provided, take the latest year in the data
-  if (is.na(data_year)){
-    data_year <- data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
-  }
+  data_year <- handle_data_year(data_year, data, date_var)
 
   # Filter and summarize data
   output <- data %>%
@@ -68,10 +66,6 @@ create_t6.1 <- function(data, cause, date_var = "dodyr", data_year = NA, tablena
       deaths_female = total_female
     )
 
-  if (is.null(output_path)){
-    return(final_output)
-  } else {
-    write.csv(final_output, paste0(output_path, tablename, ".csv"), row.names = FALSE)
-    return(final_output)
+  return(handle_table_output(final_output, output_path, tablename))
   }
 }
