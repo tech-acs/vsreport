@@ -9,7 +9,7 @@ Table 6.4 Ten leading causes of death, females"></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">vsreport</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +53,13 @@ Table 6.4 Ten leading causes of death, females"></head><body>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_t6.3_t6.4</span><span class="op">(</span><span class="va">data</span>, data_year <span class="op">=</span> <span class="cn">NA</span>, sex_value <span class="op">=</span> <span class="st">"male"</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_t6.3_t6.4</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  data_year <span class="op">=</span> <span class="cn">NA</span>,</span>
+<span>  sex_value <span class="op">=</span> <span class="st">"male"</span>,</span>
+<span>  tablename <span class="op">=</span> <span class="st">"Table_6_3"</span>,</span>
+<span>  output_path <span class="op">=</span> <span class="cn">NULL</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -70,6 +76,14 @@ Table 6.4 Ten leading causes of death, females"></head><body>
 
 <dt id="arg-sex-value">sex_value<a class="anchor" aria-label="anchor" href="#arg-sex-value"></a></dt>
 <dd><p>whether male or female</p></dd>
+
+
+<dt id="arg-tablename">tablename<a class="anchor" aria-label="anchor" href="#arg-tablename"></a></dt>
+<dd><p>name of the table being saved as a csv file</p></dd>
+
+
+<dt id="arg-output-path">output_path<a class="anchor" aria-label="anchor" href="#arg-output-path"></a></dt>
+<dd><p>The path to export the generated table</p></dd>
 
 </dl></div>
     <div class="section level2">
