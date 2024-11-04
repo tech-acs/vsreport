@@ -67,5 +67,4 @@ create_t6.1 <- function(data, cause, date_var = "dodyr", data_year = NA, tablena
     )
 
   return(handle_table_output(final_output, output_path, tablename))
-  }
 }
