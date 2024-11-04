@@ -5,8 +5,9 @@
 #' @param data dataframe being used
 #' @param dth_est dataframe being used with estimated Death data
 #' @param date_var occurrence data being used e.g. dobyr, dodyr etc
-#' @param data_year year the data is for
-#' @param tablename name of the table being saved as a csv file
+#' @param data_year The year to report on. Defaults to the last in the data.
+#' @param tablename Name of the table to be saved as a csv file. Optional.
+#' @param output_path The path to export the generated csv table. Optional.
 #'
 #' @return data frame of tabulated results
 #' @export
@@ -17,11 +18,11 @@
 #'
 #' @examples t3.10 <- create_t3.10(dth_data, date_var = dodyr, data_year = 2022, tablename = "Table_3_10")
 #'
-create_t3.10 <- function(data, dth_est, date_var, data_year=NA, tablename = NA){
+create_t3.10 <- function(data, dth_est, date_var, data_year = NA,
+                         tablename = "Table_3_10", output_path = NULL){
+
   # if data_year is not provided, take the latest year in the data
-  if (is.na(data_year)){
-    data_year = data %>% pull({{date_var}}) %>% max(na.rm = TRUE)
-  }
+  data_year <- handle_data_year(data_year, data, date_var)
 
   output <- data |>
     filter(!!sym(date_var) == data_year, birth2a != "not stated") |>
@@ -56,13 +57,7 @@ create_t3.10 <- function(data, dth_est, date_var, data_year=NA, tablename = NA){
     select(-c(est_count)) |>
     pivot_wider(names_from = birth2a, values_from = c(reg_deaths, completeness, adjusted))
 
-  output_dir <- "./outputs"
-  if (!dir.exists(output_dir)) {
-    dir.create(output_dir, recursive = TRUE)
-  }
-
-  write.csv(output, paste0(output_dir, "/", tablename, ".csv"), row.names = FALSE)
-  return(output)
+  return(handle_table_output(output, output_path, tablename))
 }
 
 

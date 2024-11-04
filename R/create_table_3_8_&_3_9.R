@@ -8,11 +8,12 @@
 #'
 #' @param data name of data frame being used
 #' @param date_var occurrence data variable being used
-#' @param data_year year of data
 #' @param est_data data frame of estimated data being used
 #' @param by_var the occurrence year being used e.g. dobyr or dodyr
 #' @param topic whether births or deahts is being run
-#' @param tablename name for csv output use _ instead of . for names
+#' @param data_year The year to report on. Defaults to the last in the data.
+#' @param tablename Name of the table to be saved as a csv file. Optional.
+#' @param output_path The path to export the generated csv table. Optional.
 #'
 #' @return data frame with tabulated results
 #' @export
@@ -29,17 +30,15 @@
 #'                             date_var = dodyr, data_year = 2022, by_var = birth1c,
 #'                             topic = "deaths", tablename = "Table_3_9")
 #'
-create_t3.8_and_t3.9 <- function(data, est_data, date_var, data_year=NA, by_var, topic = NA, tablename = NA){
-  # by_var <- enquo(by_var)
-  # by_var_name <- quo_name(by_var)
+create_t3.8_and_t3.9 <- function(data, est_data, date_var, by_var,
+                                 topic = NA, tablename = NA,
+                                 data_year = NA,
+                                 tablename = "Table_3_9", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
-  if (is.na(data_year)){
-    data_year = data %>% pull({{date_var}}) %>% max(na.rm = TRUE)
-  }
+  data_year <- handle_data_year(data_year, data, date_var)
 
   # filter data based on topic
-
   if(topic == 'births'){
     data <- data %>% filter(!!sym(date_var) == data_year, is.na(birth1j))
   } else {
@@ -72,8 +71,6 @@ create_t3.8_and_t3.9 <- function(data, est_data, date_var, data_year=NA, by_var,
     select(birth1c, male, m_adj, female, f_adj, Total, t_adj)|>
     adorn_totals("row")
 
-
-  write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
-  return(output)
+  return(handle_table_output(output, output_path, tablename))
 }
 

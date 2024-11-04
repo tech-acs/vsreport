@@ -6,9 +6,10 @@
 #' @param data dataframe being used
 #' @param est_data data frame of estimated data being used
 #' @param date_var occurrence data being used e.g. dobyr, dodyr etc
-#' @param data_year year the data is for
 #' @param topic whether the data is for births or deaths
-#' @param tablename name of the table being saved as a csv file
+#' @param data_year The year to report on. Defaults to the last in the data.
+#' @param tablename Name of the table to be saved as a csv file. Optional.
+#' @param output_path The path to export the generated csv table. Optional.
 #'
 #' @return data frame of tabulated results
 #' @export
@@ -19,17 +20,14 @@
 #'
 #' @examples t3.5 <- create_t3.5_and_3.7(bth_data, bth_est, dobyr, 2022, topic = "births", tablename = "Table_3_5")
 #'
-create_t3.5_and_3.7 <- function(data, est_data, date_var, data_year = NA, topic = NA, tablename = NA) {
-   # date_var <- enquo(date_var)
-   # date_var_name <- quo_name(date_var)
+create_t3.5_and_3.7 <- function(data, est_data, date_var,
+                                topic = NA, tablename = NA, data_year = NA,
+                                tablename = "Table_3_5", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
-  if (is.na(data_year)){
-    data_year = data %>% pull({{date_var}}) %>% max(na.rm = TRUE)
-  }
+  data_year <- handle_data_year(data_year, data, date_var)
 
   # filter data based on topic
-
   if(topic == 'births'){
     data <- data %>% filter(!!sym(date_var) == data_year , tolower(birth2a) %in% c("male", "female") , is.na(birth1j))
   } else {
@@ -63,7 +61,5 @@ create_t3.5_and_3.7 <- function(data, est_data, date_var, data_year = NA, topic 
     arrange(birth1c) %>%
     adorn_totals("row")
 
-  write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
-
-  return(output)
+  return(handle_table_output(output, output_path, tablename))
 }
