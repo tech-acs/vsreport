@@ -20,6 +20,8 @@ create_t5_5(
 \item{data_year}{year the data is for}
 
 \item{tablename}{name for csv output use _ instead of . for names}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 data frame with tabulated results

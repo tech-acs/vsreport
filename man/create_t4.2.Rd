@@ -20,11 +20,11 @@ create_t4.2(
 
 \item{date_var}{Name of date variable (years)}
 
-\item{data_year}{Year of which to select the data}
+\item{data_year}{The year to report on. Defaults to the last in the data.}
 
-\item{tablename}{Name of the table to be saved as a csv file}
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
 
-\item{output_path}{The path to export the generated csv table}
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 A table of counts of births for each place of occurance split by sex.

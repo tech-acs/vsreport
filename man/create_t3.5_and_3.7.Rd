@@ -8,9 +8,10 @@ create_t3.5_and_3.7(
   data,
   est_data,
   date_var,
-  data_year = NA,
   topic = NA,
-  tablename = NA
+  data_year = NA,
+  tablename = "Table_3_5",
+  output_path = NULL
 )
 }
 \arguments{
@@ -20,11 +21,13 @@ create_t3.5_and_3.7(
 
 \item{date_var}{occurrence data being used e.g. dobyr, dodyr etc}
 
-\item{data_year}{year the data is for}
-
 \item{topic}{whether the data is for births or deaths}
 
-\item{tablename}{name of the table being saved as a csv file}
+\item{data_year}{The year to report on. Defaults to the last in the data.}
+
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 data frame of tabulated results

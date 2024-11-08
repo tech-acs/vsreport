@@ -4,16 +4,27 @@
 \alias{create_t3.2_t3.3}
 \title{Creates Tables 3.2 and 3.3}
 \usage{
-create_t3.2_t3.3(data, occ_var, topic = NA, tablename = "table_3_2")
+create_t3.2_t3.3(
+  data,
+  date_var = "dobyr",
+  topic = "births",
+  data_year = NA,
+  tablename = "Table_3_2",
+  output_path = NULL
+)
 }
 \arguments{
 \item{data}{name of data frame being used}
 
-\item{occ_var}{year variable for births or deaths occurrences}
+\item{date_var}{year variable for births or deaths occurrences}
 
 \item{topic}{whether births or deahts is being run}
 
-\item{tablename}{name for csv output use _ instead of . for names}
+\item{data_year}{The last year to report on. Defaults to the last in the data.}
+
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 data frame with tabulated results
@@ -21,8 +32,8 @@ data frame with tabulated results
 \description{
 Table 3.2 Proportion in percentage of live births by year of registration and year of occurrence
 
-Table 3.3 Proportion in percentage  of deaths by year of registration and year of occurrence
+Table 3.3 Proportion in percentage of deaths by year of registration and year of occurrence
 }
 \examples{
-t3.2 <- create_t3.2_t3.3(bth_data, occ_var = dobyr, topic = "births", tablename = "Table_3_2")
+t3.2 <-
 }

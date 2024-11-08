@@ -16,6 +16,9 @@
 #' @param data data frame being used
 #' @param sex_value whether male or female
 #' @param age_group which age group is being used e.g. "<5"
+#' @param data_year The year to report on. Defaults to the last in the data.
+#' @param tablename Name of the table to be saved as a csv file. Optional.
+#' @param output_path The path to export the generated csv table. Optional.
 #'
 #' @return data frame with tabulated results
 #' @export
@@ -28,12 +31,11 @@
 #' t6.5 <- create_t6.5_t6.10(dth_data, sex_value = c("male","female"), age_group = "<5")
 #' t6.6 <- create_t6.5_t6.10(dth_data, sex_value = c("male","female"), age_group = "5-14")
 #'
-create_t6.5_t6.10 <- function(data, data_year = NA, sex_value = "male", age_group = "<5"){
+create_t6.5_t6.10 <- function(data, data_year = NA, sex_value = "male", age_group = "<5",
+                              tablename = "Table_6_5", output_path = NULL){
 
   # if data_year is not provided, take the latest year in the data
-  if (is.na(data_year)){
-    data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
-  }
+  data_year <- handle_data_year(data_year, data, date_var)
 
   output <- data |>
     filter(doryr == data_year & birth2a %in% sex_value & age_grp_lead == age_group) |>
@@ -71,7 +73,8 @@ create_t6.5_t6.10 <- function(data, data_year = NA, sex_value = "male", age_grou
   output <- output |>
     adorn_totals("row")  |>
     mutate(proportion = construct_round_excel(total/sum(total_deaths)*100,2))
-  return(output)
+
+  return(handle_table_output(output, output_path, tablename))
 
 }
 

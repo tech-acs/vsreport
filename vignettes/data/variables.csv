@@ -309,11 +309,10 @@ divorce1b,Date of registration,Divorce,Event,Direct,Date,table_8_05
 divorce1b,Date of registration,Divorce,Event,Direct,Date,table_7_03 
 divorce1b,Date of registration,Divorce,Event,Direct,Date,table_7_04 
 divorce1b,Date of registration,Divorce,Event,Direct,Date,table_7_05 
-divorce1b,Date of registration,Divorce,Event,Direct,Date,table_7_06 
-divorce2g,Duration of marriage,Divorce,Wife,Derived,Integer,table_7_08 
-divorce2g,Duration of marriage,Divorce,Wife,Derived,Integer,table_7_09 
-divorce2g,Duration of marriage,Divorce,Wife,Derived,Integer,table_7_06 
-divorce3g,Duration of marriage,Divorce,Husband,Derived,Integer,table_7_07 
-divorce3g,Duration of marriage,Divorce,Husband,Derived,Integer,table_7_09 
-divorce3g,Duration of marriage,Divorce,Husband,Derived,Integer,table_7_06 
-divorce2d,Number of dependent children of divorced persons,Divorce,Wife,Additional,Integer,table_7_09 
+divorce1b,Date of registration,Divorce,Event,Direct,Date,table_7_06  
+divorce1d,Duration of marriage,Divorce,Event,Derived,Integer,table_7_06 
+divorce1d,Duration of marriage,Divorce,Event,Derived,Integer,table_7_07
+divorce1d,Duration of marriage,Divorce,Event,Derived,Integer,table_7_08 
+divorce1d,Duration of marriage,Divorce,Event,Derived,Integer,table_7_09
+divorce2c,Number of dependent children of divorced persons,Divorce,Wife,Additional,Integer,table_7_09 
+divorce3c,Number of dependent children of divorced persons,Divorce,Husband,Additional,Integer,table_7_09

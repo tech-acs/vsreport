@@ -4,9 +4,9 @@
 #'
 #' @param data data frame being used
 #' @param date_var occurrence data being used e.g. dobyr, dodyr etc
-#' @param data_year year the data is for
-#' @param tablename name for csv output use _ instead of . for names
-#' @param output_path The path to export the generated table
+#' @param data_year The year to report on. Defaults to the last in the data.
+#' @param tablename Name of the table to be saved as a csv file. Optional.
+#' @param output_path The path to export the generated csv table. Optional.
 #'
 #' @return data frame with tablutated results
 #' @export

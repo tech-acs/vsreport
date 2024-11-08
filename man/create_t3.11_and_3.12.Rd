@@ -7,10 +7,11 @@
 create_t3.11_and_3.12(
   data,
   date_var,
-  data_year = NA,
   by_var,
-  tablename = NA,
-  topic = NA
+  topic = NA,
+  data_year = NA,
+  tablename = "Table_3_11",
+  output_path = NULL
 )
 }
 \arguments{
@@ -18,13 +19,15 @@ create_t3.11_and_3.12(
 
 \item{date_var}{the occurrence year being used e.g. dobyr or dodyr}
 
-\item{data_year}{the year of the data}
-
 \item{by_var}{what variable the data is being redistributed by}
 
-\item{tablename}{name of the table being saved as a csv file}
-
 \item{topic}{whether the table is births or deaths data}
+
+\item{data_year}{The year to report on. Defaults to the last in the data.}
+
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 data frames for tabulated versions of Table 3.4 and 3.6

@@ -315,10 +315,9 @@ divorce1b,Date of registration,Divorce,Event,Direct,Date,NA,figure_7_03,F7.3,Div
 divorce1b,Date of registration,Divorce,Event,Direct,Date,NA,figure_7_04,F7.4,Average age at divorce by sex and year of occurrence,Priority
 divorce1b,Date of registration,Divorce,Event,Direct,Date,NA,figure_7_05,F7.5,Age-specific divorce rate by sex and year of occurrence,Priority
 divorce1b,Date of registration,Divorce,Event,Direct,Date,NA,figure_7_06,F7.6,Divorces by duration of marriage and year of occurrence,Priority
-divorce2g,Duration of marriage,Divorce,Wife,Derived,Integer,DI-3,table_7_08,T7.8,"Divorces by duration of marriage and age of wife, year",Priority
-divorce2g,Duration of marriage,Divorce,Wife,Derived,Integer,DI-4,table_7_09,T7.9,"Divorces by duration of marriage and number of dependent children, year",Priority
-divorce2g,Duration of marriage,Divorce,Wife,Derived,Integer,NA,figure_7_06,F7.6,Divorces by duration of marriage and year of occurrence,Priority
-divorce3g,Duration of marriage,Divorce,Husband,Derived,Integer,DI-3,table_7_07,T7.7,"Divorces by duration of marriage and age of husband, year",Priority
-divorce3g,Duration of marriage,Divorce,Husband,Derived,Integer,DI-4,table_7_09,T7.9,"Divorces by duration of marriage and number of dependent children, year",Priority
-divorce3g,Duration of marriage,Divorce,Husband,Derived,Integer,NA,figure_7_06,F7.6,Divorces by duration of marriage and year of occurrence,Priority
-divorce2d,Number of dependent children of divorced persons,Divorce,Wife,Additional,Integer,DI-4,table_7_09,T7.9,"Divorces by duration of marriage and number of dependent children, year",Priority
+divorce1d,Duration of marriage,Divorce,Event,Derived,Integer,NA,figure_7_06,F7.6,Divorces by duration of marriage and year of occurrence,Priority
+divorce1d,Duration of marriage,Divorce,Event,Derived,Integer,DI-3,table_7_07,T7.7,"Divorces by duration of marriage and age of husband, year",Priority
+divorce1d,Duration of marriage,Divorce,Event,Derived,Integer,DI-3,table_7_08,T7.8,"Divorces by duration of marriage and age of wife, year",Priority
+divorce1d,Duration of marriage,Divorce,Event,Derived,Integer,DI-4,table_7_09,T7.9,"Divorces by duration of marriage and number of dependent children, year",Priority
+divorce2c,Number of dependent children of divorced persons,Divorce,Wife,Additional,Integer,DI-4,table_7_09,T7.9,"Divorces by duration of marriage and number of dependent children, year",Priority
+divorce3c,Number of dependent children of divorced persons,Divorce,Husband,Additional,Integer,DI-4,table_7_09,T7.9,"Divorces by duration of marriage and number of dependent children, year",Priority

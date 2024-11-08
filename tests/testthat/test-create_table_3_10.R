@@ -1,4 +1,7 @@
 test_that("create_t3.10 function works correctly", {
+  working_dir <- getwd()
+  setwd("../../")
+
   # Sample data
   dth_data <- data.frame(
     dodyr = c(2022, 2022, 2022, 2021, 2021),
@@ -13,7 +16,8 @@ test_that("create_t3.10 function works correctly", {
     male = c(150, 250, 350, 450)
   )
 
-  result <- create_t3.10(dth_data, dth_est, "dodyr", data_year = 2022, tablename = "Table_3_10")
+  result <- create_t3.10(dth_data, dth_est, "dodyr", data_year = 2022,
+                         tablename = "Table_3_10", output_path = "outputs/")
 
   # Check if result is a data frame
   expect_s3_class(result, "data.frame")

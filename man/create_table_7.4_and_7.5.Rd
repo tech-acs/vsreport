@@ -8,17 +8,20 @@ create_table_7.4_and_7.5(
   data,
   data_year = NA,
   groombride = "groom",
-  tablename = NA
+  tablename = "Table_7_4",
+  output_path = NULL
 )
 }
 \arguments{
 \item{data}{dataframe being used}
 
-\item{data_year}{year the data is for}
+\item{data_year}{The year to report on. Defaults to the last in the data.}
 
-\item{groombride}{whether the table is for groom or bride data}
+\item{groombride}{whether the table is for groom or bride data.}
 
-\item{tablename}{name of the table being saved as a csv file}
+\item{tablename}{Name of the table to be saved as a csv file. Optional.}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 data frame of tabulated results

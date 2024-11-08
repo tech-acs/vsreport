@@ -9,8 +9,9 @@
 #' @param est_data estimate data frame
 #' @param pops population data frame
 #' @param date_var variable for year
-#' @param tablename name for csv output use _ instead of . for names
-#' @param output_path The path to export the generated table
+#' @param data_year The year to report on. Defaults to the last in the data.
+#' @param tablename Name of the table to be saved as a csv file. Optional.
+#' @param output_path The path to export the generated csv table. Optional.
 #'
 #' @return data frame with tabulated results
 #' @export
@@ -21,9 +22,13 @@
 #'
 #' @examples t4.1 <- create_t4.1(bth_data, est_data, pops, date_var = dobyr, tablename = "Table_4_1")
 #'
-create_t4.1 <- function(data, est_data, pops, date_var = "dobyr", tablename = "Table_4_1", output_path = NULL){
-  curr_year <- data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
-  years <- construct_year_sequence(curr_year)
+create_t4.1 <- function(data, est_data, pops, date_var = "dobyr",
+                        data_year = NA,
+                        tablename = "Table_4_1", output_path = NULL){
+
+  # if data_year is not provided, take the latest year in the data
+  data_year <- handle_data_year(data_year, data, date_var)
+  years <- construct_year_sequence(data_year)
 
   output <- data |>
     filter(is.na(birth1j) & !!sym(date_var) %in% years & birth2a != "not stated") |>

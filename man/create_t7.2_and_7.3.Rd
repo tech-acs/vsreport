@@ -8,7 +8,8 @@ create_t7.2_and_7.3(
   data,
   data_year = NA,
   rural_urban = "urban",
-  tablename = NA
+  tablename = "Table_7_1",
+  output_path = NULL
 )
 }
 \arguments{
@@ -19,6 +20,8 @@ create_t7.2_and_7.3(
 \item{rural_urban}{whether the data is for urban or rural}
 
 \item{tablename}{name of the table being saved as a csv file}
+
+\item{output_path}{The path to export the generated csv table. Optional.}
 }
 \value{
 data frame of tabulated results

@@ -4,7 +4,13 @@
 \alias{create_t6.3_t6.4}
 \title{Creates Tables 6.3 or 6.4}
 \usage{
-create_t6.3_t6.4(data, data_year = NA, sex_value = "male")
+create_t6.3_t6.4(
+  data,
+  data_year = NA,
+  sex_value = "male",
+  tablename = "Table_6_3",
+  output_path = NULL
+)
 }
 \arguments{
 \item{data}{data frame being used}
@@ -12,6 +18,10 @@ create_t6.3_t6.4(data, data_year = NA, sex_value = "male")
 \item{data_year}{year the data is for}
 
 \item{sex_value}{whether male or female}
+
+\item{tablename}{name of the table being saved as a csv file}
+
+\item{output_path}{The path to export the generated table}
 }
 \value{
 dara frame with tabulated results

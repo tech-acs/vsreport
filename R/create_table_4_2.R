@@ -5,9 +5,9 @@
 #' @param data Birth records data frame
 #' @param est_data Estimated births data frame
 #' @param date_var Name of date variable (years)
-#' @param data_year Year of which to select the data
-#' @param tablename Name of the table to be saved as a csv file
-#' @param output_path The path to export the generated csv table
+#' @param data_year The year to report on. Defaults to the last in the data.
+#' @param tablename Name of the table to be saved as a csv file. Optional.
+#' @param output_path The path to export the generated csv table. Optional.
 #'
 #' @return A table of counts of births for each place of occurance split by sex.
 #' @export

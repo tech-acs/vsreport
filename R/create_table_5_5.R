@@ -15,6 +15,7 @@
 #' @param date_var occurrence data variable being used
 #' @param data_year year the data is for
 #' @param tablename name for csv output use _ instead of . for names
+#' @param output_path The path to export the generated csv table. Optional.
 #'
 #' @return data frame with tabulated results
 #' @export
